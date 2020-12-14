@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div *ngFor="let r of regions" class="col-md-4">
+      <div class="card" style="width: 18rem;">
+        <img alt="..." class="card-img-top" src="{{r.img}}">
+        <div class="card-body">
+          <h5 class="card-title">Regione {{r.name.toUpperCase()}} </h5>
+          <p class="card-text">Scopri le palestre della regione {{r.name.toUpperCase()}}!</p>
+          <a [routerLink]="['/regions', r.name, 'gyms']" class="btn btn-primary">Palestre</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

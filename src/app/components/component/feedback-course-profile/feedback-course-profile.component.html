@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div *ngFor="let f of feedbacks | async" class="col-md-4">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Recensione</h5>
+          <p class="card-text">{{f.rating}}</p>
+          <p class="card-text">{{f.feed}} </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

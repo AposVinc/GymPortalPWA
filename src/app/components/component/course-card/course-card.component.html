@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div *ngFor="let c of courses | async" class="col-md-4">
+      <div class="card" style="width: 18rem; border-radius: 100px !important;">
+        <img alt="..." class="card-img-top" src="/assets/img/gym.png">
+        <div class="card-body">
+          <h5 class="card-title">{{c.name}}</h5>
+          <p class="card-text" style="white-space: pre-line">{{c.description}}</p>
+          <a [routerLink]="[c.id,'feedbacks']" class="btn btn-primary">Vai alle recensioni</a>
+          <div *ngIf="favorites | async; let favs">
+            <button *ngIf="!isFav(favs, c)" (click)="addFav(c)" class="btn btn-primary">Aggiungi ai preferiti</button>
+            <button *ngIf="isFav(favs, c)" (click)="delFav(c)" class="btn btn-danger">Elimina dai preferiti</button>
+          </div>
+          <a [routerLink]="[c.id,'feedbacks','add']" class="btn btn-primary">Scrivi una recensione</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
