@@ -326,13 +326,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Nav Meu Container */
-#nav-menu-container {
+.nav-menu-container {
   float: right;
   margin: 0;
 }
 
 @media (max-width: 768px) {
-  #nav-menu-container {
+  .nav-menu-container {
     display: none;
   }
 }
@@ -412,7 +412,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Mobile Nav Styling */
-#mobile-nav {
+.mobile-nav {
   position: fixed;
   top: 0;
   padding-top: 18px;
@@ -425,17 +425,17 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.4s;
 }
 
-#mobile-nav ul {
+.mobile-nav ul {
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-#mobile-nav ul li {
+.mobile-nav ul li {
   position: relative;
 }
 
-#mobile-nav ul li a {
+.mobile-nav ul li a {
   color: #fff;
   font-size: 16px;
   overflow: hidden;
@@ -447,15 +447,15 @@ h1, h2, h3, h4, h5, h6 {
   outline: none;
 }
 
-#mobile-nav ul li a:hover {
+.mobile-nav ul li a:hover {
   color: #fff;
 }
 
-#mobile-nav ul li li {
+.mobile-nav ul li li {
   padding-left: 30px;
 }
 
-#mobile-nav ul .menu-has-children i {
+.mobile-nav ul .menu-has-children i {
   position: absolute;
   right: 0;
   z-index: 99;
@@ -464,11 +464,11 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
 }
 
-#mobile-nav ul .menu-has-children i.fa-chevron-up {
+.mobile-nav ul .menu-has-children i.fa-chevron-up {
   color: #50d8af;
 }
 
-#mobile-nav ul .menu-item-active {
+.mobile-nav ul .menu-item-active {
   color: #50d8af;
 }
 
@@ -488,7 +488,7 @@ body.mobile-nav-active {
   overflow: hidden;
 }
 
-body.mobile-nav-active #mobile-nav {
+body.mobile-nav-active .mobile-nav {
   left: 0;
 }
 

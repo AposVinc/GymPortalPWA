@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit, Renderer2} from '@angular/core';
 import {Router} from '@angular/router';
 import {Store} from '@ngrx/store';
 import {IAppState} from '../../../state/app.states';
@@ -14,12 +14,44 @@ import {LoggedOutAction} from '../../../actions/common.actions';
 export class HeaderComponent implements OnInit {
 
   logged: Observable<boolean>;
+  flagMobile: boolean;
+  flagMenu: boolean;
+  screenWidth: any;
+  screenHeight: any;
 
-  constructor(private store: Store<IAppState>, public router: Router) {
+  constructor(private store: Store<IAppState>, public router: Router, private renderer: Renderer2) {
+    this.flagMobile = false;
+    this.flagMenu = false;
     this.logged = this.store.select(selectCommonLogged);
   }
 
   ngOnInit(): void {
+    this.checkMobile();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event): void{
+    this.checkMobile();
+  }
+
+  checkMobile(): void {
+    this.screenWidth = window.innerWidth;
+    this.screenHeight = window.innerHeight;
+    this.flagMobile = this.screenWidth <= 768;
+    if (this.flagMenu && this.flagMobile){
+      this.renderer.addClass(document.body, 'mobile-nav-active');
+    } else {
+      this.renderer.removeClass(document.body, 'mobile-nav-active');
+    }
+  }
+
+  handleMenu(): void {
+    this.flagMenu = !this.flagMenu;
+    if (this.flagMenu && this.flagMobile){
+      this.renderer.addClass(document.body, 'mobile-nav-active');
+    } else {
+      this.renderer.removeClass(document.body, 'mobile-nav-active');
+    }
   }
 
   logout(): void {
