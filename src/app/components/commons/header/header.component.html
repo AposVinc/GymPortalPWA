@@ -2,15 +2,15 @@
 <section id="topbar" class="d-none d-lg-block">
   <div class="container clearfix">
     <div class="contact-info float-left">
-      <i class="fa fa-envelope-o"></i> <a href="mailto:contact@example.com">contact@example.com</a>
-      <i class="fa fa-phone"></i> +1 5589 55488 55
+      <i class="fa fa-envelope-o"></i> <a href="mailto:contact@example.com">contact@gymportal.com</a>
+      <i class="fa fa-phone"></i> +39 0863 27874
     </div>
     <div class="social-links float-right">
-      <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-      <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-      <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-      <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
-      <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+      <a class="twitter"><i class="fa fa-twitter"></i></a>  <!--href="#"-->
+      <a class="facebook"><i class="fa fa-facebook"></i></a>
+      <a class="instagram"><i class="fa fa-instagram"></i></a>
+      <a class="google-plus"><i class="fa fa-google-plus"></i></a>
+      <a class="linkedin"><i class="fa fa-linkedin"></i></a>
     </div>
   </div>
 </section><!-- End Top Bar-->
@@ -25,7 +25,7 @@
   <div class="container">
 
     <div id="logo" class="pull-left">
-      <h1><a href="index.html">Reve<span>al</span></a></h1>
+      <h1><a routerLink="">Gym<span>portal</span></a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html"><img src="assets/img/logo.png" alt=""></a>-->
     </div>
@@ -33,25 +33,12 @@
     <nav [ngClass]="{'nav-menu-container': !flagMobile, 'mobile-nav': flagMobile}">
       <ul [ngClass]="{'nav-menu': !flagMobile, '': flagMobile}"
           style="touch-action: pan-y;">
-      <!--          [ngStyle]="{'touch-action': flagMobile ? 'pan-y;' : '' }">-->
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#team">Team</a></li>
-        <li class="menu-has-children">
-          <a *ngIf="!flagMobile" href="">Drop Down</a>
-
-          <i *ngIf="flagMobile" class="fa fa-chevron-down"></i>
-          <a *ngIf="flagMobile" href="" class="sf-with-ul">Drop Down</a>
-          <ul>
-            <li><a href="#">Drop Down 1</a></li>
-            <li><a href="#">Drop Down 3</a></li>
-            <li><a href="#">Drop Down 4</a></li>
-            <li><a href="#">Drop Down 5</a></li>
-          </ul>
-        </li>
-        <li><a href="#contact">Contact</a></li>
+        <!--          [ngStyle]="{'touch-action': flagMobile ? 'pan-y;' : '' }">-->
+        <li><a *ngIf="logged | async" routerLink="">Home</a></li>
+        <li><a *ngIf="!(logged | async)" routerLink="registration">Registration</a></li>
+        <li><a *ngIf="!(logged | async)" routerLink="login">Login</a></li>
+        <li><a *ngIf="logged | async" routerLink="profile">Profile</a></li>
+        <li><a *ngIf="logged | async" (click)="logout()" type="button" class="btn btn-danger">Logout</a></li>
       </ul>
     </nav><!-- #nav-menu-container -->
 
