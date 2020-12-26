@@ -1,7 +1,33 @@
-.card {
-  margin: 10px;
+#portfolio .portfolio-item {
+  height: 400px;
 }
 
-img {
-  height: 300px;
+#portfolio .portfolio-item .portfolio-img {
+  position: relative;
+  height: 80%;
+}
+
+#portfolio .portfolio-item img {
+  max-height: 300px;
+  width: auto;
+
+  top: 50%;
+  transform: translateY(-50%);
+
+  display: block;
+  margin: auto;
+}
+
+#portfolio .portfolio-item .portfolio-info {
+  position: relative;
+
+  opacity: 1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+
+#portfolio .portfolio-item:hover .portfolio-info {
+  background: #379278;
 }
