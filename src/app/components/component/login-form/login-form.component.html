@@ -1,30 +1,41 @@
-<div class="row">
-  <div class="col">
-    <div *ngIf="loginError" class="alert alert-danger">
+<!-- ======= Contact Section ======= -->
+<section id="login" class="wow fadeInUp">
+  <div class="container">
 
+    <div class="row justify-content-center align-items-center">
+      <div class="col-lg-5">
+
+        <div *ngIf="loginError" class="alert alert-danger">
           <span *ngIf="loginError.error !== undefined && loginError.error.error !== undefined">
             {{ loginError.error.error }}
           </span>
+          Si è verificato un errore di autenticazione. Controllare i log.
+        </div>
 
-      Si è verificato un errore di autenticazione. Controllare i log.
-    </div>
-  </div>
-</div>
-<form (ngSubmit)="submit()" [formGroup]="loginForm" class="form">
-  <div class="form-group">
-    <label for="username">Username</label>
-    <input class="form-control" formControlName="username" id="username" type="text">
-    <div *ngIf="loginForm.get('username').dirty && !loginForm.get('username').valid" class="alert alert-danger">Campo
-      non valido
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="password">Password </label>
-    <input class="form-control" formControlName="password" id="password" type="password">
-    <div *ngIf="loginForm.get('password').dirty && !loginForm.get('password').valid" class="alert alert-danger">
-      Lunghezza tra 5 e 10 caratteri
-    </div>
-  </div>
-  <button [disabled]="!loginForm.valid" class="btn btn-success">Accedi</button>
-</form>
+        <div class="card">
+          <div class="card-body">
+            <form (ngSubmit)="submit()" [formGroup]="loginForm" class="form">
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input class="form-control" formControlName="username" id="username" type="text">
+                <div *ngIf="loginForm.get('username').dirty && !loginForm.get('username').valid" class="alert alert-danger">
+                  Campo non valido
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="password">Password </label>
+                <input class="form-control" formControlName="password" id="password" type="password">
+                <div *ngIf="loginForm.get('password').dirty && !loginForm.get('password').valid" class="alert alert-danger">
+                  Lunghezza tra 5 e 10 caratteri
+                </div>
+              </div>
+              <button [disabled]="!loginForm.valid" class="btn btn-success">Accedi</button>
+            </form>
+          </div>
+        </div>
 
+      </div>
+    </div>
+
+  </div>
+</section><!-- End Contact Section -->

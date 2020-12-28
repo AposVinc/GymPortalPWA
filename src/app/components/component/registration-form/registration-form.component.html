@@ -1,40 +1,58 @@
-<form (ngSubmit)="save()" [formGroup]="registrationForm" class="form">
-  <div class="form-group">
-    <label for="name">Name</label>
-    <input class="form-control" formControlName="name" id="name" type="text">
-    <div *ngIf="registrationForm.get('name').dirty && !registrationForm.get('name').valid" class="alert alert-danger">
-      Campo non valido
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="lastname">Last Name</label>
-    <input class="form-control" formControlName="lastname" id="lastname" type="text">
-    <div *ngIf="registrationForm.get('lastname').dirty && !registrationForm.get('lastname').valid"
-         class="alert alert-danger">Campo non valido
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input class="form-control" formControlName="email" id="email" type="email">
-    <div *ngIf="registrationForm.get('email').dirty && !registrationForm.get('email').valid" class="alert alert-danger">
-      Campo non valido
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="username">Username</label>
-    <input class="form-control" formControlName="username" id="username" type="text">
-    <div *ngIf="registrationForm.get('username').dirty && !registrationForm.get('username').valid"
-         class="alert alert-danger">Campo non valido
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="password">Password </label>
-    <input class="form-control" formControlName="password" id="password" type="password">
-    <div *ngIf="registrationForm.get('password').dirty && !registrationForm.get('password').valid"
-         class="alert alert-danger">Lunghezza tra 5 e 10
-      caratteri
-    </div>
-  </div>
-  <button [disabled]="!registrationForm.valid" class="btn btn-success">Registrati</button>
-</form>
+<!-- ======= Contact Section ======= -->
+<section id="registration" class="wow fadeInUp">
+  <div class="container">
 
+    <div class="row justify-content-center align-items-center">
+      <div class="col-lg-5">
+
+        <div class="card">
+          <div class="card-body">
+
+            <form (ngSubmit)="save()" [formGroup]="registrationForm" class="form">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input class="form-control" formControlName="name" id="name" type="text">
+                <div *ngIf="registrationForm.get('name').dirty && !registrationForm.get('name').valid" class="alert alert-danger">
+                  Campo non valido
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input class="form-control" formControlName="lastname" id="lastname" type="text">
+                <div *ngIf="registrationForm.get('lastname').dirty && !registrationForm.get('lastname').valid"
+                     class="alert alert-danger">Campo non valido
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input class="form-control" formControlName="email" id="email" type="email">
+                <div *ngIf="registrationForm.get('email').dirty && !registrationForm.get('email').valid" class="alert alert-danger">
+                  Campo non valido
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input class="form-control" formControlName="username" id="username" type="text">
+                <div *ngIf="registrationForm.get('username').dirty && !registrationForm.get('username').valid"
+                     class="alert alert-danger">Campo non valido
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="password">Password </label>
+                <input class="form-control" formControlName="password" id="password" type="password">
+                <div *ngIf="registrationForm.get('password').dirty && !registrationForm.get('password').valid"
+                     class="alert alert-danger">Lunghezza tra 5 e 10
+                  caratteri
+                </div>
+              </div>
+              <button [disabled]="!registrationForm.valid" class="btn btn-success">Registrati</button>
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section><!-- End Contact Section -->
