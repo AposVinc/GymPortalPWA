@@ -54,6 +54,7 @@ import {FeedbacksProfileEffects} from './effects/feedback-profile-effects.servic
 import {FeedbacksGymEffects} from './effects/feedback-gym-effects.service';
 import {FeedbacksCourseEffects} from './effects/feedback-course-effects.service';
 import {FavoriteEffects} from './effects/favorite-effects.service';
+import { TitleComponent } from './components/component/title/title.component';
 
 
 @NgModule({
@@ -82,7 +83,8 @@ import {FavoriteEffects} from './effects/favorite-effects.service';
     AddFeedbackComponent,
     AddFeedbackCourseComponent,
     UpdateProfileComponent,
-    CardProfileComponent
+    CardProfileComponent,
+    TitleComponent
 
   ],
   imports: [
