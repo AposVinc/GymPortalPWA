@@ -1,19 +1,25 @@
-<div class="container">
-  <div class="row">
-    <div *ngFor="let g of gyms | async" class="col-md-4">
-      <div class="card" style="width: 18rem; border-radius: 100px !important;">
-        <img alt="..." class="card-img-top" src="/assets/img/gym.png">
-        <div class="card-body">
-          <h5 class="card-title">{{g.name}}</h5>
-          <p class="card-text">{{g.address}}, {{g.province}}, {{g.region}}</p>
-          <a [routerLink]="[g.id,'courses']" class="btn btn-primary">Vai ai corsi</a>
+<!-- ======= Portfolio Section ======= -->
+<section id="portfolio" class="portfolio wow fadeInUp">
+  <div class="container">
+
+    <div class="row portfolio-container">
+
+      <div class="col-lg-4 col-md-6 portfolio-item " *ngFor="let g of gyms | async" >
+        <img src="/assets/img/gym.png" class="img-fluid" alt="{{g.name}}}">
+        <div class="portfolio-info">
+          <h4>{{g.name}}</h4>
+          <p>{{g.address}}, {{g.province}}, {{g.region}}</p>
+          <!--          <a href="assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>-->
+          <!--          <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>-->
+          <a [routerLink]="[g.id,'feedbacks','add']" class="preview-link" title="More Details"><i class='bx bx-star' ></i></a>
           <div *ngIf="favorites | async; let favs">
-            <button *ngIf="!isFav(favs, g)" (click)="addFav(g)" class="btn btn-primary">Aggiungi ai preferiti</button>
-            <button *ngIf="isFav(favs, g)" (click)="delFav(g)" class="btn btn-danger">Elimina dai preferiti</button>
+            <a *ngIf="!isFav(favs, g)" (click)="addFav(g)" class="details-link" title="More Details"><i class="bx bx-heart"></i></a>
+            <a *ngIf="isFav(favs, g)" (click)="delFav(g)" class="details-link" title="More Details"><i class="bx bxs-heart"></i></a>
           </div>
-          <a [routerLink]="[g.id,'feedbacks','add']" class="btn btn-primary">Scrivi una recensione</a>
         </div>
       </div>
+
     </div>
+
   </div>
-</div>
+</section><!-- End Portfolio Section -->
