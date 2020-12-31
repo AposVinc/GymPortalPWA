@@ -4,11 +4,13 @@
 
     <div class="row portfolio-container">
 
-      <div class="col-lg-4 col-md-6 portfolio-item " *ngFor="let g of gyms | async" >
-        <img src="/assets/img/gym.png" class="img-fluid" alt="{{g.name}}}">
+      <div class="col-lg-4 col-md-6 portfolio-item " *ngFor="let g of gyms | async">
+        <img src="/assets/img/gym.png" class="img-fluid" alt="{{g.name}}}" [routerLink]="[g.id,'courses']">
         <div class="portfolio-info">
-          <h4>{{g.name}}</h4>
-          <p>{{g.address}}, {{g.province}}, {{g.region}}</p>
+          <div [routerLink]="[g.id,'courses']">
+            <h4>{{g.name}}</h4>
+            <p>{{g.address}}, {{g.province}}, {{g.region}}</p>
+          </div>
           <!--          <a href="assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>-->
           <!--          <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>-->
           <a [routerLink]="[g.id,'feedbacks','add']" class="preview-link" title="More Details"><i class='bx bx-star' ></i></a>

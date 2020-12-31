@@ -8,7 +8,6 @@ import {ShowAllAction} from '../../../actions/gym.actions';
 import {ActivatedRoute} from '@angular/router';
 import {CreateFavoriteGymAction, DeleteFavoriteGymAction} from '../../../actions/favorite-gym.actions';
 import {selectFavoritesGym} from '../../../selectors/favorite.selector';
-import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-gym-card',
