@@ -16,6 +16,8 @@ export class HeaderComponent implements OnInit {
   logged: Observable<boolean>;
   flagMobile: boolean;
   flagMenu: boolean;
+
+  prevScrollPos: any;
   screenWidth: any;
   screenHeight: any;
 
@@ -26,11 +28,15 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    document.getElementById('header').style.top = '30px';
+    document.getElementById('mobile-nav-toggle').style.top = '0';
+    document.getElementById('topbar').style.top = '0';
+    this.prevScrollPos = window.pageYOffset;
     this.checkMobile();
   }
 
   @HostListener('window:resize', ['$event'])
-  onResize(event): void{
+  onResize(event): void {
     this.checkMobile();
   }
 
@@ -43,6 +49,28 @@ export class HeaderComponent implements OnInit {
     } else {
       this.renderer.removeClass(document.body, 'mobile-nav-active');
     }
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event): void {
+    const currentScrollPos = window.pageYOffset;
+    if (this.prevScrollPos > currentScrollPos) {
+      document.getElementById('header').style.top = '0';
+      document.getElementById('mobile-nav-toggle').style.top = '0';
+      document.getElementById('topbar').style.top = '-50px';
+      if (window.pageYOffset === 0) {
+        document.getElementById('header').style.top = '30px';
+        document.getElementById('topbar').style.top = '0';
+      }
+    } else {
+      document.getElementById('header').style.top = '-84px';
+      document.getElementById('mobile-nav-toggle').style.top = '-84px';
+      document.getElementById('topbar').style.top = '-50px';
+      if (window.pageYOffset < 45) {
+        document.getElementById('header').style.top = '0';
+      }
+    }
+    this.prevScrollPos = currentScrollPos;
   }
 
   handleMenu(): void {
