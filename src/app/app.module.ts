@@ -55,6 +55,7 @@ import {FeedbacksGymEffects} from './effects/feedback-gym-effects.service';
 import {FeedbacksCourseEffects} from './effects/feedback-course-effects.service';
 import {FavoriteEffects} from './effects/favorite-effects.service';
 import { TitleComponent } from './components/component/title/title.component';
+import { ScrollToTopComponent } from './components/commons/scroll-to-top/scroll-to-top.component';
 
 
 @NgModule({
@@ -84,7 +85,8 @@ import { TitleComponent } from './components/component/title/title.component';
     AddFeedbackCourseComponent,
     UpdateProfileComponent,
     CardProfileComponent,
-    TitleComponent
+    TitleComponent,
+    ScrollToTopComponent
 
   ],
   imports: [
