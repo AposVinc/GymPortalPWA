@@ -8,9 +8,19 @@
 
 #header {
   position: fixed;
-  top: 0;
+  top: 30px;
   z-index: 50;
   width: 100%;
   transition: top 0.3s;
+}
+
+
+@media (max-width: 768px) {
+  #topbar {
+    top: -50px;
+  }
+  #header {
+    top: 0;
+  }
 }
 

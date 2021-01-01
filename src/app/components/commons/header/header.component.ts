@@ -28,9 +28,6 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    document.getElementById('header').style.top = '30px';
-    document.getElementById('mobile-nav-toggle').style.top = '0';
-    document.getElementById('topbar').style.top = '0';
     this.prevScrollPos = window.pageYOffset;
     this.checkMobile();
   }
@@ -49,6 +46,10 @@ export class HeaderComponent implements OnInit {
     } else {
       this.renderer.removeClass(document.body, 'mobile-nav-active');
     }
+    if (this.flagMobile) {
+      document.getElementById('header').style.top = '0';
+      document.getElementById('topbar').style.top = '-50px';
+    }
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -58,7 +59,7 @@ export class HeaderComponent implements OnInit {
       document.getElementById('header').style.top = '0';
       document.getElementById('mobile-nav-toggle').style.top = '0';
       document.getElementById('topbar').style.top = '-50px';
-      if (window.pageYOffset === 0) {
+      if (window.pageYOffset === 0 && !this.flagMobile) {
         document.getElementById('header').style.top = '30px';
         document.getElementById('topbar').style.top = '0';
       }
