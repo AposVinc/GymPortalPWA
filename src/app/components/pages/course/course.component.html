@@ -1,4 +1,4 @@
-<h2>Benvenuti ai corsi della palestra {{gymName}}</h2>
+<app-title [title]="gymName" [subtitle]="'Benvenuti ai corsi della palestra ' + gymName"></app-title>
 <app-course-card></app-course-card>
-<h2>Recensioni</h2>
+<app-title [title]="'Recensioni'" [subtitle]="'Recensioni degli utenti sulla palestra ' + gymName"></app-title>
 <app-feedback-gym-card></app-feedback-gym-card>
