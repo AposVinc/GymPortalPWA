@@ -32,8 +32,8 @@ import {AddFeedbackComponent} from './components/pages/add-feedback/add-feedback
 import {AddFeedbackCourseComponent} from './components/pages/add-feedback-course/add-feedback-course.component';
 import {UpdateProfileComponent} from './components/component/update-profile/update-profile.component';
 import {CardProfileComponent} from './components/component/card-profile/card-profile.component';
-import { appReducers } from './reducers/app.reducers';
-import {StoreModule} from '@ngrx/store';
+import {appReducers, localStorageSyncReducer} from './reducers/app.reducers';
+import {MetaReducer, StoreModule} from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import {AuthService} from './services/auth/auth.service';
@@ -57,6 +57,7 @@ import {FavoriteEffects} from './effects/favorite-effects.service';
 import { TitleComponent } from './components/component/title/title.component';
 import { ScrollToTopComponent } from './components/commons/scroll-to-top/scroll-to-top.component';
 
+const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
 
 @NgModule({
   declarations: [
@@ -92,7 +93,10 @@ import { ScrollToTopComponent } from './components/commons/scroll-to-top/scroll-
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot(appReducers),
+    StoreModule.forRoot(
+      appReducers,
+      {metaReducers}
+      ),
     EffectsModule.forRoot([
       CommonEffects, UserEffects, FeedbacksProfileEffects, FavoriteEffects,
       GymEffects, FeedbacksGymEffects,
