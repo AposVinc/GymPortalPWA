@@ -4,10 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:it": "ng serve --configuration=it --port 4201",
     "build": "ng build",
+    "build:i18n": "ng build --localize",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "extract": "ng xi18n --output-path=src/locale"
   },
   "private": true,
   "dependencies": {
@@ -16,6 +19,7 @@
     "@angular/compiler": "~10.1.0",
     "@angular/core": "~10.1.0",
     "@angular/forms": "~10.1.0",
+    "@angular/localize": "^10.1.0",
     "@angular/platform-browser": "~10.1.0",
     "@angular/platform-browser-dynamic": "~10.1.0",
     "@angular/router": "~10.1.0",
@@ -33,7 +37,7 @@
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.1001.0",
+    "@angular-devkit/build-angular": "^0.1100.6",
     "@angular/cli": "~10.1.0",
     "@angular/compiler-cli": "~10.1.0",
     "@types/jasmine": "~3.5.0",

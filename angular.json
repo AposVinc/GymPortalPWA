@@ -9,6 +9,12 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "it": "src/locale/messages.it.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -18,6 +24,7 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            "localize": false,
             "aot": true,
             "assets": [
               "src/favicon.ico",
@@ -28,7 +35,8 @@
               "src/styles.css"
             ],
             "scripts": [
-            ]
+            ],
+            "i18nMissingTranslation": "error"
           },
           "configurations": {
             "production": {
@@ -60,6 +68,9 @@
               ],
               "serviceWorker": true,
               "ngswConfigPath": "ngsw-config.json"
+            },
+            "it": {
+              "localize": ["it"]
             }
           }
         },
@@ -71,6 +82,9 @@
           "configurations": {
             "production": {
               "browserTarget": "GymPortalPWA:build:production"
+            },
+            "it": {
+              "browserTarget": "GymPortalPWA:build:it"
             }
           }
         },
