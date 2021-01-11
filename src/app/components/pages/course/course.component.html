@@ -1,4 +1,4 @@
-<app-title [title]="gymName" [subtitle]="'Benvenuti ai corsi della palestra ' + gymName"></app-title>
+<app-title [title]="gymName" i18n-subtitle="@@CoursesPage-GymSubtitle" subtitle="Welcome to the {{gymName}}'s courses"></app-title>
 <app-course-card></app-course-card>
-<app-title [title]="'Recensioni'" [subtitle]="'Recensioni degli utenti sulla palestra ' + gymName"></app-title>
+<app-title i18n-title="@@CoursesPage-FeedbacksTitle" title="Reviews" i18n-subtitle="@@CoursesPage-FeedbacksSubtitle" subtitle="Reviews on the gym {{gymName}}"></app-title>
 <app-feedback-gym-card></app-feedback-gym-card>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="HomePage-Title" datatype="html">
+        <source>Regions</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/pages/home/home.component.js</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="GymsPage-Subtitle" datatype="html">
+        <source>Welcome to the <x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/>&apos;s gyms</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/pages/gym/gym.component.js</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CoursesPage-GymSubtitle" datatype="html">
+        <source>Welcome to the <x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/>&apos;s courses</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/pages/course/course.component.js</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CoursesPage-FeedbacksTitle" datatype="html">
+        <source>Reviews</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/pages/course/course.component.js</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CoursesPage-FeedbacksSubtitle" datatype="html">
+        <source>Reviews on the gym <x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/pages/course/course.component.js</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
