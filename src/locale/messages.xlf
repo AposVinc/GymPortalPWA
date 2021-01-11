@@ -37,6 +37,104 @@
           <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="Form-LabelName" datatype="html">
+        <source>Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/component/registration-form/registration-form.component.js</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Form-LabelLastname" datatype="html">
+        <source>Lastname</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/component/registration-form/registration-form.component.js</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Form-LabelEmail" datatype="html">
+        <source>Email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/component/registration-form/registration-form.component.js</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Form-LabelUsername" datatype="html">
+        <source>Username</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/component/registration-form/registration-form.component.js</context>
+          <context context-type="linenumber">84</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Form-LabelPassword" datatype="html">
+        <source>Password </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/component/registration-form/registration-form.component.js</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Form-RegisterButton" datatype="html">
+        <source> Register </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/component/registration-form/registration-form.component.js</context>
+          <context context-type="linenumber">96</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Form-ErrorName" datatype="html">
+        <source> Invalid field </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/component/registration-form/registration-form.component.js</context>
+          <context context-type="linenumber">102</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Form-ErrorLastname" datatype="html">
+        <source> Invalid field </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/component/registration-form/registration-form.component.js</context>
+          <context context-type="linenumber">108</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Form-ErrorEmail" datatype="html">
+        <source> Invalid field </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/component/registration-form/registration-form.component.js</context>
+          <context context-type="linenumber">114</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Form-ErrorUsername" datatype="html">
+        <source> Invalid field </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/component/registration-form/registration-form.component.js</context>
+          <context context-type="linenumber">120</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Form-ErrorPassword" datatype="html">
+        <source> Length between 5 and 10 characters </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/component/registration-form/registration-form.component.js</context>
+          <context context-type="linenumber">126</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Form-LoginButton" datatype="html">
+        <source>Login</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/component/login-form/login-form.component.js</context>
+          <context context-type="linenumber">79</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Form-UpdateButton" datatype="html">
+        <source>Update</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/component/update-profile/update-profile.component.js</context>
+          <context context-type="linenumber">153</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CardProfileComponent-Title" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/> <x id="INTERPOLATION_1" equiv-text="&quot;\uFFFD1\uFFFD&quot;"/>&apos;s profile</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/component/card-profile/card-profile.component.js</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
     </body>
   </file>
 </xliff>

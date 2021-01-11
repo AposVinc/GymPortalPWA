@@ -9,27 +9,27 @@
           <span *ngIf="loginError.error !== undefined && loginError.error.error !== undefined">
             {{ loginError.error.error }}
           </span>
-          Si è verificato un errore di autenticazione. Controllare i log.
+          <!--          Si è verificato un errore di autenticazione. Controllare i log.-->
         </div>
 
         <div class="card">
           <div class="card-body">
             <form (ngSubmit)="submit()" [formGroup]="loginForm" class="form">
               <div class="form-group">
-                <label for="username">Username</label>
+                <label for="username" i18n="@@Form-LabelUsername">Username</label>
                 <input class="form-control" formControlName="username" id="username" type="text">
-                <div *ngIf="loginForm.get('username').dirty && !loginForm.get('username').valid" class="alert alert-danger">
-                  Campo non valido
+                <div *ngIf="loginForm.get('username').dirty && !loginForm.get('username').valid" class="alert alert-danger" i18n="@@Form-ErrorUsername">
+                  Invalid field
                 </div>
               </div>
               <div class="form-group">
-                <label for="password">Password </label>
+                <label for="password" i18n="@@Form-LabelPassword">Password</label>
                 <input class="form-control" formControlName="password" id="password" type="password">
-                <div *ngIf="loginForm.get('password').dirty && !loginForm.get('password').valid" class="alert alert-danger">
-                  Lunghezza tra 5 e 10 caratteri
+                <div *ngIf="loginForm.get('password').dirty && !loginForm.get('password').valid" class="alert alert-danger" i18n="@@Form-ErrorPassword">
+                  Length between 5 and 10 characters
                 </div>
               </div>
-              <button [disabled]="!loginForm.valid" class="btn btn-success">Accedi</button>
+              <button [disabled]="!loginForm.valid" class="btn btn-success" i18n="@@Form-LoginButton">Login</button>
             </form>
           </div>
         </div>
