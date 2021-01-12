@@ -30,10 +30,10 @@
       <!-- <a href="index.html"><img src="assets/img/logo.png" alt=""></a>-->
     </div>
 
-    <nav [ngClass]="{'nav-menu-container': !flagMobile, 'mobile-nav': flagMobile}">
-      <ul [ngClass]="{'nav-menu': !flagMobile, '': flagMobile}"
+    <nav [ngClass]="{'nav-menu-container': !globalService.flagMobile, 'mobile-nav': globalService.flagMobile}">
+      <ul [ngClass]="{'nav-menu': !globalService.flagMobile, '': globalService.flagMobile}"
           style="touch-action: pan-y;">
-        <!--          [ngStyle]="{'touch-action': flagMobile ? 'pan-y;' : '' }">-->
+        <!--          [ngStyle]="{'touch-action': globalService.flagMobile ? 'pan-y;' : '' }">-->
         <li><a *ngIf="logged | async" routerLink="">Home</a></li>
         <li><a *ngIf="!(logged | async)" routerLink="registration">Registration</a></li>
         <li><a *ngIf="!(logged | async)" routerLink="login">Login</a></li>
@@ -42,7 +42,7 @@
       </ul>
     </nav><!-- #nav-menu-container -->
 
-    <div id="mobile-body-overly" [ngStyle]="{'display': (flagMenu && flagMobile) ? 'block' : 'none' }" ></div>
+    <div id="mobile-body-overly" [ngStyle]="{'display': (flagMenu && globalService.flagMobile) ? 'block' : 'none' }" ></div>
 
   </div>
 </header><!-- End Header -->
