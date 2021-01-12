@@ -7,7 +7,7 @@ export class GlobalService {
 
   screenWidth: any;
   screenHeight: any;
-  public flagMobile: boolean;
+  private flagMobile: boolean;
 
   constructor() {
     this.flagMobile = false;
@@ -17,11 +17,10 @@ export class GlobalService {
     this.screenWidth = window.innerWidth;
     this.screenHeight = window.innerHeight;
     this.flagMobile = this.screenWidth <= 768;
-    console.log(this.flagMobile, this.screenWidth, this.screenHeight)
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event): void {
-    this.isMobile();
+  public getFlagMobile(): boolean{
+    return this.flagMobile;
   }
+
 }

@@ -31,12 +31,12 @@ export class HeaderComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize(event): void {
     this.globalService.isMobile();
-    if (this.flagMenu && this.globalService.flagMobile){
+    if (this.flagMenu && this.globalService.getFlagMobile()){
       this.renderer.addClass(document.body, 'mobile-nav-active');
     } else {
       this.renderer.removeClass(document.body, 'mobile-nav-active');
     }
-    if (this.globalService.flagMobile) {
+    if (this.globalService.getFlagMobile()) {
       document.getElementById('header').style.top = '0';
       document.getElementById('topbar').style.top = '-50px';
     }
@@ -45,15 +45,15 @@ export class HeaderComponent implements OnInit {
   @HostListener('window:scroll', ['$event'])
   onScroll(event): void {
     const currentScrollPos = window.pageYOffset;
-    if (this.prevScrollPos > currentScrollPos) {
+    if (this.prevScrollPos > currentScrollPos) {  // scorro verso l'alto
       document.getElementById('header').style.top = '0';
       document.getElementById('mobile-nav-toggle').style.top = '0';
       document.getElementById('topbar').style.top = '-50px';
-      if (window.pageYOffset === 0 && !this.globalService.flagMobile) {
+      if (window.pageYOffset === 0 && !this.globalService.getFlagMobile()) {
         document.getElementById('header').style.top = '30px';
         document.getElementById('topbar').style.top = '0';
       }
-    } else {
+    } else {  // scorro verso il basso
       document.getElementById('header').style.top = '-84px';
       document.getElementById('mobile-nav-toggle').style.top = '-84px';
       document.getElementById('topbar').style.top = '-50px';
@@ -66,7 +66,7 @@ export class HeaderComponent implements OnInit {
 
   handleMenu(): void {
     this.flagMenu = !this.flagMenu;
-    if (this.flagMenu && this.globalService.flagMobile){
+    if (this.flagMenu && this.globalService.getFlagMobile()){
       this.renderer.addClass(document.body, 'mobile-nav-active');
     } else {
       this.renderer.removeClass(document.body, 'mobile-nav-active');
