@@ -26,6 +26,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.prevScrollPos = window.pageYOffset;
+    this.globalService.isMobile();
   }
 
   @HostListener('window:resize', ['$event'])
