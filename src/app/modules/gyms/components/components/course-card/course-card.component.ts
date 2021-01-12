@@ -1,13 +1,13 @@
 import {Component, OnInit} from '@angular/core';
-import {Course} from '../../../domain/Course';
+import {Course} from '../../../../../domain/Course';
 import {ActivatedRoute} from '@angular/router';
 import {Store} from '@ngrx/store';
-import {IAppState} from '../../../state/app.states';
-import {ShowAllAction} from '../../../actions/course.actions';
-import {selectCourseListByGymId} from '../../../selectors/gym.selector';
+import {IAppState} from '../../../../../state/app.states';
+import {ShowAllAction} from '../../../../../actions/course.actions';
+import {selectCourseListByGymId} from '../../../../../selectors/gym.selector';
 import {Observable} from 'rxjs';
-import {CreateFavoriteCourseAction, DeleteFavoriteCourseAction} from '../../../actions/favorite-course.actions';
-import {selectFavoritesCourse} from '../../../selectors/favorite.selector';
+import {CreateFavoriteCourseAction, DeleteFavoriteCourseAction} from '../../../../../actions/favorite-course.actions';
+import {selectFavoritesCourse} from '../../../../../selectors/favorite.selector';
 
 @Component({
   selector: 'app-course-card',

@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {FeedbackGym} from '../../../domain/FeedbackGym';
+import {FeedbackGym} from '../../../../../domain/FeedbackGym';
 import {Store} from '@ngrx/store';
-import {IAppState} from '../../../state/app.states';
-import {CreateAction, UpdateAction} from '../../../actions/feedback-gym.actions';
-import {selectPersonalFeedbackGymByGymId} from '../../../selectors/feedback.selector';
+import {IAppState} from '../../../../../state/app.states';
+import {CreateAction, UpdateAction} from '../../../../../actions/feedback-gym.actions';
+import {selectPersonalFeedbackGymByGymId} from '../../../../../selectors/feedback.selector';
 import {Observable} from 'rxjs';
 
 @Component({

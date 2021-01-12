@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {FeedbackCourse} from '../../../domain/FeedbackCourse';
+import {FeedbackCourse} from '../../../../../domain/FeedbackCourse';
 import {Store} from '@ngrx/store';
-import {IAppState} from '../../../state/app.states';
-import {selectPersonalFeedbackCourseByCourseId} from '../../../selectors/feedback.selector';
-import {CreateAction, UpdateAction} from '../../../actions/feedback-course.actions';
+import {IAppState} from '../../../../../state/app.states';
+import {selectPersonalFeedbackCourseByCourseId} from '../../../../../selectors/feedback.selector';
+import {CreateAction, UpdateAction} from '../../../../../actions/feedback-course.actions';
 import {Observable} from 'rxjs';
 
 @Component({

@@ -1,11 +1,11 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
-import {IAppState} from '../../../state/app.states';
-import {FeedbackGym} from '../../../domain/FeedbackGym';
-import {selectFeedbacksByGymId} from '../../../selectors/gym.selector';
+import {IAppState} from '../../../../../state/app.states';
+import {FeedbackGym} from '../../../../../domain/FeedbackGym';
+import {selectFeedbacksByGymId} from '../../../../../selectors/gym.selector';
 import {Observable} from 'rxjs';
-import {DeleteAction, ShowAllAction} from '../../../actions/feedback-gym.actions';
-import {selectPersonalFeedbackGymByGymId} from '../../../selectors/feedback.selector';
+import {DeleteAction, ShowAllAction} from '../../../../../actions/feedback-gym.actions';
+import {selectPersonalFeedbackGymByGymId} from '../../../../../selectors/feedback.selector';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({

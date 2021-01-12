@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Store} from '@ngrx/store';
-import {IAppState} from '../../../state/app.states';
-import {selectGymById} from '../../../selectors/gym.selector';
+import {IAppState} from '../../../../../state/app.states';
+import {selectGymById} from '../../../../../selectors/gym.selector';
 
 @Component({
   selector: 'app-course',

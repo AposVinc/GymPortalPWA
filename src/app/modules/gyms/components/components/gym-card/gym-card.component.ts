@@ -1,14 +1,14 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Gym} from '../../../domain/Gym';
+import {Gym} from '../../../../../domain/Gym';
 import {Observable} from 'rxjs';
 import {Store} from '@ngrx/store';
-import {IAppState} from '../../../state/app.states';
-import {selectGymList} from '../../../selectors/gym.selector';
-import {ShowAllAction} from '../../../actions/gym.actions';
+import {IAppState} from '../../../../../state/app.states';
+import {selectGymList} from '../../../../../selectors/gym.selector';
+import {ShowAllAction} from '../../../../../actions/gym.actions';
 import {ActivatedRoute} from '@angular/router';
-import {CreateFavoriteGymAction, DeleteFavoriteGymAction} from '../../../actions/favorite-gym.actions';
-import {selectFavoritesGym} from '../../../selectors/favorite.selector';
-import {GlobalService} from '../../../services/utility/global.service';
+import {CreateFavoriteGymAction, DeleteFavoriteGymAction} from '../../../../../actions/favorite-gym.actions';
+import {selectFavoritesGym} from '../../../../../selectors/favorite.selector';
+import {GlobalService} from '../../../../../services/utility/global.service';
 
 @Component({
   selector: 'app-gym-card',
