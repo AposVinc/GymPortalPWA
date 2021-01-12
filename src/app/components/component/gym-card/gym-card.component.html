@@ -6,7 +6,7 @@
 
       <div class="col-lg-4 col-md-6 portfolio-item " *ngFor="let g of gyms | async">
         <img src="/assets/img/gym.png" class="img-fluid" alt="{{g.name}}}" [routerLink]="[g.id,'courses']">
-        <div class="portfolio-info">
+        <div class="portfolio-info" [ngClass]="{'portfolio-info-mobile': globalService.getFlagMobile()}">
           <div [routerLink]="[g.id,'courses']">
             <h4>{{g.name}}</h4>
             <p>{{g.address}}, {{g.province}}, {{g.region}}</p>
