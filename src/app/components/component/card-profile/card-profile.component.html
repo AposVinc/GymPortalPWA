@@ -1,15 +1,10 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-6">
-      <div class="card" style="width: 20rem;">
-        <img alt="..." class="card-img-top" src="/assets/img/avatar.png">
-        <div class="card-body">
-          <h5 class="card-title" i18n="@@CardProfileComponent-Title">{{user.name}} {{user.lastname}}'s profile</h5>
-          <p class="card-text">{{user.username}}</p>
-          <p class="card-text">{{user.email}}</p>
-        </div>
-      </div>
+<div *ngIf="(user | async) as u">
+  <div class="card" style="width: 20rem;">
+    <img alt="..." class="card-img-top" src="/assets/img/avatar.png">
+    <div class="card-body">
+      <h5 class="card-title" i18n="@@CardProfileComponent-Title">{{u.name}} {{u.lastname}}'s profile</h5>
+      <p class="card-text">{{u.username}}</p>
+      <p class="card-text">{{u.email}}</p>
     </div>
-    <app-update-profile></app-update-profile>
   </div>
 </div>
