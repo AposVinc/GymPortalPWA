@@ -5,7 +5,7 @@ import {IAppState} from '../../../state/app.states';
 import {Observable} from 'rxjs';
 import {selectCommonLogged} from '../../../selectors/common.selector';
 import {LoggedOutAction} from '../../../actions/common.actions';
-import {GlobalService} from '../../../services/utility/global.service';
+import {UtilityService} from '../../../services/utility/utility.service';
 
 @Component({
   selector: 'app-header',
@@ -19,25 +19,25 @@ export class HeaderComponent implements OnInit {
 
   prevScrollPos: any;
 
-  constructor(private store: Store<IAppState>, public globalService: GlobalService, public router: Router, private renderer: Renderer2) {
+  constructor(private store: Store<IAppState>, public utilityService: UtilityService, public router: Router, private renderer: Renderer2) {
     this.flagMenu = false;
     this.logged = this.store.select(selectCommonLogged);
   }
 
   ngOnInit(): void {
     this.prevScrollPos = window.pageYOffset;
-    this.globalService.isMobile();
+    this.utilityService.isMobile();
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event): void {
-    this.globalService.isMobile();
-    if (this.flagMenu && this.globalService.getFlagMobile()){
+    this.utilityService.isMobile();
+    if (this.flagMenu && this.utilityService.getFlagMobile()){
       this.renderer.addClass(document.body, 'mobile-nav-active');
     } else {
       this.renderer.removeClass(document.body, 'mobile-nav-active');
     }
-    if (this.globalService.getFlagMobile()) {
+    if (this.utilityService.getFlagMobile()) {
       document.getElementById('header').style.top = '0';
       document.getElementById('topbar').style.top = '-50px';
     }
@@ -50,7 +50,7 @@ export class HeaderComponent implements OnInit {
       document.getElementById('header').style.top = '0';
       document.getElementById('mobile-nav-toggle').style.top = '0';
       document.getElementById('topbar').style.top = '-50px';
-      if (window.pageYOffset === 0 && !this.globalService.getFlagMobile()) {
+      if (window.pageYOffset === 0 && !this.utilityService.getFlagMobile()) {
         document.getElementById('header').style.top = '30px';
         document.getElementById('topbar').style.top = '0';
       }
@@ -67,7 +67,7 @@ export class HeaderComponent implements OnInit {
 
   handleMenu(): void {
     this.flagMenu = !this.flagMenu;
-    if (this.flagMenu && this.globalService.getFlagMobile()){
+    if (this.flagMenu && this.utilityService.getFlagMobile()){
       this.renderer.addClass(document.body, 'mobile-nav-active');
     } else {
       this.renderer.removeClass(document.body, 'mobile-nav-active');

@@ -8,6 +8,7 @@ import {selectCourseListByGymId} from '../../../../../selectors/gym.selector';
 import {Observable} from 'rxjs';
 import {CreateFavoriteCourseAction, DeleteFavoriteCourseAction} from '../../../../../actions/favorite-course.actions';
 import {selectFavoritesCourse} from '../../../../../selectors/favorite.selector';
+import {UtilityService} from '../../../../../services/utility/utility.service';
 
 @Component({
   selector: 'app-course-card',
@@ -20,7 +21,7 @@ export class CourseCardComponent implements OnInit {
   courses: Observable<Course[]>;
   favorites: Observable<Course[]>;
 
-  constructor(private ar: ActivatedRoute, private store: Store<IAppState>) {
+  constructor(private ar: ActivatedRoute, public utilityService: UtilityService, private store: Store<IAppState>) {
     this.idGym = +this.ar.snapshot.params.idGym;
     this.favorites = this.store.select(selectFavoritesCourse);
   }

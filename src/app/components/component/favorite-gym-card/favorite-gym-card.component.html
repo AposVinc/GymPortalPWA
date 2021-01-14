@@ -2,7 +2,7 @@
   <div class="row">
     <div *ngFor="let g of favorites | async" class="col-md-4">
       <div class="card" style="width: 18rem;">
-        <img alt="..." class="card-img-top" src="/assets/img/gym.png">
+        <img alt="..." class="card-img-top" src="./assets/img/gyms/gym{{utilityService.selectGymImgById(g.id)}}.png">
         <div class="card-body">
           <h5 class="card-title">{{g.name}}</h5>
           <p class="card-text">{{g.address}}, {{g.province}}, {{g.region}}</p>

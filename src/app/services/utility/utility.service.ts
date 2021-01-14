@@ -1,9 +1,9 @@
-import {HostListener, Injectable} from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
-export class GlobalService {
+export class UtilityService {
 
   screenWidth: any;
   screenHeight: any;
@@ -21,6 +21,16 @@ export class GlobalService {
 
   public getFlagMobile(): boolean{
     return this.flagMobile;
+  }
+
+  // Select Img
+
+  public selectGymImgById(idGym: number): number{
+    return (idGym % 3) + 1;
+  }
+
+  public selectCourseImgById(idCourse: number): number{
+    return (idCourse % 14) + 1;
   }
 
 }
