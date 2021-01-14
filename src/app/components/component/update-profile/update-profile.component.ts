@@ -20,7 +20,10 @@ export class UpdateProfileComponent implements OnInit {
   user: Observable<User>;
   updateForm: FormGroup;
 
-  constructor(private store: Store<IAppState>, private fb: FormBuilder, private router: Router) {
+  constructor(private store: Store<IAppState>, private fb: FormBuilder) {
+  }
+
+  ngOnInit(): void {
     this.updateForm = this.fb.group({
       name: ['', [Validators.required]],
       lastname: ['', [Validators.required]],
@@ -28,11 +31,13 @@ export class UpdateProfileComponent implements OnInit {
       username: ['', [Validators.required]],
       password: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(10)]]
     });
-  }
-
-  ngOnInit(): void {
-    this.user = this.store.select(selectUserDetail).pipe(tap((user) => this.updateForm.patchValue(user)));
-    this.user.subscribe(e => this.idUser = e.id);
+    this.user = this.store.select(selectUserDetail);
+    this.user.subscribe(u => {
+      if (u !== null){
+        this.idUser = u.id;
+        this.updateForm.patchValue(u);
+      }
+    });
   }
 
   update() {
