@@ -5,6 +5,7 @@ import {IAppState} from '../../../state/app.states';
 import {selectPersonalFeedbacksGym} from '../../../selectors/feedback.selector';
 import {Observable} from 'rxjs';
 import {ShowAllForGymAction} from '../../../actions/feedback-profile.actions';
+import {UtilityService} from '../../../services/utility/utility.service';
 
 @Component({
   selector: 'app-feedback-gym-profile',
@@ -15,8 +16,8 @@ export class FeedbackGymProfileComponent implements OnInit {
 
   feedbacks: Observable<FeedbackGym[]>;
 
-  constructor(private store: Store<IAppState>) {
-    // this.store.dispatch( new ShowAllForGymAction());
+  constructor(private store: Store<IAppState>, public utilityService: UtilityService) {
+    this.store.dispatch( new ShowAllForGymAction());
   }
 
   ngOnInit(): void {

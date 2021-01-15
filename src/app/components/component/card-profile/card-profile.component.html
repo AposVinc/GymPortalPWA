@@ -1,10 +1,16 @@
-<div *ngIf="(user | async) as u">
-  <div class="card" style="width: 20rem;">
-    <img alt="..." class="card-img-top" src="/assets/img/avatar.png">
-    <div class="card-body">
-      <h5 class="card-title" i18n="@@CardProfileComponent-Title">{{u.name}} {{u.lastname}}'s profile</h5>
-      <p class="card-text">{{u.username}}</p>
-      <p class="card-text">{{u.email}}</p>
+<section id="team" class="wow fadeInUp animated" style="visibility: visible;">
+  <div class="member" *ngIf="(user | async) as u">
+    <div class="pic"><img src="assets/img/team-5.png" alt=""></div>
+    <div class="details">
+      <h4 i18n="@@CardProfileComponent-Title">{{u.name}} {{u.lastname}}'s profile</h4>
+      <span>{{u.username}}</span>
+      <span>{{u.email}}</span>
+<!--      <div class="social">-->
+<!--        <a href=""><i class="fa fa-twitter"></i></a>-->
+<!--        <a href=""><i class="fa fa-facebook"></i></a>-->
+<!--        <a href=""><i class="fa fa-google-plus"></i></a>-->
+<!--        <a href=""><i class="fa fa-linkedin"></i></a>-->
+<!--      </div>-->
     </div>
   </div>
-</div>
+</section>

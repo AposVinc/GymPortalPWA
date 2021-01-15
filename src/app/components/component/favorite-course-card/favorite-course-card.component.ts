@@ -3,7 +3,7 @@ import {Course} from '../../../domain/Course';
 import {Observable} from 'rxjs';
 import {Store} from '@ngrx/store';
 import {IAppState} from '../../../state/app.states';
-import {DeleteFavoriteCourseAction} from '../../../actions/favorite-course.actions';
+import {DeleteFavoriteCourseAction, ShowAllFavoritesCourseAction} from '../../../actions/favorite-course.actions';
 import {selectFavoritesCourse} from '../../../selectors/favorite.selector';
 import {UtilityService} from '../../../services/utility/utility.service';
 
@@ -17,7 +17,7 @@ export class FavoriteCourseCardComponent implements OnInit {
   favorites: Observable<Course[]>;
 
   constructor(private store: Store<IAppState>, public utilityService: UtilityService) {
-    // this.store.dispatch( new ShowAllFavoritesCourseAction());
+    this.store.dispatch( new ShowAllFavoritesCourseAction());
   }
 
   ngOnInit(): void {

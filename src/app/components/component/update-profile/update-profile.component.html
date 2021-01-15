@@ -1,38 +1,45 @@
-<form (ngSubmit)="update()" *ngIf="user | async" [formGroup]="updateForm" class="form" style="width: 20rem;">
-  <div class="form-group">
-    <label for="name" i18n="@@Form-LabelName">Name</label>
-    <input class="form-control" formControlName="name" id="name" type="text">
-    <div *ngIf="updateForm.get('name').dirty && !updateForm.get('name').valid" class="alert alert-danger" i18n="@@Form-ErrorName">
-      <p>Invalid field</p>
+<section id="contact" class="wow fadeInUp animated" style="visibility: visible;">
+
+  <div class="container">
+    <div class="form">
+      <form class="php-email-form" (ngSubmit)="update()" *ngIf="user | async" [formGroup]="updateForm" > <!--action="forms/contact.php" method="post" role="form" -->
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="name" i18n="@@Form-LabelName">Name</label>
+            <input id="name" type="text" name="name" formControlName="name" placeholder="Your Name" class="form-control"> <!--  data-rule="minlen:4" data-msg="Please enter at least 4 chars" -->
+            <div class="validate" *ngIf="updateForm.get('name').dirty && !updateForm.get('name').valid" i18n="@@Form-ErrorName">Invalid field</div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="lastname" i18n="@@Form-LabelLastname">Lastname</label>
+            <input id="lastname" type="text" name="lastname" formControlName="lastname" placeholder="Your Lastname" class="form-control"> <!-- data-rule="lastname" data-msg="Please enter a valid email" -->
+            <div class="validate" *ngIf="updateForm.get('lastname').dirty && !updateForm.get('lastname').valid" i18n="@@Form-ErrorLastname">Invalid field</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="username" i18n="@@Form-LabelUsername">Username</label>
+          <input id="username" type="text" name="username" formControlName="username" placeholder="Your Username" class="form-control"> <!-- data-rule="lastname" data-msg="Please enter a valid email" -->
+          <div class="validate" *ngIf="updateForm.get('username').dirty && !updateForm.get('username').valid" i18n="@@Form-ErrorUsername">Invalid field</div>
+        </div>
+        <div class="form-group">
+          <label for="email" i18n="@@Form-LabelEmail">Email</label>
+          <input id="email" type="email" name="email" formControlName="email" placeholder="Your Email" class="form-control"> <!-- data-rule="email" data-msg="Please enter a valid email" -->
+          <div class="validate" *ngIf="updateForm.get('email').dirty && !updateForm.get('email').valid" i18n="@@Form-ErrorEmail">Invalid field</div>
+        </div>
+        <div class="form-group">
+          <label for="password" i18n="@@Form-LabelPassword">Password</label>
+          <input id="password" type="password" name="password" formControlName="password" placeholder="Password" class="form-control"> <!-- data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" -->
+          <div class="validate" *ngIf="updateForm.get('password').dirty && !updateForm.get('password').valid" i18n="@@Form-ErrorPassword">Length between 5 and 10 characters</div>
+        </div>
+
+<!--        <div class="mb-3">-->
+<!--          <div class="loading">Loading</div>-->
+<!--          <div class="error-message"></div>-->
+<!--          <div class="sent-message">Your message has been sent. Thank you!</div>-->
+<!--        </div>-->
+
+        <div class="text-center"><button type="submit" [disabled]="!updateForm.valid" i18n="@@ButtonUpdate">Update</button></div>
+      </form>
     </div>
+
   </div>
-  <div class="form-group">
-    <label for="lastname" i18n="@@Form-LabelLastname">Lastname</label>
-    <input class="form-control" formControlName="lastname" id="lastname" type="text">
-    <div *ngIf="updateForm.get('lastname').dirty && !updateForm.get('lastname').valid" class="alert alert-danger" i18n="@@Form-ErrorLastname">
-      <p>Invalid field</p>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="email" i18n="@@Form-LabelEmail">Email</label>
-    <input class="form-control" formControlName="email" id="email" type="email">
-    <div *ngIf="updateForm.get('email').dirty && !updateForm.get('email').valid" class="alert alert-danger" i18n="@@Form-ErrorEmail">
-      <p>Invalid field</p>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="username" i18n="@@Form-LabelUsername">Username</label>
-    <input class="form-control" formControlName="username" id="username" type="text">
-    <div *ngIf="updateForm.get('username').dirty && !updateForm.get('username').valid" class="alert alert-danger"i18n="@@Form-ErrorUsername">
-      <p>Invalid field</p>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="password" i18n="@@Form-LabelPassword">Password</label>
-    <input class="form-control" formControlName="password" id="password" type="password">
-    <div *ngIf="updateForm.get('password').dirty && !updateForm.get('password').valid" class="alert alert-danger" i18n="@@Form-ErrorPassword">
-      <p>Length between 5 and 10 characters</p>
-    </div>
-  </div>
-  <button [disabled]="!updateForm.valid" class="btn btn-info" i18n="@@ButtonUpdate">Update</button>
-</form>
+</section>

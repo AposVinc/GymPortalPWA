@@ -21,7 +21,7 @@ export class FeedbackCourseProfileComponent implements OnInit {
   feedbacks: Observable<FeedbackCourse[]>;
 
   constructor(private store: Store<IAppState>) {
-    // this.store.dispatch( new ShowAllForCourseAction());
+    this.store.dispatch( new ShowAllForCourseAction());
   }
 
   ngOnInit(): void {

@@ -1,0 +1,8 @@
+#portfolio .portfolio-item .portfolio-info-mobile .preview-link, #portfolio .portfolio-item .portfolio-info-mobile .details-link {
+  top: calc(50% - 30px);
+}
+
+#portfolio .portfolio-info-mobile {
+  opacity: 1;
+  bottom: 0;
+}

@@ -1,14 +1,24 @@
 <div class="container">
   <div class="row">
-    <app-card-profile class="col-md-6"></app-card-profile>
-    <app-update-profile class="col-md-6"></app-update-profile>
+    <div class="col-md-6">
+      <app-title title='Profilo'></app-title>
+      <app-card-profile></app-card-profile>
+    </div>
+    <div class="col-md-6">
+      <app-title title='Aggiorna'></app-title>
+      <app-update-profile></app-update-profile>
+    </div>
   </div>
 </div>
-<h4>Le tue recensioni palestra</h4>
-<app-feedback-gym-profile></app-feedback-gym-profile>
-<h4>Le tue recensioni corsi</h4>
-<app-feedback-course-profile></app-feedback-course-profile>
-<h4>Le tue palestre preferite</h4>
+
+<app-title title='Le tue palestre preferite'></app-title>
 <app-favorite-gym-card></app-favorite-gym-card>
-<h4>I tuoi corsi preferiti</h4>
+
+<app-title title='I tuoi corsi preferiti'></app-title>
 <app-favorite-course-card></app-favorite-course-card>
+
+<app-title title='Le tue recensioni palestra'></app-title>
+<app-feedback-gym-profile></app-feedback-gym-profile>
+
+<app-title title='Le tue recensioni corsi'></app-title>
+<app-feedback-course-profile></app-feedback-course-profile>

@@ -1,14 +1,21 @@
-<div class="container">
-  <div class="row">
-    <div *ngFor="let g of favorites | async" class="col-md-4">
-      <div class="card" style="width: 18rem;">
-        <img alt="..." class="card-img-top" src="./assets/img/gyms/gym{{utilityService.selectGymImgById(g.id)}}.png">
-        <div class="card-body">
-          <h5 class="card-title">{{g.name}}</h5>
-          <p class="card-text">{{g.address}}, {{g.province}}, {{g.region}}</p>
-          <button (click)="delete(g)" class="btn btn-danger">Elimina dai favoriti</button>
+<!-- ======= Portfolio Section ======= -->
+<section id="portfolio" class="portfolio wow fadeInUp">
+  <div class="container">
+
+    <div class="row portfolio-container">
+
+      <div class="col-lg-4 col-md-6 portfolio-item " *ngFor="let g of favorites | async">
+        <img src="./assets/img/gyms/gym{{utilityService.selectGymImgById(g.id)}}.png" class="img-fluid" alt="{{g.name}}" [routerLink]="[g.id,'courses']">
+        <div class="portfolio-info" [ngClass]="{'portfolio-info-mobile': utilityService.getFlagMobile()}">
+          <div [routerLink]="[g.id,'courses']">
+            <h4>{{g.name}}</h4>
+            <p>{{g.address}}, {{g.province}}, {{g.region}}</p>
+          </div>
+          <a (click)="delete(g)" class="details-link" title="More Details"><i class="bx bxs-heart"></i></a>
         </div>
       </div>
+
     </div>
+
   </div>
-</div>
+</section><!-- End Portfolio Section -->
