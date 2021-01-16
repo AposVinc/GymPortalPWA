@@ -9,74 +9,74 @@
           <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="GymsPage-Subtitle" datatype="html">
-        <source>Welcome to the <x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/>&apos;s gyms</source>
+      <trans-unit id="ProfilePage-ProfileSection" datatype="html">
+        <source>Profile</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/pages/gym/gym.component.js</context>
-          <context context-type="linenumber">20</context>
+          <context context-type="sourcefile">src/app/components/pages/profile/profile.component.js</context>
+          <context context-type="linenumber">22</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="CoursesPage-GymSubtitle" datatype="html">
-        <source>Welcome to the <x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/>&apos;s courses</source>
+      <trans-unit id="ProfilePage-UpdateSection" datatype="html">
+        <source>Update</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/pages/course/course.component.js</context>
-          <context context-type="linenumber">32</context>
+          <context context-type="sourcefile">src/app/components/pages/profile/profile.component.js</context>
+          <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="CoursesPage-FeedbacksTitle" datatype="html">
-        <source>Reviews</source>
+      <trans-unit id="ProfilePage-TitleFavoritesGymSection" datatype="html">
+        <source>Favorite gyms</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/pages/course/course.component.js</context>
-          <context context-type="linenumber">38</context>
+          <context context-type="sourcefile">src/app/components/pages/profile/profile.component.js</context>
+          <context context-type="linenumber">34</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="CoursesPage-FeedbacksSubtitle" datatype="html">
-        <source>Reviews on the gym <x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/></source>
+      <trans-unit id="ProfilePage-SubtitleFavoritesGymSection" datatype="html">
+        <source>In this section are shown the gyms that you have chosen to mark as favorites by clicking on the heart button</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/pages/course/course.component.js</context>
-          <context context-type="linenumber">44</context>
+          <context context-type="sourcefile">src/app/components/pages/profile/profile.component.js</context>
+          <context context-type="linenumber">40</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="FeedbackComponent-FeedLabel" datatype="html">
-        <source>Feed</source>
+      <trans-unit id="ProfilePage-TitleFavoritesCourseSection" datatype="html">
+        <source>Favorite courses</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/pages/add-feedback/add-feedback.component.js</context>
-          <context context-type="linenumber">84</context>
+          <context context-type="sourcefile">src/app/components/pages/profile/profile.component.js</context>
+          <context context-type="linenumber">46</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="FeedbackComponent-RatingLabel" datatype="html">
-        <source>Rating</source>
+      <trans-unit id="ProfilePage-SubtitleFavoritesCourseSection" datatype="html">
+        <source>In this section are shown the courses of the gyms you have chosen to mark as your favorites by clicking on the heart button</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/pages/add-feedback/add-feedback.component.js</context>
-          <context context-type="linenumber">90</context>
+          <context context-type="sourcefile">src/app/components/pages/profile/profile.component.js</context>
+          <context context-type="linenumber">52</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="FeedbackComponent-ErrorFeed" datatype="html">
-        <source><x id="START_PARAGRAPH" equiv-text="&quot;\uFFFD#2\uFFFD&quot;"/>Invalid field<x id="CLOSE_PARAGRAPH" equiv-text="&quot;\uFFFD/#2\uFFFD&quot;"/></source>
+      <trans-unit id="ProfilePage-TitleFeedbacksGymSection" datatype="html">
+        <source>Gyms reviews</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/pages/add-feedback/add-feedback.component.js</context>
-          <context context-type="linenumber">96</context>
+          <context context-type="sourcefile">src/app/components/pages/profile/profile.component.js</context>
+          <context context-type="linenumber">58</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="FeedbackComponent-ErrorRating" datatype="html">
-        <source><x id="START_PARAGRAPH" equiv-text="&quot;\uFFFD#2\uFFFD&quot;"/>Invalid field<x id="CLOSE_PARAGRAPH" equiv-text="&quot;\uFFFD/#2\uFFFD&quot;"/></source>
+      <trans-unit id="ProfilePage-SubtitleFeedbacksGymSection" datatype="html">
+        <source>This section shows your reviews that you have written for gyms</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/pages/add-feedback/add-feedback.component.js</context>
-          <context context-type="linenumber">102</context>
+          <context context-type="sourcefile">src/app/components/pages/profile/profile.component.js</context>
+          <context context-type="linenumber">64</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="ButtonEdit" datatype="html">
-        <source>Edit</source>
+      <trans-unit id="ProfilePage-TitleFeedbacksCourseSection" datatype="html">
+        <source>Courses reviews</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/pages/add-feedback/add-feedback.component.js</context>
-          <context context-type="linenumber">108</context>
+          <context context-type="sourcefile">src/app/components/pages/profile/profile.component.js</context>
+          <context context-type="linenumber">70</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="ButtonAdd" datatype="html">
-        <source>Add</source>
+      <trans-unit id="ProfilePage-SubtitleFeedbacksCourseSection" datatype="html">
+        <source>This section shows your reviews that you have written for courses</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/pages/add-feedback/add-feedback.component.js</context>
-          <context context-type="linenumber">114</context>
+          <context context-type="sourcefile">src/app/components/pages/profile/profile.component.js</context>
+          <context context-type="linenumber">76</context>
         </context-group>
       </trans-unit>
       <trans-unit id="Form-LabelName" datatype="html">
@@ -167,14 +167,84 @@
         <source>Update</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/component/update-profile/update-profile.component.js</context>
-          <context context-type="linenumber">163</context>
+          <context context-type="linenumber">159</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CardProfileComponent-Title" datatype="html">
         <source><x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/> <x id="INTERPOLATION_1" equiv-text="&quot;\uFFFD1\uFFFD&quot;"/>&apos;s profile</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/component/card-profile/card-profile.component.js</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="GymsPage-Subtitle" datatype="html">
+        <source>Welcome to the <x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/>&apos;s gyms</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/gyms/gyms.component.js</context>
           <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="FeedbackComponent-FeedLabel" datatype="html">
+        <source>Feed</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/gyms/components/components/add-feedback-course/add-feedback-course.component.js</context>
+          <context context-type="linenumber">85</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="FeedbackComponent-RatingLabel" datatype="html">
+        <source>Rating</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/gyms/components/components/add-feedback-course/add-feedback-course.component.js</context>
+          <context context-type="linenumber">91</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="FeedbackComponent-ErrorFeed" datatype="html">
+        <source><x id="START_PARAGRAPH" equiv-text="&quot;\uFFFD#2\uFFFD&quot;"/>Invalid field<x id="CLOSE_PARAGRAPH" equiv-text="&quot;\uFFFD/#2\uFFFD&quot;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/gyms/components/components/add-feedback-course/add-feedback-course.component.js</context>
+          <context context-type="linenumber">97</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="FeedbackComponent-ErrorRating" datatype="html">
+        <source><x id="START_PARAGRAPH" equiv-text="&quot;\uFFFD#2\uFFFD&quot;"/>Invalid field<x id="CLOSE_PARAGRAPH" equiv-text="&quot;\uFFFD/#2\uFFFD&quot;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/gyms/components/components/add-feedback-course/add-feedback-course.component.js</context>
+          <context context-type="linenumber">103</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ButtonEdit" datatype="html">
+        <source>Edit</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/gyms/components/components/add-feedback-course/add-feedback-course.component.js</context>
+          <context context-type="linenumber">109</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ButtonAdd" datatype="html">
+        <source>Add</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/gyms/components/components/add-feedback-course/add-feedback-course.component.js</context>
+          <context context-type="linenumber">115</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CoursesPage-GymSubtitle" datatype="html">
+        <source>Welcome to the <x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/>&apos;s courses</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/gyms/components/pages/course/course.component.js</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CoursesPage-FeedbacksTitle" datatype="html">
+        <source>Reviews</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/gyms/components/pages/course/course.component.js</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CoursesPage-FeedbacksSubtitle" datatype="html">
+        <source>Reviews on the gym <x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/gyms/components/pages/course/course.component.js</context>
+          <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit>
     </body>

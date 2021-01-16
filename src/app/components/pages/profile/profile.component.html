@@ -1,24 +1,24 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-      <app-title title='Profilo'></app-title>
+      <app-title i18n-title="@@ProfilePage-ProfileSection" title='Profile'></app-title>
       <app-card-profile></app-card-profile>
     </div>
     <div class="col-md-6">
-      <app-title title='Aggiorna'></app-title>
+      <app-title i18n-title="@@ProfilePage-UpdateSection" title='Update'></app-title>
       <app-update-profile></app-update-profile>
     </div>
   </div>
 </div>
 
-<app-title title='Le tue palestre preferite'></app-title>
+<app-title i18n-title="@@ProfilePage-TitleFavoritesGymSection" title='Favorite gyms' i18n-subtitle="@@ProfilePage-SubtitleFavoritesGymSection" subtitle='In this section are shown the gyms that you have chosen to mark as favorites by clicking on the heart button'></app-title> <!--In questa sezione vengono mostrate le palestre che hai scelto di segnare come preferite cliccando sul bottone a forma di cuore-->
 <app-favorite-gym-card></app-favorite-gym-card>
 
-<app-title title='I tuoi corsi preferiti'></app-title>
+<app-title i18n-title="@@ProfilePage-TitleFavoritesCourseSection" title='Favorite courses' i18n-subtitle="@@ProfilePage-SubtitleFavoritesCourseSection" subtitle='In this section are shown the courses of the gyms you have chosen to mark as your favorites by clicking on the heart button'></app-title> <!--In questa sezione vengono mostrate le palestre che hai scelto di segnare come preferite cliccando sul bottone a forma di cuore-->
 <app-favorite-course-card></app-favorite-course-card>
 
-<app-title title='Le tue recensioni palestra'></app-title>
+<app-title i18n-title="@@ProfilePage-TitleFeedbacksGymSection" title='Gyms reviews' i18n-subtitle="@@ProfilePage-SubtitleFeedbacksGymSection" subtitle='This section shows your reviews that you have written for gyms'></app-title> <!--In questa sezione sono mostrate le tue recensioni che hai scritto per le palestre-->
 <app-feedback-gym-profile></app-feedback-gym-profile>
 
-<app-title title='Le tue recensioni corsi'></app-title>
+<app-title i18n-title="@@ProfilePage-TitleFeedbacksCourseSection" title='Courses reviews' i18n-subtitle="@@ProfilePage-SubtitleFeedbacksCourseSection" subtitle='This section shows your reviews that you have written for courses'></app-title> <!--In questa sezione vengono mostrate le palestre che hai scelto di segnare come preferite cliccando sul bottone a forma di cuore-->
 <app-feedback-course-profile></app-feedback-course-profile>
