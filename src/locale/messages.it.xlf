@@ -95,7 +95,7 @@
         <target>Nome</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/component/registration-form/registration-form.component.js</context>
-          <context context-type="linenumber">76</context>
+          <context context-type="linenumber">66</context>
         </context-group>
       </trans-unit>
       <trans-unit id="Form-LabelLastname" datatype="html">
@@ -103,7 +103,7 @@
         <target>Cognome</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/component/registration-form/registration-form.component.js</context>
-          <context context-type="linenumber">82</context>
+          <context context-type="linenumber">72</context>
         </context-group>
       </trans-unit>
       <trans-unit id="Form-LabelEmail" datatype="html">
@@ -111,7 +111,7 @@
         <target>Email</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/component/registration-form/registration-form.component.js</context>
-          <context context-type="linenumber">88</context>
+          <context context-type="linenumber">78</context>
         </context-group>
       </trans-unit>
       <trans-unit id="Form-LabelUsername" datatype="html">
@@ -119,7 +119,7 @@
         <target>Username</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/component/registration-form/registration-form.component.js</context>
-          <context context-type="linenumber">94</context>
+          <context context-type="linenumber">84</context>
         </context-group>
       </trans-unit>
       <trans-unit id="Form-LabelPassword" datatype="html">
@@ -127,7 +127,7 @@
         <target>Password</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/component/registration-form/registration-form.component.js</context>
-          <context context-type="linenumber">100</context>
+          <context context-type="linenumber">90</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ButtonRegister" datatype="html">
@@ -135,47 +135,47 @@
         <target>Registrati</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/component/registration-form/registration-form.component.js</context>
-          <context context-type="linenumber">106</context>
+          <context context-type="linenumber">96</context>
         </context-group>
       </trans-unit>
       <trans-unit id="Form-ErrorName" datatype="html">
-        <source><x id="START_PARAGRAPH" equiv-text="&quot;\uFFFD#2\uFFFD&quot;"/>Invalid field<x id="CLOSE_PARAGRAPH" equiv-text="&quot;\uFFFD/#2\uFFFD&quot;"/></source>
-        <target><x id="START_PARAGRAPH" equiv-text="&quot;\uFFFD#2\uFFFD&quot;"/>Campo non valido<x id="CLOSE_PARAGRAPH" equiv-text="&quot;\uFFFD/#2\uFFFD&quot;"/></target>
+        <source>Invalid field</source>
+        <target>Campo non valido</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/component/registration-form/registration-form.component.js</context>
-          <context context-type="linenumber">112</context>
+          <context context-type="linenumber">102</context>
         </context-group>
       </trans-unit>
       <trans-unit id="Form-ErrorLastname" datatype="html">
-        <source><x id="START_PARAGRAPH" equiv-text="&quot;\uFFFD#2\uFFFD&quot;"/>Invalid field<x id="CLOSE_PARAGRAPH" equiv-text="&quot;\uFFFD/#2\uFFFD&quot;"/></source>
-        <target><x id="START_PARAGRAPH" equiv-text="&quot;\uFFFD#2\uFFFD&quot;"/>Campo non valido<x id="CLOSE_PARAGRAPH" equiv-text="&quot;\uFFFD/#2\uFFFD&quot;"/></target>
+        <source>Invalid field</source>
+        <target>Campo non valido</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/component/registration-form/registration-form.component.js</context>
-          <context context-type="linenumber">118</context>
+          <context context-type="linenumber">108</context>
         </context-group>
       </trans-unit>
       <trans-unit id="Form-ErrorEmail" datatype="html">
-        <source><x id="START_PARAGRAPH" equiv-text="&quot;\uFFFD#2\uFFFD&quot;"/>Invalid field<x id="CLOSE_PARAGRAPH" equiv-text="&quot;\uFFFD/#2\uFFFD&quot;"/></source>
-        <target><x id="START_PARAGRAPH" equiv-text="&quot;\uFFFD#2\uFFFD&quot;"/>Campo non valido<x id="CLOSE_PARAGRAPH" equiv-text="&quot;\uFFFD/#2\uFFFD&quot;"/></target>
+        <source>Invalid field</source>
+        <target>Campo non valido</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/component/registration-form/registration-form.component.js</context>
-          <context context-type="linenumber">124</context>
+          <context context-type="linenumber">114</context>
         </context-group>
       </trans-unit>
       <trans-unit id="Form-ErrorUsername" datatype="html">
-        <source><x id="START_PARAGRAPH" equiv-text="&quot;\uFFFD#2\uFFFD&quot;"/>Invalid field<x id="CLOSE_PARAGRAPH" equiv-text="&quot;\uFFFD/#2\uFFFD&quot;"/></source>
-        <target><x id="START_PARAGRAPH" equiv-text="&quot;\uFFFD#2\uFFFD&quot;"/>Campo non valido<x id="CLOSE_PARAGRAPH" equiv-text="&quot;\uFFFD/#2\uFFFD&quot;"/></target>
+        <source>Invalid field</source>
+        <target>Campo non valido</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/component/registration-form/registration-form.component.js</context>
-          <context context-type="linenumber">130</context>
+          <context context-type="linenumber">120</context>
         </context-group>
       </trans-unit>
       <trans-unit id="Form-ErrorPassword" datatype="html">
-        <source><x id="START_PARAGRAPH" equiv-text="&quot;\uFFFD#2\uFFFD&quot;"/>Length between 5 and 10 characters<x id="CLOSE_PARAGRAPH" equiv-text="&quot;\uFFFD/#2\uFFFD&quot;"/></source>
-        <target><x id="START_PARAGRAPH" equiv-text="&quot;\uFFFD#2\uFFFD&quot;"/>Lunghezza tra 5 e 10 caratteri<x id="CLOSE_PARAGRAPH" equiv-text="&quot;\uFFFD/#2\uFFFD&quot;"/></target>
+        <source>Length between 5 and 10 characters</source>
+        <target>Lunghezza tra 5 e 10 caratteri</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/component/registration-form/registration-form.component.js</context>
-          <context context-type="linenumber">136</context>
+          <context context-type="linenumber">126</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ButtonLogin" datatype="html">
@@ -183,7 +183,7 @@
         <target>Accedi</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/component/login-form/login-form.component.js</context>
-          <context context-type="linenumber">83</context>
+          <context context-type="linenumber">79</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ButtonUpdate" datatype="html">
@@ -196,7 +196,7 @@
       </trans-unit>
       <trans-unit id="CardProfileComponent-Title" datatype="html">
         <source><x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/> <x id="INTERPOLATION_1" equiv-text="&quot;\uFFFD1\uFFFD&quot;"/>&apos;s profile</source>
-        <target>Profilo di <x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/> <x id="INTERPOLATION_1" equiv-text="&quot;\uFFFD1\uFFFD&quot;"/>&apos;</target>
+        <target>Profilo di <x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/> <x id="INTERPOLATION_1" equiv-text="&quot;\uFFFD1\uFFFD&quot;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/component/card-profile/card-profile.component.js</context>
           <context context-type="linenumber">47</context>
