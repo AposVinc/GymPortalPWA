@@ -7,6 +7,7 @@ import {Observable} from 'rxjs';
 import {DeleteAction, ShowAllAction} from '../../../../../actions/feedback-gym.actions';
 import {selectPersonalFeedbackGymByGymId} from '../../../../../selectors/feedback.selector';
 import {ActivatedRoute} from '@angular/router';
+import {UtilityService} from '../../../../../services/utility/utility.service';
 
 @Component({
   selector: 'app-feedback-gym-card',
@@ -20,7 +21,7 @@ export class FeedbackGymCardComponent implements OnInit {
   personalFeedback: Observable<FeedbackGym>;
   feedbacks: Observable<FeedbackGym[]>;
 
-  constructor(private ar: ActivatedRoute, private store: Store<IAppState>) {
+  constructor(private ar: ActivatedRoute, private store: Store<IAppState>, public utilityService: UtilityService) {
     this.idGym = +this.ar.snapshot.params.idGym;
     this.personalFeedback = this.store.select(selectPersonalFeedbackGymByGymId(this.idGym));
   }

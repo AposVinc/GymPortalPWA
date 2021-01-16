@@ -24,6 +24,9 @@ export class UtilityService {
   }
 
   // Select Img
+  public selectUserImgById(idUser: number): number{
+    return (idUser % 5) + 1;
+  }
 
   public selectGymImgById(idGym: number): number{
     return (idGym % 3) + 1;

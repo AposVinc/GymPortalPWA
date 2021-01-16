@@ -4,7 +4,7 @@
     <div class="row">
 
       <div class="testimonial-item col-md-3" *ngFor="let f of feedbacks | async" >
-        <img src="assets/img/testimonial-1.jpg" class="testimonial-img" alt="">
+        <img src="./assets/img/teams/team-{{utilityService.selectUserImgById(f.user)}}.jpg" class="testimonial-img" alt="">
         <h3>{{f.userName}} {{f.userLastname}}</h3>
         <h4 i18n="@@FeedbacksCourseProfileComponent-Rating">Rating: {{f.rating}}</h4>
         <p>

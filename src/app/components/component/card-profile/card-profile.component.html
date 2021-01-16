@@ -1,6 +1,6 @@
 <section id="team" class="wow fadeInUp animated" style="visibility: visible;">
   <div class="member" *ngIf="(user | async) as u">
-    <div class="pic"><img src="assets/img/team-5.png" alt=""></div>
+    <div class="pic"><img src="./assets/img/teams/team-{{utilityService.selectUserImgById(u.id)}}.jpg" alt=""></div>
     <div class="details">
       <h4 i18n="@@CardProfileComponent-Title">{{u.name}} {{u.lastname}}'s profile</h4>
       <span>{{u.username}}</span>
