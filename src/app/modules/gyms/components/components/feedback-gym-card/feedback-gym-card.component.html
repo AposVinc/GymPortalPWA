@@ -1,15 +1,22 @@
-<div class="container">
-  <div class="row">
-    <div *ngFor="let f of feedbacks | async" class="col-md-4">
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Recensione</h5>
-          <p class="card-text">{{f.rating}}</p>
-          <p class="card-text">{{f.feed}}</p>
-          <a *ngIf="f.id === idPersonalFeedback" [routerLink]="['..','feedbacks', f.id]"  class="btn btn-primary">Modifica</a>
-          <button *ngIf="f.id === idPersonalFeedback" (click)="delete(f)" class="btn btn-danger">Elimina</button>
-        </div>
+<!-- ======= Testimonials Section ======= -->
+<section id="testimonials">
+  <div class="container">
+    <div class="row">
+
+      <div class="testimonial-item col-md-3" *ngFor="let f of feedbacks | async" >
+        <img src="assets/img/testimonial-1.jpg" class="testimonial-img" alt="">
+        <h3>{{f.userName}} {{f.userLastname}}</h3>
+        <h4 i18n="@@FeedbacksCourseProfileComponent-Rating">Rating: {{f.rating}}</h4>
+        <p>
+          <img src="assets/img/quote-sign-left.png" class="quote-sign-left" alt="">
+          {{f.feed}}
+          <img src="assets/img/quote-sign-right.png" class="quote-sign-right" alt="">
+        </p>
+
+        <a *ngIf="f.id === idPersonalFeedback" [routerLink]="['..','feedbacks', f.id]" class="edit-link" title="Edit Review"><i class='bx bxs-edit'></i></a>
+        <a *ngIf="f.id === idPersonalFeedback" (click)="delete(f)" class="delete-link" title="Delete Review"><i class='bx bxs-trash'></i></a>
       </div>
+
     </div>
   </div>
-</div>
+</section><!-- End Testimonials Section -->
