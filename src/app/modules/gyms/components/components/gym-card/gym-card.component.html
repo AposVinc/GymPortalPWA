@@ -13,7 +13,7 @@
           </div>
           <!--          <a href="assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>-->
           <!--          <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>-->
-          <a [routerLink]="[g.id,'feedbacks','add']" class="preview-link" title="More Details"><i class='bx bx-star' ></i></a>
+          <a [routerLink]="[g.id,'feedbacks','add']" class="preview-link" title="More Details"><i class='bx bx-message-add'></i></a>
           <div *ngIf="favorites | async; let favs">
             <a *ngIf="!isFav(favs, g)" (click)="addFav(g)" class="details-link" title="More Details"><i class="bx bx-heart"></i></a>
             <a *ngIf="isFav(favs, g)" (click)="delFav(g)" class="details-link" title="More Details"><i class="bx bxs-heart"></i></a>

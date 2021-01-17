@@ -1,19 +1,27 @@
-<div class="container">
-  <div class="row">
-    <div *ngFor="let c of courses | async" class="col-md-4">
-      <div class="card" style="width: 18rem; border-radius: 100px !important;">
-        <img alt="..." class="card-img-top" src="./assets/img/courses/course{{utilityService.selectCourseImgById(c.id)}}.png">
-        <div class="card-body">
-          <h5 class="card-title">{{c.name}}</h5>
-          <p class="card-text" style="white-space: pre-line">{{c.description}}</p>
-          <a [routerLink]="[c.id,'feedbacks']" class="btn btn-primary">Vai alle recensioni</a>
+<!-- ======= Portfolio Section ======= -->
+<section id="portfolio" class="portfolio wow fadeInUp">
+  <div class="container">
+
+    <div class="row portfolio-container">
+
+      <div class="col-lg-4 col-md-6 portfolio-item " *ngFor="let c of courses | async" [ngClass]="{'portfolio-item-mobile': utilityService.getFlagMobile()}">
+        <img src="./assets/img/courses/course{{utilityService.selectCourseImgById(c.id)}}.png" class="img-fluid" alt="{{c.name}}">
+        <div class="portfolio-info">
+          <h4>{{c.name}}</h4>
+          <p>{{c.description}}</p>
+          <!--          <a href="assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>-->
+          <!--          <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>-->
+          <a [routerLink]="[c.id,'feedbacks']" class="show-feedbacks-link" title="More Details"><i class='bx bx-star' ></i></a>
+          <a [routerLink]="[c.id,'feedbacks','add']" class="preview-link" title="More Details"><i class='bx bx-message-add'></i></a>
           <div *ngIf="favorites | async; let favs">
-            <button *ngIf="!isFav(favs, c)" (click)="addFav(c)" class="btn btn-primary">Aggiungi ai preferiti</button>
-            <button *ngIf="isFav(favs, c)" (click)="delFav(c)" class="btn btn-danger">Elimina dai preferiti</button>
+            <a *ngIf="!isFav(favs, c)" (click)="addFav(c)" class="details-link" title="More Details"><i class="bx bx-heart"></i></a>
+            <a *ngIf="isFav(favs, c)" (click)="delFav(c)" class="details-link" title="More Details"><i class="bx bxs-heart"></i></a>
           </div>
-          <a [routerLink]="[c.id,'feedbacks','add']" class="btn btn-primary">Scrivi una recensione</a>
         </div>
       </div>
+
     </div>
+
   </div>
-</div>
+</section><!-- End Portfolio Section -->
+

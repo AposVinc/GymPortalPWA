@@ -1,3 +1,17 @@
+#portfolio .portfolio-item {
+  text-align: center;
+}
+
+#portfolio .portfolio-item img {
+  height: 400px;
+  object-fit: contain;
+}
+
+#portfolio .portfolio-item .portfolio-info {
+  text-align: left;
+  white-space: pre-line;
+}
+
 #portfolio .portfolio-item .portfolio-info-mobile .preview-link, #portfolio .portfolio-item .portfolio-info-mobile .details-link {
   top: calc(50% - 30px);
 }
