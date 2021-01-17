@@ -186,7 +186,7 @@
           <context context-type="linenumber">79</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="FeedbacksGymProfileComponent-Title" datatype="html">
+      <trans-unit id="FeedbacksComponent-ProfileTitleGym" datatype="html">
         <source>Gym: <x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/></source>
         <target>Palestra: <x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/></target>
         <context-group purpose="location">
@@ -194,12 +194,20 @@
           <context context-type="linenumber">56</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="FeedbacksGymProfileComponent-Rating" datatype="html">
+      <trans-unit id="FeedbacksComponent-Rating" datatype="html">
         <source>Rating: <x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/></source>
         <target>Voto: <x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/component/feedback-gym-profile/feedback-gym-profile.component.js</context>
           <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="FeedbacksComponent-ProfileTitleCourse" datatype="html">
+        <source>Course: <x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/></source>
+        <target>Corso: <x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/component/feedback-course-profile/feedback-course-profile.component.js</context>
+          <context context-type="linenumber">56</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ButtonUpdate" datatype="html">
@@ -215,7 +223,7 @@
         <target>Profilo di <x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/> <x id="INTERPOLATION_1" equiv-text="&quot;\uFFFD1\uFFFD&quot;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/component/card-profile/card-profile.component.js</context>
-          <context context-type="linenumber">47</context>
+          <context context-type="linenumber">52</context>
         </context-group>
       </trans-unit>
       <trans-unit id="GymsPage-Subtitle" datatype="html">
@@ -231,7 +239,7 @@
         <target>Recensione</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/gyms/components/components/add-feedback-course/add-feedback-course.component.js</context>
-          <context context-type="linenumber">84</context>
+          <context context-type="linenumber">85</context>
         </context-group>
       </trans-unit>
       <trans-unit id="FeedbackComponent-RatingLabel" datatype="html">
@@ -239,7 +247,7 @@
         <target>Voto</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/gyms/components/components/add-feedback-course/add-feedback-course.component.js</context>
-          <context context-type="linenumber">90</context>
+          <context context-type="linenumber">91</context>
         </context-group>
       </trans-unit>
       <trans-unit id="FeedbackComponent-ErrorFeed" datatype="html">
@@ -247,7 +255,7 @@
         <target><x id="START_PARAGRAPH" equiv-text="&quot;\uFFFD#2\uFFFD&quot;"/>Campo non valido<x id="CLOSE_PARAGRAPH" equiv-text="&quot;\uFFFD/#2\uFFFD&quot;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/gyms/components/components/add-feedback-course/add-feedback-course.component.js</context>
-          <context context-type="linenumber">96</context>
+          <context context-type="linenumber">97</context>
         </context-group>
       </trans-unit>
       <trans-unit id="FeedbackComponent-ErrorRating" datatype="html">
@@ -255,7 +263,7 @@
         <target><x id="START_PARAGRAPH" equiv-text="&quot;\uFFFD#2\uFFFD&quot;"/>Campo non valido<x id="CLOSE_PARAGRAPH" equiv-text="&quot;\uFFFD/#2\uFFFD&quot;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/gyms/components/components/add-feedback-course/add-feedback-course.component.js</context>
-          <context context-type="linenumber">102</context>
+          <context context-type="linenumber">103</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ButtonEdit" datatype="html">
@@ -263,7 +271,7 @@
         <target>Modifica</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/gyms/components/components/add-feedback-course/add-feedback-course.component.js</context>
-          <context context-type="linenumber">108</context>
+          <context context-type="linenumber">109</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ButtonAdd" datatype="html">
@@ -271,15 +279,7 @@
         <target>Aggiungi</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/gyms/components/components/add-feedback-course/add-feedback-course.component.js</context>
-          <context context-type="linenumber">114</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="FeedbacksCourseProfileComponent-Rating" datatype="html">
-        <source>Rating: <x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/></source>
-        <target>Voto: <x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/></target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/gyms/components/components/feedback-gym-card/feedback-gym-card.component.js</context>
-          <context context-type="linenumber">85</context>
+          <context context-type="linenumber">115</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CoursesPage-GymSubtitle" datatype="html">
