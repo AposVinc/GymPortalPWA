@@ -5,8 +5,8 @@
 
       <div class="testimonial-item col-md-3" *ngFor="let f of feedbacks | async">
         <img src="./assets/img/gyms/gym{{utilityService.selectGymImgById(f.gym)}}.png" class="testimonial-img" alt="">
-        <h3 i18n="@@FeedbacksGymProfileComponent-Title">Gym: {{f.gymName}}</h3>
-        <h4 i18n="@@FeedbacksGymProfileComponent-Rating">Rating: {{f.rating}}</h4>
+        <h3 i18n="@@FeedbacksComponent-ProfileTitleGym">Gym: {{f.gymName}}</h3>
+        <h4 i18n="@@FeedbacksComponent-Rating">Rating: {{f.rating}}</h4>
         <p>
           <img src="assets/img/quote-sign-left.png" class="quote-sign-left" alt="">
           {{f.feed}}
