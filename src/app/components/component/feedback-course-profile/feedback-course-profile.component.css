@@ -1,0 +1,34 @@
+#testimonials .testimonial-item {
+  min-height: 225px;
+}
+
+#testimonials .testimonial-item .edit-link, #testimonials .testimonial-item .delete-link {
+  position: absolute;
+  right: 50px;
+  font-size: 24px;
+  top: calc(20% - 18px);
+  color: rgba(255, 255, 255, 0.6);
+  transition: ease-in-out 0.3s;
+}
+
+#testimonials .testimonial-item .edit-link {
+  color: #50d8af;
+}
+#testimonials .testimonial-item .delete-link {
+  right: 15px;
+  color: #bd2130;
+}
+
+#testimonials .testimonial-item .edit-link:hover {
+  color: #0c2e8a;
+}
+#testimonials .testimonial-item .delete-link:hover {
+  color: #c82333;
+}
+
+/*Size img*/
+#testimonials .testimonial-item .testimonial-img {
+  height: 90px;
+  object-fit: contain;
+}
+

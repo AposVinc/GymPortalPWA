@@ -1,13 +1,19 @@
-<div class="container">
-  <div class="row">
-    <div *ngFor="let f of feedbacks | async" class="col-md-4">
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Recensione</h5>
-          <p class="card-text">{{f.rating}}</p>
-          <p class="card-text">{{f.feed}} </p>
-        </div>
+<!-- ======= Testimonials Section ======= -->
+<section id="testimonials">
+  <div class="container">
+    <div class="row">
+
+      <div class="testimonial-item col-md-3" *ngFor="let f of feedbacks | async">
+        <img src="./assets/img/courses/course{{utilityService.selectCourseImgById(f.course)}}.png" class="testimonial-img" alt="">
+        <h3 i18n="@@FeedbacksComponent-ProfileTitleCourse">Course: {{f.courseName}}</h3>
+        <h4 i18n="@@FeedbacksComponent-Rating">Rating: {{f.rating}}</h4>
+        <p>
+          <img src="assets/img/quote-sign-left.png" class="quote-sign-left" alt="">
+          {{f.feed}}
+          <img src="assets/img/quote-sign-right.png" class="quote-sign-right" alt="">
+        </p>
       </div>
+
     </div>
   </div>
-</div>
+</section><!-- End Testimonials Section -->
