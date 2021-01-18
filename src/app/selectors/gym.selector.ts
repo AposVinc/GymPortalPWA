@@ -34,14 +34,10 @@ export const selectCourseListByGymId = (idGym: number) => createSelector(
   }
 );
 
-export const selectCourseById = (idCourse: number) => createSelector(
+export const selectCourseByGymIdAndCourseId = (idGym: number, idCourse: number) => createSelector(
   selectGym,
   (state: IGymState) => {
-    state.gyms.find(gym => gym.courses.find(course => {
-      if (course.id === idCourse) {
-        return course;
-      }
-    }));
+    return state.gyms.find(el => el.id === idGym).courses.find(el => el.id === idCourse);
   }
 );
 

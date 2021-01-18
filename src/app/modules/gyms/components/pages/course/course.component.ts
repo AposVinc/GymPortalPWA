@@ -11,11 +11,12 @@ import {selectGymById} from '../../../../../selectors/gym.selector';
 })
 export class CourseComponent implements OnInit {
 
-  gymName: string;
   idGym: number;
+  gymName: string;
 
   constructor(private ar: ActivatedRoute, private store: Store<IAppState>) {
     this.idGym = +this.ar.snapshot.params.idGym;
+    this.gymName = '';
   }
 
   ngOnInit(): void {
@@ -23,8 +24,6 @@ export class CourseComponent implements OnInit {
       (g) => {
         if (g){
           this.gymName = g.name;
-        } else {
-          this.gymName = '';
         }
     });
   }
