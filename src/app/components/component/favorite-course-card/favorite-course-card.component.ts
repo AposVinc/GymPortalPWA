@@ -24,6 +24,7 @@ export class FavoriteCourseCardComponent implements OnInit {
     // this.favProfile.findAllFavCourse('token').subscribe(res => {
     //   this.favoriteCourses = res;
     // });
+    this.store.dispatch( new ShowAllFavoritesCourseAction());
     this.favorites = this.store.select(selectFavoritesCourse);
   }
 

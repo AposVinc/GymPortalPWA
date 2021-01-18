@@ -24,6 +24,7 @@ export class FeedbackGymProfileComponent implements OnInit {
     // this.feedProfile.findAllFedGym('token').subscribe(res => {
     //   this.feedbacks = res;
     // });
+    this.store.dispatch( new ShowAllForGymAction());
     this.feedbacks = this.store.select(selectPersonalFeedbacksGym);
   }
 

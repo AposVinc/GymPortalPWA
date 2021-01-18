@@ -5,12 +5,10 @@
     <div class="row portfolio-container">
 
       <div class="col-lg-4 col-md-6 portfolio-item " *ngFor="let g of favorites | async">
-        <img src="./assets/img/gyms/gym{{utilityService.selectGymImgById(g.id)}}.png" class="img-fluid" alt="{{g.name}}" [routerLink]="[g.id,'courses']">
+        <img src="./assets/img/gyms/gym{{utilityService.selectGymImgById(g.id)}}.png" class="img-fluid" alt="{{g.name}}">
         <div class="portfolio-info" [ngClass]="{'portfolio-info-mobile': utilityService.getFlagMobile()}">
-          <div [routerLink]="[g.id,'courses']">
-            <h4>{{g.name}}</h4>
-            <p>{{g.address}}, {{g.province}}, {{g.region}}</p>
-          </div>
+          <h4>{{g.name}}</h4>
+          <p>{{g.address}}, {{g.province}}, {{g.region}}</p>
           <a (click)="delete(g)" class="details-link" i18n-title="@@LinkButton-RemoveFavorite" title="Remove Favorite"><i class="bx bxs-heart"></i></a>
         </div>
       </div>

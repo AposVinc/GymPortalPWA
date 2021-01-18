@@ -24,6 +24,7 @@ export class FeedbackCourseProfileComponent implements OnInit {
     // this.feedProfile.findAllFedCourse('token').subscribe(res => {
     //   this.feedbacks = res;
     // });
+    this.store.dispatch( new ShowAllForCourseAction());
     this.feedbacks = this.store.select(selectPersonalFeedbacksCourse);
   }
 

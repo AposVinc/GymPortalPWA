@@ -24,6 +24,7 @@ export class FavoriteGymCardComponent implements OnInit {
     // this.favoriteService.findAllFavGym('token').subscribe(res => {
     //   this.favoriteGyms = res;
     // });
+    this.store.dispatch( new ShowAllFavoritesGymAction());
     this.favorites = this.store.select(selectFavoritesGym);
   }
 
