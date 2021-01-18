@@ -215,15 +215,7 @@
         <target>Rimuovi Favorito</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/component/favorite-gym-card/favorite-gym-card.component.js</context>
-          <context context-type="linenumber">71</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="ButtonUpdate" datatype="html">
-        <source>Update</source>
-        <target>Aggiorna</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/component/update-profile/update-profile.component.js</context>
-          <context context-type="linenumber">159</context>
+          <context context-type="linenumber">64</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CardProfileComponent-Title" datatype="html">
@@ -232,6 +224,14 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/component/card-profile/card-profile.component.js</context>
           <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ButtonUpdate" datatype="html">
+        <source>Update</source>
+        <target>Aggiorna</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/component/update-profile/update-profile.component.js</context>
+          <context context-type="linenumber">159</context>
         </context-group>
       </trans-unit>
       <trans-unit id="GymsPage-Subtitle" datatype="html">
@@ -306,6 +306,14 @@
           <context context-type="linenumber">104</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="LinkButton-ViewsReview" datatype="html">
+        <source>Views Reviews</source>
+        <target>Vedi Recensioni</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/gyms/components/components/course-card/course-card.component.js</context>
+          <context context-type="linenumber">117</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="LinkButton-AddReview" datatype="html">
         <source>Add Review</source>
         <target>Aggiungi Recensione</target>
@@ -319,15 +327,7 @@
         <target>Aggiungi Favorito</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/gyms/components/components/gym-card/gym-card.component.js</context>
-          <context context-type="linenumber">126</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="LinkButton-ViewsReview" datatype="html">
-        <source>Views Reviews</source>
-        <target>Vedi Recensioni</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/gyms/components/components/course-card/course-card.component.js</context>
-          <context context-type="linenumber">117</context>
+          <context context-type="linenumber">129</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CoursesPage-GymSubtitle" datatype="html">
@@ -335,7 +335,7 @@
         <target>Benvenuti ai corsi della palestra <x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/gyms/components/pages/course/course.component.js</context>
-          <context context-type="linenumber">32</context>
+          <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CoursesPage-FeedbacksTitle" datatype="html">
@@ -343,7 +343,7 @@
         <target>Recensioni</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/gyms/components/pages/course/course.component.js</context>
-          <context context-type="linenumber">38</context>
+          <context context-type="linenumber">36</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CoursesPage-FeedbacksSubtitle" datatype="html">
@@ -351,7 +351,23 @@
         <target>Recensioni sulla palestra <x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/gyms/components/pages/course/course.component.js</context>
-          <context context-type="linenumber">44</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="FeedbacksCoursePage-FeedbacksTitle" datatype="html">
+        <source>Reviews</source>
+        <target>Recensioni</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/gyms/components/pages/feedback/feedback.component.js</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="CoursesCoursePage-FeedbacksSubtitle" datatype="html">
+        <source>Reviews on the course <x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/></source>
+        <target>Recensioni sul corso <x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/gyms/components/pages/feedback/feedback.component.js</context>
+          <context context-type="linenumber">36</context>
         </context-group>
       </trans-unit>
     </body>
