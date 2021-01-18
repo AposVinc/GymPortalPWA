@@ -19,3 +19,10 @@ export const selectUserToken = createSelector(
     return state.token;
   }
 );
+
+export const selectUserLoading = createSelector(
+  selectUser,
+  (state: IUserState) => {
+    return state.loading;
+  }
+);
