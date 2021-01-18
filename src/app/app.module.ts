@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {APP_INITIALIZER, NgModule} from '@angular/core';
+import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -48,7 +48,6 @@ import {FavoriteEffects} from './effects/favorite-effects.service';
 import { TitleComponent } from './components/component/title/title.component';
 import { ScrollToTopComponent } from './components/commons/scroll-to-top/scroll-to-top.component';
 import {ErrorInterceptor} from './helpers/error.interceptor';
-import {appInitializer} from './helpers/app.installer';
 
 const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
 
@@ -100,7 +99,6 @@ const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
     }),
   ],
   providers: [
-    // { provide: APP_INITIALIZER, useFactory: appInitializer, multi: true, deps: [UserEffects] },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 
     AuthService, UserService,
