@@ -5,7 +5,7 @@ import {selectPersonalFeedbacksCourse} from '../../../selectors/feedback.selecto
 import {Observable} from 'rxjs';
 import {ShowAllForCourseAction} from '../../../actions/feedback-profile.actions';
 import {FeedbackCourse} from '../../../domain/FeedbackCourse';
-import {UtilityService} from '../../../services/utility/utility.service';
+import {Utility} from '../../../helpers/utility';
 
 @Component({
   selector: 'app-feedback-course-profile',
@@ -16,7 +16,7 @@ export class FeedbackCourseProfileComponent implements OnInit {
 
   feedbacks: Observable<FeedbackCourse[]>;
 
-  constructor(private store: Store<IAppState>, public utilityService: UtilityService) {
+  constructor(private store: Store<IAppState>, public utilityService: Utility) {
     this.store.dispatch( new ShowAllForCourseAction());
   }
 
@@ -24,7 +24,6 @@ export class FeedbackCourseProfileComponent implements OnInit {
     // this.feedProfile.findAllFedCourse('token').subscribe(res => {
     //   this.feedbacks = res;
     // });
-    this.store.dispatch( new ShowAllForCourseAction());
     this.feedbacks = this.store.select(selectPersonalFeedbacksCourse);
   }
 
