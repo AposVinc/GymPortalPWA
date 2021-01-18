@@ -5,7 +5,7 @@ import {IAppState} from '../../../state/app.states';
 import {Observable} from 'rxjs';
 import {selectCommonLogged} from '../../../selectors/common.selector';
 import {LoggedOutAction} from '../../../actions/common.actions';
-import {UtilityService} from '../../../services/utility/utility.service';
+import {Utility} from '../../../helpers/utility';
 
 @Component({
   selector: 'app-header',
@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
 
   prevScrollPos: any;
 
-  constructor(private store: Store<IAppState>, public utilityService: UtilityService, public router: Router, private renderer: Renderer2) {
+  constructor(private store: Store<IAppState>, public utilityService: Utility, public router: Router, private renderer: Renderer2) {
     this.flagMenu = false;
     this.logged = this.store.select(selectCommonLogged);
   }

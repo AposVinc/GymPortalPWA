@@ -5,7 +5,7 @@ import {selectFavoritesGym} from '../../../selectors/favorite.selector';
 import {Gym} from '../../../domain/Gym';
 import {Observable} from 'rxjs';
 import {DeleteFavoriteGymAction, ShowAllFavoritesGymAction} from '../../../actions/favorite-gym.actions';
-import {UtilityService} from '../../../services/utility/utility.service';
+import {Utility} from '../../../helpers/utility';
 
 @Component({
   selector: 'app-favorite-gym-card',
@@ -16,7 +16,7 @@ export class FavoriteGymCardComponent implements OnInit {
 
   favorites: Observable<Gym[]>;
 
-  constructor(private store: Store<IAppState>, public utilityService: UtilityService) {
+  constructor(private store: Store<IAppState>, public utilityService: Utility) {
     this.store.dispatch( new ShowAllFavoritesGymAction());
   }
 
@@ -24,7 +24,6 @@ export class FavoriteGymCardComponent implements OnInit {
     // this.favoriteService.findAllFavGym('token').subscribe(res => {
     //   this.favoriteGyms = res;
     // });
-    this.store.dispatch( new ShowAllFavoritesGymAction());
     this.favorites = this.store.select(selectFavoritesGym);
   }
 

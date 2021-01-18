@@ -7,7 +7,7 @@ import {DeleteAction, ShowAllAction} from '../../../../../actions/feedback-cours
 import {FeedbackCourse} from '../../../../../domain/FeedbackCourse';
 import {selectPersonalFeedbackCourseByCourseId, selectPersonalFeedbacksCourse} from '../../../../../selectors/feedback.selector';
 import {ActivatedRoute} from '@angular/router';
-import {UtilityService} from '../../../../../services/utility/utility.service';
+import {Utility} from '../../../../../helpers/utility';
 
 @Component({
   selector: 'app-feedback-course-card',
@@ -22,7 +22,7 @@ export class FeedbackCourseCardComponent implements OnInit {
   personalFeedback: Observable<FeedbackCourse>;
   feedbacks: Observable<FeedbackCourse[]>;
 
-  constructor(private ar: ActivatedRoute, private store: Store<IAppState>, public utilityService: UtilityService) {
+  constructor(private ar: ActivatedRoute, private store: Store<IAppState>, public utilityService: Utility) {
     this.idGym = +this.ar.snapshot.params.idGym;
     this.idCourse = +this.ar.snapshot.params.idCourse;
     this.personalFeedback = this.store.select(selectPersonalFeedbackCourseByCourseId(this.idCourse));
