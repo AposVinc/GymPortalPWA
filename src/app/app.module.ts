@@ -11,7 +11,7 @@ import {LoginComponent} from './components/pages/login/login.component';
 import {HeaderComponent} from './components/commons/header/header.component';
 import {FooterComponent} from './components/commons/footer/footer.component';
 import {RegionComponent} from './components/component/region/region.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {RegistrationComponent} from './components/pages/registration/registration.component';
 import {RegistrationFormComponent} from './components/component/registration-form/registration-form.component';
 import {ReactiveFormsModule} from '@angular/forms';
@@ -47,6 +47,7 @@ import {FeedbacksCourseEffects} from './effects/feedback-course-effects.service'
 import {FavoriteEffects} from './effects/favorite-effects.service';
 import { TitleComponent } from './components/component/title/title.component';
 import { ScrollToTopComponent } from './components/commons/scroll-to-top/scroll-to-top.component';
+import {ErrorInterceptor} from './helpers/error.interceptor';
 
 const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
 
@@ -98,6 +99,8 @@ const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
     }),
   ],
   providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+
     AuthService, UserService,
     GymService, CourseService, FavoriteService,
     FeedbackProfileService, FeedbackGymService, FeedbackCourseService

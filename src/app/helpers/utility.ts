@@ -3,7 +3,7 @@ import {Injectable} from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class UtilityService {
+export class Utility {
 
   screenWidth: any;
   screenHeight: any;

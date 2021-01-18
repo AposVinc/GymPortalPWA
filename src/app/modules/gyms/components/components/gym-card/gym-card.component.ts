@@ -8,7 +8,7 @@ import {ShowAllAction} from '../../../../../actions/gym.actions';
 import {ActivatedRoute} from '@angular/router';
 import {CreateFavoriteGymAction, DeleteFavoriteGymAction} from '../../../../../actions/favorite-gym.actions';
 import {selectFavoritesGym} from '../../../../../selectors/favorite.selector';
-import {UtilityService} from '../../../../../services/utility/utility.service';
+import {Utility} from '../../../../../helpers/utility';
 
 @Component({
   selector: 'app-gym-card',
@@ -21,7 +21,7 @@ export class GymCardComponent implements OnInit {
   gyms: Observable<Gym[]>;
   favorites: Observable<Gym[]>;
 
-  constructor(private ar: ActivatedRoute, public utilityService: UtilityService, private store: Store<IAppState>) {
+  constructor(private ar: ActivatedRoute, public utilityService: Utility, private store: Store<IAppState>) {
     this.region = this.ar.snapshot.params.region;
     this.gyms = this.store.select(selectGymList);
     this.favorites = this.store.select(selectFavoritesGym);

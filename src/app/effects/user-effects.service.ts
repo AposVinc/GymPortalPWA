@@ -10,7 +10,7 @@ import {
   EUserActions,
   LoginAction,
   LoginFailureAction,
-  LoginSuccessAction,
+  LoginSuccessAction, LogOutAction,
   RefreshDetailAction,
   RefreshDetailFailureAction,
   RefreshDetailSuccessAction,
@@ -25,6 +25,7 @@ import {
 } from '../actions/user.actions';
 import {IAppState} from '../state/app.states';
 import {selectUserDetail, selectUserToken} from '../selectors/user.selector';
+import {LoggedOutAction} from '../actions/common.actions';
 
 @Injectable()
 export class UserEffects {
@@ -76,7 +77,10 @@ export class UserEffects {
       switchMap(() => this.store.select(selectUserToken)),
       switchMap((token) => this.authService.refreshToken(token)),
       switchMap((result) => of(new TokenRefreshSuccessAction(result.headers.get('Authorization')))),
-      catchError(() => of(new TokenRefreshFailureAction()))
+      catchError(() => {
+        of(new LoggedOutAction());
+        return of(new TokenRefreshFailureAction());
+      })
     );
 
   @Effect()

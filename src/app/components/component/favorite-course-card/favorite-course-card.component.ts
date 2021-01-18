@@ -5,7 +5,7 @@ import {Store} from '@ngrx/store';
 import {IAppState} from '../../../state/app.states';
 import {DeleteFavoriteCourseAction, ShowAllFavoritesCourseAction} from '../../../actions/favorite-course.actions';
 import {selectFavoritesCourse} from '../../../selectors/favorite.selector';
-import {UtilityService} from '../../../services/utility/utility.service';
+import {Utility} from '../../../helpers/utility';
 
 @Component({
   selector: 'app-favorite-course-card',
@@ -16,7 +16,7 @@ export class FavoriteCourseCardComponent implements OnInit {
 
   favorites: Observable<Course[]>;
 
-  constructor(private store: Store<IAppState>, public utilityService: UtilityService) {
+  constructor(private store: Store<IAppState>, public utilityService: Utility) {
     this.store.dispatch( new ShowAllFavoritesCourseAction());
   }
 
@@ -24,7 +24,6 @@ export class FavoriteCourseCardComponent implements OnInit {
     // this.favProfile.findAllFavCourse('token').subscribe(res => {
     //   this.favoriteCourses = res;
     // });
-    this.store.dispatch( new ShowAllFavoritesCourseAction());
     this.favorites = this.store.select(selectFavoritesCourse);
   }
 

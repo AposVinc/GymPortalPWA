@@ -27,15 +27,13 @@ export class AuthService {
           headers: {'Content-Type': 'application/x-www-form-urlencoded'},
           observe: 'response'
         }).pipe(
-          retry(3),
-          catchError(this.handleError)
+          retry(3)
       );
   }
 
   register(user: User): Observable<any> {
     return this.http.post<any>(BASE_URL + URL_REGISTRATION, user).pipe(
-      retry(3),
-      catchError(this.handleError)
+      retry(3)
     );
   }
 
@@ -43,25 +41,8 @@ export class AuthService {
     let headers: HttpHeaders = new HttpHeaders();
     headers = headers.append('Authorization', token);
     return this.http.get<any>(BASE_URL + URL_REFRESH, {headers, observe: 'response'}).pipe(
-      retry(3),
-      catchError(this.handleError)
+      retry(3)
     );
   }
 
-  // tslint:disable-next-line:typedef
-  private handleError(error: HttpErrorResponse) {
-    if (error.error instanceof ErrorEvent) {
-      // A client-side or network error occurred. Handle it accordingly.
-      console.error('An error occurred:', error.error.message);
-    } else {
-      // The backend returned an unsuccessful response code.
-      // The response body may contain clues as to what went wrong,
-      console.error(`Backend returned error: ${JSON.stringify(error)}`);
-      /* console.error(
-        `Backend returned code ${error.status}, ` +
-        `body was: ${ JSON.stringify(error.error) }`); */
-    }
-    // return an observable with a user-facing error message
-    return throwError(error);
-  }
 }
