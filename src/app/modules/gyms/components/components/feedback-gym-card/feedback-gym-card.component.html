@@ -13,8 +13,8 @@
           <img src="assets/img/quote-sign-right.png" class="quote-sign-right" alt="">
         </p>
 
-        <a *ngIf="f.id === idPersonalFeedback" [routerLink]="['..','feedbacks', f.id]" class="edit-link" title="Edit Review"><i class='bx bxs-edit'></i></a>
-        <a *ngIf="f.id === idPersonalFeedback" (click)="delete(f)" class="delete-link" title="Delete Review"><i class='bx bxs-trash'></i></a>
+        <a *ngIf="f.id === idPersonalFeedback" [routerLink]="['..','feedbacks', f.id]" class="edit-link" i18n-title="@@LinkButton-EditReview" title="Edit Review"><i class='bx bxs-edit'></i></a>
+        <a *ngIf="f.id === idPersonalFeedback" (click)="delete(f)" class="delete-link" i18n-title="@@LinkButton-DeleteReview" title="Delete Review"><i class='bx bxs-trash'></i></a>
       </div>
 
     </div>

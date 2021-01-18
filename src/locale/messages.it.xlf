@@ -210,6 +210,14 @@
           <context context-type="linenumber">56</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="LinkButton-RemoveFavorite" datatype="html">
+        <source>Remove Favorite</source>
+        <target>Rimuovi Favorito</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/component/favorite-gym-card/favorite-gym-card.component.js</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="ButtonUpdate" datatype="html">
         <source>Update</source>
         <target>Aggiorna</target>
@@ -280,6 +288,46 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/gyms/components/components/add-feedback-course/add-feedback-course.component.js</context>
           <context context-type="linenumber">115</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="LinkButton-EditReview" datatype="html">
+        <source>Edit Review</source>
+        <target>Modifica Recensione</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/gyms/components/components/feedback-course-card/feedback-course-card.component.js</context>
+          <context context-type="linenumber">98</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="LinkButton-DeleteReview" datatype="html">
+        <source>Delete Review</source>
+        <target>Elimina Recensione</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/gyms/components/components/feedback-course-card/feedback-course-card.component.js</context>
+          <context context-type="linenumber">104</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="LinkButton-AddReview" datatype="html">
+        <source>Add Review</source>
+        <target>Aggiungi Recensione</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/gyms/components/components/gym-card/gym-card.component.js</context>
+          <context context-type="linenumber">120</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="LinkButton-AddFavorite" datatype="html">
+        <source>Add Favorite</source>
+        <target>Aggiungi Favorito</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/gyms/components/components/gym-card/gym-card.component.js</context>
+          <context context-type="linenumber">126</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="LinkButton-ViewsReview" datatype="html">
+        <source>Views Reviews</source>
+        <target>Vedi Recensioni</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/gyms/components/components/course-card/course-card.component.js</context>
+          <context context-type="linenumber">117</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CoursesPage-GymSubtitle" datatype="html">

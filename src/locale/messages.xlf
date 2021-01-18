@@ -163,6 +163,20 @@
           <context context-type="linenumber">79</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="FeedbacksComponent-ProfileTitleCourse" datatype="html">
+        <source>Course: <x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/component/feedback-course-profile/feedback-course-profile.component.js</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="FeedbacksComponent-Rating" datatype="html">
+        <source>Rating: <x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/component/feedback-course-profile/feedback-course-profile.component.js</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="FeedbacksComponent-ProfileTitleGym" datatype="html">
         <source>Gym: <x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/></source>
         <context-group purpose="location">
@@ -170,18 +184,11 @@
           <context context-type="linenumber">56</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="FeedbacksComponent-Rating" datatype="html">
-        <source>Rating: <x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/></source>
+      <trans-unit id="LinkButton-RemoveFavorite" datatype="html">
+        <source>Remove Favorite</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/component/feedback-gym-profile/feedback-gym-profile.component.js</context>
-          <context context-type="linenumber">62</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="FeedbacksComponent-ProfileTitleCourse" datatype="html">
-        <source>Course: <x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/></source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/component/feedback-course-profile/feedback-course-profile.component.js</context>
-          <context context-type="linenumber">56</context>
+          <context context-type="sourcefile">src/app/components/component/favorite-gym-card/favorite-gym-card.component.js</context>
+          <context context-type="linenumber">71</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ButtonUpdate" datatype="html">
@@ -245,6 +252,41 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/gyms/components/components/add-feedback-course/add-feedback-course.component.js</context>
           <context context-type="linenumber">115</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="LinkButton-EditReview" datatype="html">
+        <source>Edit Review</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/gyms/components/components/feedback-course-card/feedback-course-card.component.js</context>
+          <context context-type="linenumber">98</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="LinkButton-DeleteReview" datatype="html">
+        <source>Delete Review</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/gyms/components/components/feedback-course-card/feedback-course-card.component.js</context>
+          <context context-type="linenumber">104</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="LinkButton-AddReview" datatype="html">
+        <source>Add Review</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/gyms/components/components/gym-card/gym-card.component.js</context>
+          <context context-type="linenumber">120</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="LinkButton-AddFavorite" datatype="html">
+        <source>Add Favorite</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/gyms/components/components/gym-card/gym-card.component.js</context>
+          <context context-type="linenumber">126</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="LinkButton-ViewsReview" datatype="html">
+        <source>Views Reviews</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/gyms/components/components/course-card/course-card.component.js</context>
+          <context context-type="linenumber">117</context>
         </context-group>
       </trans-unit>
       <trans-unit id="CoursesPage-GymSubtitle" datatype="html">
