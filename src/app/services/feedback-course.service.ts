@@ -24,8 +24,7 @@ export class FeedbackCourseService {
     let headers: HttpHeaders = new HttpHeaders();
     headers = headers.append('Authorization', token);
     return this.http.post(BASE_URL_GYMS + idGym + URL_COURSES + feedback.course + URL_FEEDBACKS, feedback, {headers, observe: 'response'}).pipe(
-      retry(3),
-      catchError(this.handleError)
+      retry(3)
     );
   }
 
@@ -33,8 +32,7 @@ export class FeedbackCourseService {
     let headers: HttpHeaders = new HttpHeaders();
     headers = headers.append('Authorization', token);
     return this.http.put(BASE_URL_GYMS + idGym + URL_COURSES + feedback.course + URL_FEEDBACKS + feedback.id, feedback, {headers}).pipe(
-      retry(3),
-      catchError(this.handleError)
+      retry(3)
     );
   }
 
@@ -42,25 +40,8 @@ export class FeedbackCourseService {
     let headers: HttpHeaders = new HttpHeaders();
     headers = headers.append('Authorization', token);
     return this.http.delete(BASE_URL_GYMS + idGym + URL_COURSES + feedback.course + URL_FEEDBACKS + feedback.id, {headers}).pipe(
-      retry(3),
-      catchError(this.handleError)
+      retry(3)
     );
   }
 
-
-  private handleError(error: HttpErrorResponse) {
-    if (error.error instanceof ErrorEvent) {
-      // A client-side or network error occurred. Handle it accordingly.
-      console.error('An error occurred:', error.error.message);
-    } else {
-      // The backend returned an unsuccessful response code.
-      // The response body may contain clues as to what went wrong,
-      console.error(
-        `Backend returned code ${error.status}, ` +
-        `body was: ${error.error}`);
-    }
-    // return an observable with a user-facing error message
-    return throwError(
-      'Something bad happened; please try again later.');
-  }
 }
