@@ -34,11 +34,11 @@
       <ul [ngClass]="{'nav-menu': !utilityService.getFlagMobile()}"
           style="touch-action: pan-y;">
         <!--          [ngStyle]="{'touch-action': globalService.getFlagMobile() ? 'pan-y;' : '' }">-->
-        <li><a *ngIf="logged | async" routerLink="">Home</a></li>
-        <li><a *ngIf="!(logged | async)" routerLink="registration">Registration</a></li>
-        <li><a *ngIf="!(logged | async)" routerLink="login">Login</a></li>
-        <li><a *ngIf="logged | async" routerLink="profile">Profile</a></li>
-        <li><a *ngIf="logged | async" (click)="logout()" type="button" class="btn btn-danger">Logout</a></li>
+        <li><a *ngIf="logged | async" routerLink="" i18n="@@Header-Home">Home</a></li>
+        <li><a *ngIf="!(logged | async)" routerLink="registration" i18n="@@Header-Registration">Registration</a></li>
+        <li><a *ngIf="!(logged | async)" routerLink="login" i18n="@@Header-Login">Login</a></li>
+        <li><a *ngIf="logged | async" routerLink="profile" i18n="@@Header-Profile">Profile</a></li>
+        <li><a *ngIf="logged | async" (click)="logout()" type="button" class="btn btn-danger" i18n="@@Header-Logout">Logout</a></li>
       </ul>
     </nav><!-- #nav-menu-container -->
 

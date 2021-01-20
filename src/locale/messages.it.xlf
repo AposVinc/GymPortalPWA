@@ -89,6 +89,45 @@
           <context context-type="sourcefile">src/app/components/pages/profile/profile.component.js</context>
           <context context-type="linenumber">76</context>
         </context-group>
+      </trans-unit><trans-unit id="Header-Home" datatype="html">
+      <source>Home</source>
+      <target>Home</target>
+      <context-group purpose="location">
+        <context context-type="sourcefile">src/app/components/commons/header/header.component.js</context>
+        <context context-type="linenumber">110</context>
+      </context-group>
+    </trans-unit>
+      <trans-unit id="Header-Registration" datatype="html">
+        <source>Registration</source>
+        <target>Registrazione</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/commons/header/header.component.js</context>
+          <context context-type="linenumber">116</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Header-Login" datatype="html">
+        <source>Login</source>
+        <target>Login</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/commons/header/header.component.js</context>
+          <context context-type="linenumber">122</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Header-Profile" datatype="html">
+        <source>Profile</source>
+        <target>Profilo</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/commons/header/header.component.js</context>
+          <context context-type="linenumber">128</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Header-Logout" datatype="html">
+        <source>Logout</source>
+        <target>Esci</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/commons/header/header.component.js</context>
+          <context context-type="linenumber">134</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="Form-LabelName" datatype="html">
         <source>Name</source>

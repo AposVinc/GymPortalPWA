@@ -79,6 +79,41 @@
           <context context-type="linenumber">76</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="Header-Home" datatype="html">
+        <source>Home</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/commons/header/header.component.js</context>
+          <context context-type="linenumber">110</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Header-Registration" datatype="html">
+        <source>Registration</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/commons/header/header.component.js</context>
+          <context context-type="linenumber">116</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Header-Login" datatype="html">
+        <source>Login</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/commons/header/header.component.js</context>
+          <context context-type="linenumber">122</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Header-Profile" datatype="html">
+        <source>Profile</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/commons/header/header.component.js</context>
+          <context context-type="linenumber">128</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Header-Logout" datatype="html">
+        <source>Logout</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/commons/header/header.component.js</context>
+          <context context-type="linenumber">134</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="Form-LabelName" datatype="html">
         <source>Name</source>
         <context-group purpose="location">
@@ -324,13 +359,6 @@
           <context context-type="linenumber">126</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="LinkButton-ViewsReview" datatype="html">
-        <source>Views Reviews</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/gyms/components/components/course-card/course-card.component.js</context>
-          <context context-type="linenumber">117</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="CoursesPage-GymSubtitle" datatype="html">
         <source>Welcome to the <x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/>&apos;s courses</source>
         <context-group purpose="location">
@@ -350,6 +378,13 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/gyms/components/pages/course/course.component.js</context>
           <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="LinkButton-ViewsReview" datatype="html">
+        <source>Views Reviews</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/gyms/components/components/course-card/course-card.component.js</context>
+          <context context-type="linenumber">117</context>
         </context-group>
       </trans-unit>
     </body>
