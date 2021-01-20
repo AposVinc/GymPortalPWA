@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {Store} from '@ngrx/store';
+import {IAppState} from '../../../../../state/app.states';
+import {selectCourseByGymIdAndCourseId} from '../../../../../selectors/gym.selector';
 
 @Component({
   selector: 'app-add-feedback-course',
@@ -7,9 +11,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddFeedbackCourseComponent implements OnInit {
 
-  constructor() { }
+  idGym: number;
+  idCourse: number;
+  courseName: string;
+
+  constructor(private ar: ActivatedRoute, private store: Store<IAppState>) {
+    this.idGym = +this.ar.snapshot.params.idGym;
+    this.idCourse = +this.ar.snapshot.params.idCourse;
+    this.courseName = '';
+  }
 
   ngOnInit(): void {
+    this.store.select(selectCourseByGymIdAndCourseId(this.idGym, this.idCourse)).subscribe(
+      (c) => {
+        if (c){
+          this.courseName = c.name;
+        }
+      });
   }
 
 }
