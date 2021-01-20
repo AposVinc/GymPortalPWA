@@ -5,18 +5,19 @@ import {Action, Store} from '@ngrx/store';
 import {catchError, mergeMap, switchMap, tap} from 'rxjs/operators';
 import {FeedbackGymService} from '../services/feedback-gym.service';
 import {
+  CreateAction,
+  CreateFailureAction,
+  CreateSuccessAction,
+  DeleteAction,
+  DeleteFailureAction,
+  DeleteSuccessAction,
   EFeedbackGymActions,
   ShowAllAction,
   ShowAllFailureAction,
   ShowAllSuccessAction,
-  CreateAction,
-  CreateFailureAction,
-  CreateSuccessAction,
   UpdateAction,
-  UpdateSuccessAction,
   UpdateFailureAction,
-  DeleteAction,
-  DeleteSuccessAction, DeleteFailureAction
+  UpdateSuccessAction
 } from '../actions/feedback-gym.actions';
 import {selectUserToken} from '../selectors/user.selector';
 import {IAppState} from '../state/app.states';

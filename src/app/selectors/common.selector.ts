@@ -1,5 +1,5 @@
-import { createSelector } from '@ngrx/store';
-import { IAppState } from '../state/app.states';
+import {createSelector} from '@ngrx/store';
+import {IAppState} from '../state/app.states';
 import {ICommonState} from '../state/common.states';
 
 const selectCommon = (state: IAppState) => {

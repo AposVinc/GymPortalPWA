@@ -2,11 +2,15 @@ import {Injectable} from '@angular/core';
 import {Actions, Effect, ofType} from '@ngrx/effects';
 import {Observable, of} from 'rxjs';
 import {Action, Store} from '@ngrx/store';
-import {catchError, concatMap, mergeMap, switchMap, tap, withLatestFrom} from 'rxjs/operators';
+import {catchError, switchMap, withLatestFrom} from 'rxjs/operators';
 import {
   EFeedbackProfileActions,
-  ShowAllForGymAction, ShowAllForGymFailureAction, ShowAllForGymSuccessAction,
-  ShowAllForCourseAction, ShowAllForCourseFailureAction, ShowAllForCourseSuccessAction
+  ShowAllForCourseAction,
+  ShowAllForCourseFailureAction,
+  ShowAllForCourseSuccessAction,
+  ShowAllForGymAction,
+  ShowAllForGymFailureAction,
+  ShowAllForGymSuccessAction
 } from '../actions/feedback-profile.actions';
 import {FeedbackProfileService} from '../services/feedback-profile.service';
 import {selectUserDetail, selectUserToken} from '../selectors/user.selector';

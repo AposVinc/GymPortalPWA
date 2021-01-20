@@ -4,16 +4,28 @@ import {Observable, of} from 'rxjs';
 import {Action, Store} from '@ngrx/store';
 import {catchError, mergeMap, switchMap, withLatestFrom} from 'rxjs/operators';
 import {
+  CreateFavoriteGymAction,
+  CreateFavoriteGymFailureAction,
+  CreateFavoriteGymSuccessAction,
+  DeleteFavoriteGymAction,
+  DeleteFavoriteGymFailureAction,
+  DeleteFavoriteGymSuccessAction,
   EFavoriteGymActions,
-  ShowAllFavoritesGymAction, ShowAllFavoritesGymFailureAction, ShowAllFavoritesGymSuccessAction,
-  CreateFavoriteGymAction, CreateFavoriteGymFailureAction, CreateFavoriteGymSuccessAction,
-  DeleteFavoriteGymAction, DeleteFavoriteGymFailureAction, DeleteFavoriteGymSuccessAction
+  ShowAllFavoritesGymAction,
+  ShowAllFavoritesGymFailureAction,
+  ShowAllFavoritesGymSuccessAction
 } from '../actions/favorite-gym.actions';
 import {
+  CreateFavoriteCourseAction,
+  CreateFavoriteCourseFailureAction,
+  CreateFavoriteCourseSuccessAction,
+  DeleteFavoriteCourseAction,
+  DeleteFavoriteCourseFailureAction,
+  DeleteFavoriteCourseSuccessAction,
   EFavoriteCourseActions,
-  ShowAllFavoritesCourseAction, ShowAllFavoritesCourseFailureAction, ShowAllFavoritesCourseSuccessAction,
-  CreateFavoriteCourseAction, CreateFavoriteCourseFailureAction, CreateFavoriteCourseSuccessAction,
-  DeleteFavoriteCourseAction, DeleteFavoriteCourseFailureAction, DeleteFavoriteCourseSuccessAction
+  ShowAllFavoritesCourseAction,
+  ShowAllFavoritesCourseFailureAction,
+  ShowAllFavoritesCourseSuccessAction
 } from '../actions/favorite-course.actions';
 import {selectUserDetail, selectUserToken} from '../selectors/user.selector';
 import {IAppState} from '../state/app.states';

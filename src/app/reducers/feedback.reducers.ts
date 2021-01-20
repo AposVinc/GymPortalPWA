@@ -1,12 +1,12 @@
 import * as fromActions from '../actions/feedback-profile.actions';
-import * as fromActionsFeedbacksGym from '../actions/feedback-gym.actions';
-import * as fromActionsFeedbacksCourse from '../actions/feedback-course.actions';
-import * as fromCommonActions from '../actions/common.actions';
 import {EFeedbackProfileActions} from '../actions/feedback-profile.actions';
+import * as fromActionsFeedbacksGym from '../actions/feedback-gym.actions';
 import {EFeedbackGymActions} from '../actions/feedback-gym.actions';
+import * as fromActionsFeedbacksCourse from '../actions/feedback-course.actions';
 import {EFeedbackCourseActions} from '../actions/feedback-course.actions';
+import * as fromCommonActions from '../actions/common.actions';
 import {ECommonActions} from '../actions/common.actions';
-import { IFeedbackState, initialFeedbackState } from '../state/feedback.states';
+import {IFeedbackState, initialFeedbackState} from '../state/feedback.states';
 
 export function feedbackReducer(state = initialFeedbackState,
                                 action: fromActions.ALL_FEEDBACK_PROFILE_REDUCER_ACTIONS |

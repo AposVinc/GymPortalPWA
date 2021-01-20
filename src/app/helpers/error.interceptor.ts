@@ -1,12 +1,11 @@
-import { Injectable } from '@angular/core';
-import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import {Injectable} from '@angular/core';
+import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
+import {Observable, throwError} from 'rxjs';
+import {catchError} from 'rxjs/operators';
 import {Store} from '@ngrx/store';
 import {IAppState} from '../state/app.states';
 import {TokenRefreshAction} from '../actions/user.actions';
 import {LoggedOutAction} from '../actions/common.actions';
-import {selectUserToken} from '../selectors/user.selector';
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {

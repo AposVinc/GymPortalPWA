@@ -1,4 +1,4 @@
-import {Injectable, } from '@angular/core';
+import {Injectable,} from '@angular/core';
 import {Actions, Effect, ofType} from '@ngrx/effects';
 import {Observable, of} from 'rxjs';
 import {Router} from '@angular/router';
@@ -10,7 +10,7 @@ import {
   EUserActions,
   LoginAction,
   LoginFailureAction,
-  LoginSuccessAction, LogOutAction,
+  LoginSuccessAction,
   RefreshDetailAction,
   RefreshDetailFailureAction,
   RefreshDetailSuccessAction,
@@ -20,7 +20,8 @@ import {
   TokenRefreshAction,
   TokenRefreshFailureAction,
   TokenRefreshSuccessAction,
-  UpdateAction, UpdateFailureAction,
+  UpdateAction,
+  UpdateFailureAction,
   UpdateSuccessAction
 } from '../actions/user.actions';
 import {IAppState} from '../state/app.states';

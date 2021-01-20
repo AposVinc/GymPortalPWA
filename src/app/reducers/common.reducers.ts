@@ -1,6 +1,6 @@
 import * as fromActions from '../actions/common.actions';
-import {ICommonState, initialCommonState} from '../state/common.states';
 import {ECommonActions} from '../actions/common.actions';
+import {ICommonState, initialCommonState} from '../state/common.states';
 
 export function commonReducer(state = initialCommonState, action: fromActions.ALL_COMMON_REDUCER_ACTIONS): ICommonState {
   switch (action.type) {

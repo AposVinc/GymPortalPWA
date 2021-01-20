@@ -1,5 +1,4 @@
-import { Action } from '@ngrx/store';
-import {Gym} from '../domain/Gym';
+import {Action} from '@ngrx/store';
 
 export enum ECommonActions {
   LOGGED_IN = '[Common] Logged in',

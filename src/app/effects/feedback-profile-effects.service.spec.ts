@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { FeedbacksProfileEffects } from './feedback-profile-effects.service';
+import {FeedbacksProfileEffects} from './feedback-profile-effects.service';
 
 describe('FeedbacksProfileEffects', () => {
 

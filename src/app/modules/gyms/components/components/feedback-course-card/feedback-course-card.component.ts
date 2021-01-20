@@ -1,11 +1,11 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {IAppState} from '../../../../../state/app.states';
 import {Observable} from 'rxjs';
 import {selectFeedbacksByGymIdAndCourseId} from '../../../../../selectors/gym.selector';
 import {DeleteAction, ShowAllAction} from '../../../../../actions/feedback-course.actions';
 import {FeedbackCourse} from '../../../../../domain/FeedbackCourse';
-import {selectPersonalFeedbackCourseByCourseId, selectPersonalFeedbacksCourse} from '../../../../../selectors/feedback.selector';
+import {selectPersonalFeedbackCourseByCourseId} from '../../../../../selectors/feedback.selector';
 import {ActivatedRoute} from '@angular/router';
 import {Utility} from '../../../../../helpers/utility';
 

@@ -1,8 +1,8 @@
 import * as fromFavoriteGymActions from '../actions/favorite-gym.actions';
-import * as fromFavoriteCourseActions from '../actions/favorite-course.actions';
-import * as fromCommonActions from '../actions/common.actions';
 import {EFavoriteGymActions} from '../actions/favorite-gym.actions';
+import * as fromFavoriteCourseActions from '../actions/favorite-course.actions';
 import {EFavoriteCourseActions} from '../actions/favorite-course.actions';
+import * as fromCommonActions from '../actions/common.actions';
 import {ECommonActions} from '../actions/common.actions';
 import {IFavoriteState, initialFavoriteState} from '../state/favorite.states';
 

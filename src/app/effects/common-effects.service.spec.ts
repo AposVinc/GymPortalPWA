@@ -1,6 +1,4 @@
-import { TestBed } from '@angular/core/testing';
-
-import {UserEffects} from './user-effects.service';
+import {TestBed} from '@angular/core/testing';
 import {CommonEffects} from './common-effects.service';
 
 describe('CommonEffects', () => {

@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 
 import {GymsComponent} from './gyms.component';
 import {AddFeedbackComponent} from './components/components/add-feedback/add-feedback.component';

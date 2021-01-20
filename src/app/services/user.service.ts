@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {User} from '../domain/User';
-import {Observable, throwError} from 'rxjs';
-import {catchError, retry} from 'rxjs/operators';
+import {Observable} from 'rxjs';
+import {retry} from 'rxjs/operators';
 
 const BASE_URL_USERS = 'http://localhost:8080/GymREST/rest/users/';
 

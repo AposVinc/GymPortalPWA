@@ -1,4 +1,4 @@
-import { Action } from '@ngrx/store';
+import {Action} from '@ngrx/store';
 import {FeedbackGym} from '../domain/FeedbackGym';
 
 export enum EFeedbackGymActions {

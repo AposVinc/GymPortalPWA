@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Gym} from '../domain/Gym';
-import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import {Observable, throwError} from 'rxjs';
-import {catchError, retry} from 'rxjs/operators';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {retry} from 'rxjs/operators';
 
 const BASE_URL_GYMS = 'http://localhost:8080/GymREST/rest/gyms';
 const URL_REGION = '?region=';

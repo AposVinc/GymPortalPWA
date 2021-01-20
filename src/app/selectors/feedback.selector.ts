@@ -1,5 +1,5 @@
-import { createSelector } from '@ngrx/store';
-import { IAppState } from '../state/app.states';
+import {createSelector} from '@ngrx/store';
+import {IAppState} from '../state/app.states';
 import {IFeedbackState} from '../state/feedback.states';
 
 const selectFeedbacks = (state: IAppState) => {

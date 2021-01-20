@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {selectCourseByGymIdAndCourseId, selectGymById} from '../../../../../selectors/gym.selector';
+import {selectCourseByGymIdAndCourseId} from '../../../../../selectors/gym.selector';
 import {Store} from '@ngrx/store';
 import {IAppState} from '../../../../../state/app.states';
 

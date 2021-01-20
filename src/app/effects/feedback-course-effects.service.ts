@@ -4,11 +4,20 @@ import {Observable, of} from 'rxjs';
 import {Action, Store} from '@ngrx/store';
 import {catchError, mergeMap, switchMap, tap} from 'rxjs/operators';
 import {FeedbackCourseService} from '../services/feedback-course.service';
-import {EFeedbackCourseActions,
-  ShowAllAction, ShowAllFailureAction, ShowAllSuccessAction,
-  CreateAction, CreateFailureAction, CreateSuccessAction,
-  UpdateAction, UpdateFailureAction, UpdateSuccessAction,
-  DeleteAction, DeleteFailureAction, DeleteSuccessAction
+import {
+  CreateAction,
+  CreateFailureAction,
+  CreateSuccessAction,
+  DeleteAction,
+  DeleteFailureAction,
+  DeleteSuccessAction,
+  EFeedbackCourseActions,
+  ShowAllAction,
+  ShowAllFailureAction,
+  ShowAllSuccessAction,
+  UpdateAction,
+  UpdateFailureAction,
+  UpdateSuccessAction
 } from '../actions/feedback-course.actions';
 import {IAppState} from '../state/app.states';
 import {selectUserToken} from '../selectors/user.selector';

@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {JwtHelperService} from '@auth0/angular-jwt';
-import {HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse} from '@angular/common/http';
-import {Observable, throwError} from 'rxjs';
-import {catchError, retry} from 'rxjs/operators';
+import {HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {retry} from 'rxjs/operators';
 import {LoginData} from '../../domain/LoginData';
 import {User} from '../../domain/User';
 

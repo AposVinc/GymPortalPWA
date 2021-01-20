@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { FeedbacksCourseEffects } from './feedback-course-effects.service';
+import {FeedbacksCourseEffects} from './feedback-course-effects.service';
 
 describe('FeedbacksCourseEffects', () => {
 

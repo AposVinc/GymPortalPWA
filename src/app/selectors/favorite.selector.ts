@@ -1,5 +1,5 @@
-import { createSelector } from '@ngrx/store';
-import { IAppState } from '../state/app.states';
+import {createSelector} from '@ngrx/store';
+import {IAppState} from '../state/app.states';
 import {IFavoriteState} from '../state/favorite.states';
 
 const selectFavorites = (state: IAppState) => {

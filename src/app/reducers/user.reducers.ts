@@ -1,6 +1,6 @@
 import * as fromActions from '../actions/user.actions';
-import {initialUserState, IUserState} from '../state/user.states';
 import {EUserActions} from '../actions/user.actions';
+import {initialUserState, IUserState} from '../state/user.states';
 
 export function userReducer(state = initialUserState, action: fromActions.ALL_USER_REDUCER_ACTIONS): IUserState {
   switch (action.type) {

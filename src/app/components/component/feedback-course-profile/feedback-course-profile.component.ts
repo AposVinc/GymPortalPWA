@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {select, Store} from '@ngrx/store';
+import {Store} from '@ngrx/store';
 import {IAppState} from '../../../state/app.states';
 import {selectPersonalFeedbacksCourse} from '../../../selectors/feedback.selector';
 import {Observable} from 'rxjs';

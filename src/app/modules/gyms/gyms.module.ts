@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
 import {GymComponent} from './components/pages/gym/gym.component';
 import {CourseComponent} from './components/pages/course/course.component';
@@ -11,10 +11,9 @@ import {FeedbackCourseCardComponent} from './components/components/feedback-cour
 import {AddFeedbackComponent} from './components/components/add-feedback/add-feedback.component';
 import {AddFeedbackCourseComponent} from './components/components/add-feedback-course/add-feedback-course.component';
 
-import { GymsRoutingModule } from './gyms-routing.module';
-import { GymsComponent } from './gyms.component';
+import {GymsRoutingModule} from './gyms-routing.module';
+import {GymsComponent} from './gyms.component';
 import {ReactiveFormsModule} from '@angular/forms';
-import {AppModule} from '../../app.module';
 import {TitleComponent} from './components/components/title/title.component';
 
 

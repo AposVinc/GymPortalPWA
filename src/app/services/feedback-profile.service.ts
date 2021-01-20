@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
-import {Observable, throwError} from 'rxjs';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Observable} from 'rxjs';
 import {FeedbackGym} from '../domain/FeedbackGym';
-import {catchError, retry} from 'rxjs/operators';
+import {retry} from 'rxjs/operators';
 import {FeedbackCourse} from '../domain/FeedbackCourse';
 
 const BASE_URL_USERS = 'http://localhost:8080/GymREST/rest/users/';

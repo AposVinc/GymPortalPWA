@@ -1,4 +1,4 @@
-import {Injectable, } from '@angular/core';
+import {Injectable,} from '@angular/core';
 import {Actions, Effect, ofType} from '@ngrx/effects';
 import {Observable, of} from 'rxjs';
 import {Action} from '@ngrx/store';
@@ -6,7 +6,8 @@ import {catchError, mergeMap, switchMap} from 'rxjs/operators';
 import {CourseService} from '../services/course.service';
 import {
   ECourseActions,
-  GetCourseAction, GetCourseFailureAction,
+  GetCourseAction,
+  GetCourseFailureAction,
   GetCourseSuccessAction,
   ShowAllAction,
   ShowAllFailureAction,

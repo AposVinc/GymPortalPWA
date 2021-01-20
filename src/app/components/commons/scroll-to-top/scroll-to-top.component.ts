@@ -1,4 +1,4 @@
-import {Component, HostListener, Inject, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-scroll-to-top',

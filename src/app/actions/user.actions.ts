@@ -1,4 +1,4 @@
-import { Action } from '@ngrx/store';
+import {Action} from '@ngrx/store';
 import {User} from '../domain/User';
 
 export enum EUserActions {

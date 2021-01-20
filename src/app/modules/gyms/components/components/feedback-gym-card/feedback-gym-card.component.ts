@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {IAppState} from '../../../../../state/app.states';
 import {FeedbackGym} from '../../../../../domain/FeedbackGym';

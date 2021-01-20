@@ -25,7 +25,7 @@ import {UpdateProfileComponent} from './components/component/update-profile/upda
 import {CardProfileComponent} from './components/component/card-profile/card-profile.component';
 import {appReducers, localStorageSyncReducer} from './reducers/app.reducers';
 import {MetaReducer, StoreModule} from '@ngrx/store';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 
 import {AuthService} from './services/auth/auth.service';
 import {UserService} from './services/user.service';
@@ -45,8 +45,8 @@ import {FeedbacksProfileEffects} from './effects/feedback-profile-effects.servic
 import {FeedbacksGymEffects} from './effects/feedback-gym-effects.service';
 import {FeedbacksCourseEffects} from './effects/feedback-course-effects.service';
 import {FavoriteEffects} from './effects/favorite-effects.service';
-import { TitleComponent } from './components/component/title/title.component';
-import { ScrollToTopComponent } from './components/commons/scroll-to-top/scroll-to-top.component';
+import {TitleComponent} from './components/component/title/title.component';
+import {ScrollToTopComponent} from './components/commons/scroll-to-top/scroll-to-top.component';
 import {ErrorInterceptor} from './helpers/error.interceptor';
 
 const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
