@@ -1,15 +1,18 @@
 import * as fromActions from '../actions/feedback-profile.actions';
 import * as fromActionsFeedbacksGym from '../actions/feedback-gym.actions';
 import * as fromActionsFeedbacksCourse from '../actions/feedback-course.actions';
-import { IFeedbackState, initialFeedbackState } from '../state/feedback.states';
+import * as fromCommonActions from '../actions/common.actions';
 import {EFeedbackProfileActions} from '../actions/feedback-profile.actions';
 import {EFeedbackGymActions} from '../actions/feedback-gym.actions';
 import {EFeedbackCourseActions} from '../actions/feedback-course.actions';
+import {ECommonActions} from '../actions/common.actions';
+import { IFeedbackState, initialFeedbackState } from '../state/feedback.states';
 
 export function feedbackReducer(state = initialFeedbackState,
                                 action: fromActions.ALL_FEEDBACK_PROFILE_REDUCER_ACTIONS |
                                   fromActionsFeedbacksGym.ALL_FEEDBACK_GYM_REDUCER_ACTIONS |
-                                  fromActionsFeedbacksCourse.ALL_FEEDBACK_COURSE_REDUCER_ACTIONS): IFeedbackState {
+                                  fromActionsFeedbacksCourse.ALL_FEEDBACK_COURSE_REDUCER_ACTIONS |
+                                  fromCommonActions.ALL_COMMON_REDUCER_ACTIONS): IFeedbackState {
   switch (action.type) {
     case EFeedbackProfileActions.SHOW_ALL_FOR_GYM: {
       return {
@@ -192,6 +195,14 @@ export function feedbackReducer(state = initialFeedbackState,
       };
     }
 
+    case ECommonActions.LOGGED_OUT: {
+      return {
+        ...state,
+        feedbacksGym: [],
+        feedbacksCourse: [],
+        loading: false,
+      };
+    }
 
     default:
       return state;

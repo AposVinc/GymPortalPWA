@@ -6,6 +6,6 @@ export interface IGymState {
 }
 
 export const initialGymState: IGymState = {
-  gyms: null,
+  gyms: [],
   loading: false,
 };

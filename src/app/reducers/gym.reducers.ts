@@ -2,15 +2,18 @@ import * as fromActionsGym from '../actions/gym.actions';
 import * as fromActionsCourse from '../actions/course.actions';
 import * as fromActionsFeedbacksGym from '../actions/feedback-gym.actions';
 import * as fromActionsFeedbacksCourse from '../actions/feedback-course.actions';
-import {IGymState, initialGymState} from '../state/gym.states';
+import * as fromCommonActions from '../actions/common.actions';
 import {EGymActions} from '../actions/gym.actions';
 import {ECourseActions} from '../actions/course.actions';
 import {EFeedbackGymActions} from '../actions/feedback-gym.actions';
 import {EFeedbackCourseActions} from '../actions/feedback-course.actions';
+import {IGymState, initialGymState} from '../state/gym.states';
+import {ECommonActions} from '../actions/common.actions';
 
 export function gymReducer(state = initialGymState,
                            action: fromActionsGym.ALL_GYM_REDUCER_ACTIONS | fromActionsCourse.ALL_COURSE_REDUCER_ACTIONS |
-                             fromActionsFeedbacksGym.ALL_FEEDBACK_GYM_REDUCER_ACTIONS | fromActionsFeedbacksCourse.ALL_FEEDBACK_COURSE_REDUCER_ACTIONS): IGymState {
+                             fromActionsFeedbacksGym.ALL_FEEDBACK_GYM_REDUCER_ACTIONS | fromActionsFeedbacksCourse.ALL_FEEDBACK_COURSE_REDUCER_ACTIONS |
+                             fromCommonActions.ALL_COMMON_REDUCER_ACTIONS): IGymState {
   switch (action.type) {
 
     // Gym
@@ -444,6 +447,14 @@ export function gymReducer(state = initialGymState,
               return {...gym};
             }
           }),
+        loading: false,
+      };
+    }
+
+    case ECommonActions.LOGGED_OUT: {
+      return {
+        ...state,
+        gyms: [],
         loading: false,
       };
     }

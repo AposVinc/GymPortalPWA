@@ -1,11 +1,15 @@
 import * as fromFavoriteGymActions from '../actions/favorite-gym.actions';
 import * as fromFavoriteCourseActions from '../actions/favorite-course.actions';
-import {IFavoriteState, initialFavoriteState} from '../state/favorite.states';
+import * as fromCommonActions from '../actions/common.actions';
 import {EFavoriteGymActions} from '../actions/favorite-gym.actions';
 import {EFavoriteCourseActions} from '../actions/favorite-course.actions';
+import {ECommonActions} from '../actions/common.actions';
+import {IFavoriteState, initialFavoriteState} from '../state/favorite.states';
 
 export function favoriteReducer(state = initialFavoriteState,
-                                action: fromFavoriteGymActions.ALL_FAVORITE_GYM_REDUCER_ACTIONS | fromFavoriteCourseActions.ALL_FAVORITE_COURSE_REDUCER_ACTIONS): IFavoriteState {
+                                action: fromFavoriteGymActions.ALL_FAVORITE_GYM_REDUCER_ACTIONS |
+                                  fromFavoriteCourseActions.ALL_FAVORITE_COURSE_REDUCER_ACTIONS |
+                                  fromCommonActions.ALL_COMMON_REDUCER_ACTIONS): IFavoriteState {
   switch (action.type) {
 
     // Gym
@@ -129,6 +133,15 @@ export function favoriteReducer(state = initialFavoriteState,
       return {
         ...state,
         courses: [...state.courses].filter(c => c.id !== action.payload.id),
+        loading: false,
+      };
+    }
+
+    case ECommonActions.LOGGED_OUT: {
+      return {
+        ...state,
+        gyms: [],
+        courses: [],
         loading: false,
       };
     }
