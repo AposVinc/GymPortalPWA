@@ -9,11 +9,11 @@ import {CreateAction, UpdateAction} from '../../../../../actions/feedback-course
 import {Observable} from 'rxjs';
 
 @Component({
-  selector: 'app-add-feedback-course',
-  templateUrl: './add-feedback-course.component.html',
-  styleUrls: ['./add-feedback-course.component.css']
+  selector: 'app-add-feedback-course-card',
+  templateUrl: './add-feedback-course-card.component.html',
+  styleUrls: ['./add-feedback-course-card.component.css']
 })
-export class AddFeedbackCourseComponent implements OnInit {
+export class AddFeedbackCourseCardComponent implements OnInit {
 
   idGym: number;
   idCourse: number;

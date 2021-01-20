@@ -9,11 +9,11 @@ import {selectPersonalFeedbackGymByGymId} from '../../../../../selectors/feedbac
 import {Observable} from 'rxjs';
 
 @Component({
-  selector: 'app-add-feedback',
-  templateUrl: './add-feedback.component.html',
-  styleUrls: ['./add-feedback.component.css']
+  selector: 'app-add-feedback-gym-card',
+  templateUrl: './add-feedback-gym-card.component.html',
+  styleUrls: ['./add-feedback-gym-card.component.css']
 })
-export class AddFeedbackComponent implements OnInit {
+export class AddFeedbackGymCardComponent implements OnInit {
 
   idGym: number;
   idExistingFeedback: number;

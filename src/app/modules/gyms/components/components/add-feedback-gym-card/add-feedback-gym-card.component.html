@@ -9,7 +9,7 @@
   <div class="form-group">
     <label for="rating" i18n="@@FeedbackComponent-RatingLabel">Rating</label>
     <input class="form-control" formControlName="rating" id="rating" max="10" min="1" type="number">
-    <div *ngIf="feedbackForm.get('feed').dirty && !feedbackForm.get('feed').valid" class="alert alert-danger" i18n="@@FeedbackComponent-ErrorRating">
+    <div *ngIf="feedbackForm.get('rating').dirty && !feedbackForm.get('rating').valid" class="alert alert-danger" i18n="@@FeedbackComponent-ErrorRating">
       <p>Invalid field</p>
     </div>
   </div>

@@ -8,13 +8,15 @@ import {GymCardComponent} from './components/components/gym-card/gym-card.compon
 import {CourseCardComponent} from './components/components/course-card/course-card.component';
 import {FeedbackGymCardComponent} from './components/components/feedback-gym-card/feedback-gym-card.component';
 import {FeedbackCourseCardComponent} from './components/components/feedback-course-card/feedback-course-card.component';
-import {AddFeedbackComponent} from './components/components/add-feedback/add-feedback.component';
-import {AddFeedbackCourseComponent} from './components/components/add-feedback-course/add-feedback-course.component';
+import { AddFeedbackGymCardComponent } from './components/components/add-feedback-gym-card/add-feedback-gym-card.component';
+import { AddFeedbackCourseCardComponent } from './components/components/add-feedback-course-card/add-feedback-course-card.component';
+import {TitleComponent} from './components/components/title/title.component';
 
 import {GymsRoutingModule} from './gyms-routing.module';
 import {GymsComponent} from './gyms.component';
 import {ReactiveFormsModule} from '@angular/forms';
-import {TitleComponent} from './components/components/title/title.component';
+import { AddFeedbackGymComponent } from './components/pages/add-feedback-gym/add-feedback-gym.component';
+import { AddFeedbackCourseComponent } from './components/pages/add-feedback-course/add-feedback-course.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import {TitleComponent} from './components/components/title/title.component';
     CourseCardComponent,
     FeedbackGymCardComponent,
     FeedbackCourseCardComponent,
-    AddFeedbackComponent,
+    AddFeedbackGymCardComponent,
+    AddFeedbackCourseCardComponent,
+    AddFeedbackGymComponent,
     AddFeedbackCourseComponent,
   ],
   imports: [

@@ -2,17 +2,17 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
 import {GymsComponent} from './gyms.component';
-import {AddFeedbackComponent} from './components/components/add-feedback/add-feedback.component';
 import {AuthGuard} from '../../helpers/auth-guard';
 import {CourseComponent} from './components/pages/course/course.component';
 import {FeedbackComponent} from './components/pages/feedback/feedback.component';
-import {AddFeedbackCourseComponent} from './components/components/add-feedback-course/add-feedback-course.component';
+import {AddFeedbackGymComponent} from './components/pages/add-feedback-gym/add-feedback-gym.component';
+import {AddFeedbackCourseComponent} from './components/pages/add-feedback-course/add-feedback-course.component';
 
 const routes: Routes = [
   { path: '', component: GymsComponent }, // , canActivate: [AuthGuard]
 
-  {path: ':idGym/feedbacks/add', component: AddFeedbackComponent, canActivate: [AuthGuard]},
-  {path: ':idGym/feedbacks/:idFeedback', component: AddFeedbackComponent, canActivate: [AuthGuard]},
+  {path: ':idGym/feedbacks/add', component: AddFeedbackGymComponent, canActivate: [AuthGuard]},
+  {path: ':idGym/feedbacks/:idFeedback', component: AddFeedbackGymComponent, canActivate: [AuthGuard]},
 
   {path: ':idGym/courses', component: CourseComponent}, // , canActivate: [AuthGuard]
   {path: ':idGym/courses/:idCourse/feedbacks', component: FeedbackComponent}, // , canActivate: [AuthGuard]
