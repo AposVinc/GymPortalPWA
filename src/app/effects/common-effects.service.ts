@@ -42,7 +42,7 @@ export class CommonEffects {
       ofType<LoggedOutAction>(ECommonActions.LOGGED_OUT),
       switchMap(() => of(new LogOutAction())),
       tap(() => {
-        return this.router.navigate(['/login']);
+        return this.router.navigate(['/']);
       })
     );
 

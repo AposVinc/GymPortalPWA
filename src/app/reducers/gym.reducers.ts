@@ -12,8 +12,7 @@ import {ECommonActions} from '../actions/common.actions';
 
 export function gymReducer(state = initialGymState,
                            action: fromActionsGym.ALL_GYM_REDUCER_ACTIONS | fromActionsCourse.ALL_COURSE_REDUCER_ACTIONS |
-                             fromActionsFeedbacksGym.ALL_FEEDBACK_GYM_REDUCER_ACTIONS | fromActionsFeedbacksCourse.ALL_FEEDBACK_COURSE_REDUCER_ACTIONS |
-                             fromCommonActions.ALL_COMMON_REDUCER_ACTIONS): IGymState {
+                             fromActionsFeedbacksGym.ALL_FEEDBACK_GYM_REDUCER_ACTIONS | fromActionsFeedbacksCourse.ALL_FEEDBACK_COURSE_REDUCER_ACTIONS ): IGymState {
   switch (action.type) {
 
     // Gym
@@ -447,14 +446,6 @@ export function gymReducer(state = initialGymState,
               return {...gym};
             }
           }),
-        loading: false,
-      };
-    }
-
-    case ECommonActions.LOGGED_OUT: {
-      return {
-        ...state,
-        gyms: [],
         loading: false,
       };
     }
