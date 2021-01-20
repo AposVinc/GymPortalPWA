@@ -37,7 +37,13 @@ export class FeedbacksProfileEffects {
     ofType<ShowAllForGymAction>(EFeedbackProfileActions.SHOW_ALL_FOR_GYM),
     switchMap(() => this.store.select(selectUserDetail)),
     withLatestFrom(this.store.select(selectUserToken)),
-    switchMap(([user, token]) => this.feedbackProfileService.getAllFeedbacksToGym(user.id, token)),
+    switchMap(([user, token]) => {
+      if (token.length) {
+        return this.feedbackProfileService.getAllFeedbacksToGym(user.id, token);
+      } else {
+        return [[]];
+      }
+    }),
     switchMap((feedbacks) => of(new ShowAllForGymSuccessAction(feedbacks))),
     catchError(() => of(new ShowAllForGymFailureAction()))
     )
@@ -47,7 +53,13 @@ export class FeedbacksProfileEffects {
     ofType<ShowAllForCourseAction>(EFeedbackProfileActions.SHOW_ALL_FOR_COURSE),
     switchMap(() => this.store.select(selectUserDetail)),
     withLatestFrom(this.store.select(selectUserToken)),
-    switchMap(([user, token]) => this.feedbackProfileService.getAllFeedbacksToCourse(user.id, token)),
+    switchMap(([user, token]) => {
+      if (token.length) {
+        return this.feedbackProfileService.getAllFeedbacksToCourse(user.id, token);
+      } else {
+        return [[]];
+      }
+    }),
     switchMap((feedbacks) => of(new ShowAllForCourseSuccessAction(feedbacks))),
     catchError(() => of(new ShowAllForCourseFailureAction()))
     )

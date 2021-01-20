@@ -54,7 +54,13 @@ export class FavoriteEffects {
     ofType<ShowAllFavoritesGymAction>(EFavoriteGymActions.SHOW_ALL),
     switchMap(() => this.store.select(selectUserDetail)),
     withLatestFrom(this.store.select(selectUserToken)),
-    switchMap(([user, token]) => this.favoriteService.getAllFavoriteGyms(user.id, token)),
+    switchMap(([user, token]) => {
+      if (token.length) {
+        return this.favoriteService.getAllFavoriteGyms(user.id, token);
+      } else {
+        return [[]];
+      }
+    }),
     switchMap((favorites) => of(new ShowAllFavoritesGymSuccessAction(favorites))),
     catchError(() => of(new ShowAllFavoritesGymFailureAction()))
     ),
@@ -106,7 +112,13 @@ export class FavoriteEffects {
     ofType<ShowAllFavoritesCourseAction>(EFavoriteCourseActions.SHOW_ALL),
     switchMap(() => this.store.select(selectUserDetail)),
     withLatestFrom(this.store.select(selectUserToken)),
-    switchMap(([user, token]) => this.favoriteService.getAllFavoriteCourses(user.id, token)),
+    switchMap(([user, token]) => {
+      if (token.length) {
+        return this.favoriteService.getAllFavoriteCourses(user.id, token);
+      } else {
+        return [[]];
+      }
+    }),
     switchMap((favorites) => of(new ShowAllFavoritesCourseSuccessAction(favorites))),
     catchError(() => of(new ShowAllFavoritesCourseFailureAction()))
     )
