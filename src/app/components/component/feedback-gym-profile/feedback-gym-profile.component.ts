@@ -17,7 +17,7 @@ export class FeedbackGymProfileComponent implements OnInit {
   feedbacks: Observable<FeedbackGym[]>;
 
   constructor(private store: Store<IAppState>, public utilityService: Utility) {
-    this.store.dispatch( new ShowAllForGymAction());
+    // this.store.dispatch( new ShowAllForGymAction());
   }
 
   ngOnInit(): void {

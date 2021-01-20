@@ -17,7 +17,7 @@ export class FavoriteGymCardComponent implements OnInit {
   favorites: Observable<Gym[]>;
 
   constructor(private store: Store<IAppState>, public utilityService: Utility) {
-    this.store.dispatch( new ShowAllFavoritesGymAction());
+    // this.store.dispatch( new ShowAllFavoritesGymAction());
   }
 
   ngOnInit(): void {
