@@ -2,7 +2,7 @@ import {User} from '../domain/User';
 
 export interface IUserState {
   user: User | null;
-  token: string | null;
+  token: string;
   loading: boolean;
 }
 
