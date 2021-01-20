@@ -1,8 +1,8 @@
-import {Injectable,} from '@angular/core';
-import {Actions, Effect, ofType} from '@ngrx/effects';
-import {Observable, of} from 'rxjs';
+import {Injectable} from '@angular/core';
+import {Actions, createEffect, ofType} from '@ngrx/effects';
+import {of} from 'rxjs';
 import {Router} from '@angular/router';
-import {Action, Store} from '@ngrx/store';
+import {Store} from '@ngrx/store';
 import {switchMap, tap} from 'rxjs/operators';
 import {AuthService} from '../services/auth/auth.service';
 import {UserService} from '../services/user.service';
@@ -16,35 +16,26 @@ export class CommonEffects {
   constructor(private store: Store<IAppState>, private actions: Actions, private authService: AuthService, private userService: UserService, private router: Router) {
   }
 
-  @Effect()
-  loginSuccess: Observable<Action> =
-    this.actions.pipe(
-      ofType<LoginSuccessAction>(EUserActions.LOGIN_SUCCESS),
-      switchMap(() => of(new LoggedInAction())),
-      tap(() => {
-        return this.router.navigate(['/']);
-      })
-    );
+  loginSuccess = createEffect(() => this.actions.pipe(
+    ofType<LoginSuccessAction>(EUserActions.LOGIN_SUCCESS),
+    switchMap(() => of(new LoggedInAction())),
+    tap(() => this.router.navigate(['/']))
+    )
+  );
 
-  @Effect()
-  logonSuccess: Observable<Action> =
-    this.actions.pipe(
-      ofType<RegisterSuccessAction>(EUserActions.REGISTER_SUCCESS),
-      switchMap(() => of(new LoggedInAction())),
-      tap(() => {
-        return this.router.navigate(['/']);
-      })
-    );
+  logonSuccess = createEffect(() => this.actions.pipe(
+    ofType<RegisterSuccessAction>(EUserActions.REGISTER_SUCCESS),
+    switchMap(() => of(new LoggedInAction())),
+    tap(() => this.router.navigate(['/']))
+    )
+  );
 
-  @Effect()
-  logout: Observable<Action> =
-    this.actions.pipe(
-      ofType<LoggedOutAction>(ECommonActions.LOGGED_OUT),
-      switchMap(() => of(new LogOutAction())),
-      tap(() => {
-        return this.router.navigate(['/']);
-      })
-    );
+  logout = createEffect(() => this.actions.pipe(
+    ofType<LoggedOutAction>(ECommonActions.LOGGED_OUT),
+    switchMap(() => of(new LogOutAction())),
+    tap(() => this.router.navigate(['/']))
+    )
+  );
 
 }
 

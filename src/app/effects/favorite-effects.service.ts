@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {Actions, Effect, ofType} from '@ngrx/effects';
-import {Observable, of} from 'rxjs';
-import {Action, Store} from '@ngrx/store';
+import {Actions, createEffect, ofType} from '@ngrx/effects';
+import {of} from 'rxjs';
+import {Store} from '@ngrx/store';
 import {catchError, mergeMap, switchMap, withLatestFrom} from 'rxjs/operators';
 import {
   CreateFavoriteGymAction,
@@ -37,127 +37,119 @@ export class FavoriteEffects {
 
   constructor(private store: Store<IAppState>, private actions: Actions, private favoriteService: FavoriteService) { }
 
-  @Effect()
-  loginSuccessFetchGym: Observable<Action> =
-    this.actions.pipe(
-      ofType<LoginSuccessAction>(EUserActions.LOGIN_SUCCESS),
-      switchMap(() => of(new ShowAllFavoritesGymAction()))
-    );
-  @Effect()
-  loginSuccessFetchCourse: Observable<Action> =
-    this.actions.pipe(
-      ofType<LoginSuccessAction>(EUserActions.LOGIN_SUCCESS),
-      switchMap(() => of(new ShowAllFavoritesCourseAction()))
-    );
+  loginSuccessFetchGym = createEffect(() => this.actions.pipe(
+    ofType<LoginSuccessAction>(EUserActions.LOGIN_SUCCESS),
+    switchMap(() => of(new ShowAllFavoritesGymAction()))
+    )
+  );
+  loginSuccessFetchCourse = createEffect(() => this.actions.pipe(
+    ofType<LoginSuccessAction>(EUserActions.LOGIN_SUCCESS),
+    switchMap(() => of(new ShowAllFavoritesCourseAction()))
+    )
+  );
 
 
   // Gym
-  @Effect()
-  findAllForGym: Observable<Action> =
-    this.actions.pipe(
-      ofType<ShowAllFavoritesGymAction>(EFavoriteGymActions.SHOW_ALL),
-      switchMap(() => this.store.select(selectUserDetail)),
-      withLatestFrom(this.store.select(selectUserToken)),
-      switchMap(([user, token]) => this.favoriteService.getAllFavoriteGyms(user.id, token)),
-      switchMap((favorites) => of(new ShowAllFavoritesGymSuccessAction(favorites))),
-      catchError(() => of(new ShowAllFavoritesGymFailureAction()))
-    );
+  findAllForGym = createEffect(() => this.actions.pipe(
+    ofType<ShowAllFavoritesGymAction>(EFavoriteGymActions.SHOW_ALL),
+    switchMap(() => this.store.select(selectUserDetail)),
+    withLatestFrom(this.store.select(selectUserToken)),
+    switchMap(([user, token]) => this.favoriteService.getAllFavoriteGyms(user.id, token)),
+    switchMap((favorites) => of(new ShowAllFavoritesGymSuccessAction(favorites))),
+    catchError(() => of(new ShowAllFavoritesGymFailureAction()))
+    ),
+  );
 
-  @Effect()
-  createFavoriteGym: Observable<Action> =
-    this.actions.pipe(
-      ofType<CreateFavoriteGymAction>(EFavoriteGymActions.CREATE),
-      switchMap((action) => {
-        return this.store.select(selectUserDetail).pipe(
-          mergeMap( (user) => {
-            return this.store.select(selectUserToken).pipe(
-              mergeMap( (token) => {
-                return this.favoriteService.addGymToFavorite(user.id, action.gym.id, token).pipe(
-                  mergeMap(() => [action.gym])
-                );
-              })
-            );
-          })
-        );
-      }),
-      switchMap((payload) => of(new CreateFavoriteGymSuccessAction(payload))),
-      catchError(() => of(new CreateFavoriteGymFailureAction()))
-    );
+  createFavoriteGym = createEffect(() => this.actions.pipe(
+    ofType<CreateFavoriteGymAction>(EFavoriteGymActions.CREATE),
+    switchMap((action) => {
+      return this.store.select(selectUserDetail).pipe(
+        mergeMap( (user) => {
+          return this.store.select(selectUserToken).pipe(
+            mergeMap( (token) => {
+              return this.favoriteService.addGymToFavorite(user.id, action.gym.id, token).pipe(
+                mergeMap(() => [action.gym])
+              );
+            })
+          );
+        })
+      );
+    }),
+    switchMap((payload) => of(new CreateFavoriteGymSuccessAction(payload))),
+    catchError(() => of(new CreateFavoriteGymFailureAction()))
+    )
+  );
 
-  @Effect()
-  deleteFavoriteGym: Observable<Action> =
-    this.actions.pipe(
-      ofType<DeleteFavoriteGymAction>(EFavoriteGymActions.DELETE),
-      switchMap((action) => {
-        return this.store.select(selectUserDetail).pipe(
-          mergeMap( (user) => {
-            return this.store.select(selectUserToken).pipe(
-              mergeMap( (token) => {
-                return this.favoriteService.removeGymToFavorite(user.id, action.gym.id, token).pipe(
-                  mergeMap(() => [action.gym])
-                );
-              })
-            );
-          })
-        );
-      }),
-      switchMap((payload) => of(new DeleteFavoriteGymSuccessAction(payload))),
-      catchError(() => of(new DeleteFavoriteGymFailureAction()))
-    );
+  deleteFavoriteGym = createEffect(() => this.actions.pipe(
+    ofType<DeleteFavoriteGymAction>(EFavoriteGymActions.DELETE),
+    switchMap((action) => {
+      return this.store.select(selectUserDetail).pipe(
+        mergeMap( (user) => {
+          return this.store.select(selectUserToken).pipe(
+            mergeMap( (token) => {
+              return this.favoriteService.removeGymToFavorite(user.id, action.gym.id, token).pipe(
+                mergeMap(() => [action.gym])
+              );
+            })
+          );
+        })
+      );
+    }),
+    switchMap((payload) => of(new DeleteFavoriteGymSuccessAction(payload))),
+    catchError(() => of(new DeleteFavoriteGymFailureAction()))
+    )
+  );
 
 
   // Course
-  @Effect()
-  findAllForCourse: Observable<Action> =
-    this.actions.pipe(
-      ofType<ShowAllFavoritesCourseAction>(EFavoriteCourseActions.SHOW_ALL),
-      switchMap(() => this.store.select(selectUserDetail)),
-      withLatestFrom(this.store.select(selectUserToken)),
-      switchMap(([user, token]) => this.favoriteService.getAllFavoriteCourses(user.id, token)),
-      switchMap((favorites) => of(new ShowAllFavoritesCourseSuccessAction(favorites))),
-      catchError(() => of(new ShowAllFavoritesCourseFailureAction()))
-    );
+  findAllForCourse = createEffect(() => this.actions.pipe(
+    ofType<ShowAllFavoritesCourseAction>(EFavoriteCourseActions.SHOW_ALL),
+    switchMap(() => this.store.select(selectUserDetail)),
+    withLatestFrom(this.store.select(selectUserToken)),
+    switchMap(([user, token]) => this.favoriteService.getAllFavoriteCourses(user.id, token)),
+    switchMap((favorites) => of(new ShowAllFavoritesCourseSuccessAction(favorites))),
+    catchError(() => of(new ShowAllFavoritesCourseFailureAction()))
+    )
+  );
 
-  @Effect()
-  createFavoriteCourse: Observable<Action> =
-    this.actions.pipe(
-      ofType<CreateFavoriteCourseAction>(EFavoriteCourseActions.CREATE),
-      switchMap((action) => {
-        return this.store.select(selectUserDetail).pipe(
-          mergeMap( (user) => {
-            return this.store.select(selectUserToken).pipe(
-              mergeMap( (token) => {
-                return this.favoriteService.addCourseToFavorite(user.id, action.course.id, token).pipe(
-                  mergeMap(() => [action.course])
-                );
-              })
-            );
-          })
-        );
-      }),
-      switchMap((payload) => of(new CreateFavoriteCourseSuccessAction(payload))),
-      catchError(() => of(new CreateFavoriteCourseFailureAction()))
-    );
+  createFavoriteCourse = createEffect(() => this.actions.pipe(
+    ofType<CreateFavoriteCourseAction>(EFavoriteCourseActions.CREATE),
+    switchMap((action) => {
+      return this.store.select(selectUserDetail).pipe(
+        mergeMap( (user) => {
+          return this.store.select(selectUserToken).pipe(
+            mergeMap( (token) => {
+              return this.favoriteService.addCourseToFavorite(user.id, action.course.id, token).pipe(
+                mergeMap(() => [action.course])
+              );
+            })
+          );
+        })
+      );
+    }),
+    switchMap((payload) => of(new CreateFavoriteCourseSuccessAction(payload))),
+    catchError(() => of(new CreateFavoriteCourseFailureAction()))
+    )
+  );
 
-  @Effect()
-  deleteFavoriteCourse: Observable<Action> =
-    this.actions.pipe(
-      ofType<DeleteFavoriteCourseAction>(EFavoriteCourseActions.DELETE),
-      switchMap((action) => {
-        return this.store.select(selectUserDetail).pipe(
-          mergeMap( (user) => {
-            return this.store.select(selectUserToken).pipe(
-              mergeMap( (token) => {
-                return this.favoriteService.removeCourseToFavorite(user.id, action.course.id, token).pipe(
-                  mergeMap(() => [action.course])
-                );
-              })
-            );
-          })
-        );
-      }),
-      switchMap((payload) => of(new DeleteFavoriteCourseSuccessAction(payload))),
-      catchError(() => of(new DeleteFavoriteCourseFailureAction()))
-    );
+  deleteFavoriteCourse = createEffect(() => this.actions.pipe(
+    ofType<DeleteFavoriteCourseAction>(EFavoriteCourseActions.DELETE),
+    switchMap((action) => {
+      return this.store.select(selectUserDetail).pipe(
+        mergeMap( (user) => {
+          return this.store.select(selectUserToken).pipe(
+            mergeMap( (token) => {
+              return this.favoriteService.removeCourseToFavorite(user.id, action.course.id, token).pipe(
+                mergeMap(() => [action.course])
+              );
+            })
+          );
+        })
+      );
+    }),
+    switchMap((payload) => of(new DeleteFavoriteCourseSuccessAction(payload))),
+    catchError(() => of(new DeleteFavoriteCourseFailureAction()))
+    )
+  );
 
 }
