@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {Actions, Effect, ofType} from '@ngrx/effects';
 import {Observable, of} from 'rxjs';
 import {Action, Store} from '@ngrx/store';
-import {catchError, mergeMap, switchMap} from 'rxjs/operators';
+import {catchError, mergeMap, switchMap, withLatestFrom} from 'rxjs/operators';
 import {
   EFavoriteGymActions,
   ShowAllFavoritesGymAction, ShowAllFavoritesGymFailureAction, ShowAllFavoritesGymSuccessAction,
@@ -44,17 +44,9 @@ export class FavoriteEffects {
   findAllForGym: Observable<Action> =
     this.actions.pipe(
       ofType<ShowAllFavoritesGymAction>(EFavoriteGymActions.SHOW_ALL),
-      switchMap(() => {
-        return this.store.select(selectUserDetail).pipe(
-          mergeMap( (user) => {
-            return this.store.select(selectUserToken).pipe(
-              mergeMap( (token) => {
-                return this.favoriteService.getAllFavoriteGyms(user.id, token);
-              })
-            );
-          })
-        );
-      }),
+      switchMap(() => this.store.select(selectUserDetail)),
+      withLatestFrom(this.store.select(selectUserToken)),
+      switchMap(([user, token]) => this.favoriteService.getAllFavoriteGyms(user.id, token)),
       switchMap((favorites) => of(new ShowAllFavoritesGymSuccessAction(favorites))),
       catchError(() => of(new ShowAllFavoritesGymFailureAction()))
     );
@@ -107,17 +99,9 @@ export class FavoriteEffects {
   findAllForCourse: Observable<Action> =
     this.actions.pipe(
       ofType<ShowAllFavoritesCourseAction>(EFavoriteCourseActions.SHOW_ALL),
-      switchMap(() => {
-        return this.store.select(selectUserDetail).pipe(
-          mergeMap( (user) => {
-            return this.store.select(selectUserToken).pipe(
-              mergeMap( (token) => {
-                return this.favoriteService.getAllFavoriteCourses(user.id, token);
-              })
-            );
-          })
-        );
-      }),
+      switchMap(() => this.store.select(selectUserDetail)),
+      withLatestFrom(this.store.select(selectUserToken)),
+      switchMap(([user, token]) => this.favoriteService.getAllFavoriteCourses(user.id, token)),
       switchMap((favorites) => of(new ShowAllFavoritesCourseSuccessAction(favorites))),
       catchError(() => of(new ShowAllFavoritesCourseFailureAction()))
     );

@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {Actions, Effect, ofType} from '@ngrx/effects';
 import {Observable, of} from 'rxjs';
 import {Action, Store} from '@ngrx/store';
-import {catchError, mergeMap, switchMap, tap} from 'rxjs/operators';
+import {catchError, concatMap, mergeMap, switchMap, tap, withLatestFrom} from 'rxjs/operators';
 import {
   EFeedbackProfileActions,
   ShowAllForGymAction, ShowAllForGymFailureAction, ShowAllForGymSuccessAction,
@@ -35,17 +35,9 @@ export class FeedbacksProfileEffects {
   findAllForGym: Observable<Action> =
     this.actions.pipe(
       ofType<ShowAllForGymAction>(EFeedbackProfileActions.SHOW_ALL_FOR_GYM),
-      switchMap(() => {
-        return this.store.select(selectUserDetail).pipe(
-          mergeMap( (user) => {
-            return this.store.select(selectUserToken).pipe(
-              mergeMap( (token) => {
-                return this.feedbackProfileService.getAllFeedbacksToGym(user.id, token);
-              })
-            );
-          })
-        );
-      }),
+      switchMap(() => this.store.select(selectUserDetail)),
+      withLatestFrom(this.store.select(selectUserToken)),
+      switchMap(([user, token]) => this.feedbackProfileService.getAllFeedbacksToGym(user.id, token)),
       switchMap((feedbacks) => of(new ShowAllForGymSuccessAction(feedbacks))),
       catchError(() => of(new ShowAllForGymFailureAction()))
     );
@@ -54,17 +46,9 @@ export class FeedbacksProfileEffects {
   findAllForCourse: Observable<Action> =
     this.actions.pipe(
       ofType<ShowAllForCourseAction>(EFeedbackProfileActions.SHOW_ALL_FOR_COURSE),
-      switchMap(() => {
-        return this.store.select(selectUserDetail).pipe(
-          mergeMap( (user) => {
-            return this.store.select(selectUserToken).pipe(
-              mergeMap( (token) => {
-                return this.feedbackProfileService.getAllFeedbacksToCourse(user.id, token);
-              })
-            );
-          })
-        );
-      }),
+      switchMap(() => this.store.select(selectUserDetail)),
+      withLatestFrom(this.store.select(selectUserToken)),
+      switchMap(([user, token]) => this.feedbackProfileService.getAllFeedbacksToCourse(user.id, token)),
       switchMap((feedbacks) => of(new ShowAllForCourseSuccessAction(feedbacks))),
       catchError(() => of(new ShowAllForCourseFailureAction()))
     );
