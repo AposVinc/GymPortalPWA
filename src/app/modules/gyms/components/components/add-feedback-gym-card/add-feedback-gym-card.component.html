@@ -7,16 +7,12 @@
           <div class="form-group">
             <label for="feed" i18n="@@FeedbackComponent-FeedLabel">Feed</label>
             <input class="form-control" formControlName="feed" id="feed" type="text">
-            <div *ngIf="feedbackForm.get('feed').dirty && !feedbackForm.get('feed').valid" class="alert alert-danger" i18n="@@FeedbackComponent-ErrorFeed">
-              <p>Invalid field</p>
-            </div>
+            <div *ngIf="feedbackForm.get('feed').dirty && (feedbackForm.get('feed').dirty && !feedbackForm.get('feed').valid)" class="alert alert-danger" i18n="@@FeedbackComponent-ErrorFeed">Invalid field</div>
           </div>
           <div class="form-group">
             <label for="rating" i18n="@@FeedbackComponent-RatingLabel">Rating</label>
             <input class="form-control" formControlName="rating" id="rating" max="10" min="1" type="number">
-            <div *ngIf="feedbackForm.get('rating').dirty && !feedbackForm.get('rating').valid" class="alert alert-danger" i18n="@@FeedbackComponent-ErrorRating">
-              <p>Invalid field</p>
-            </div>
+            <div *ngIf="feedbackForm.get('rating').dirty && (feedbackForm.get('rating').dirty && !feedbackForm.get('rating').valid)" class="alert alert-danger" i18n="@@FeedbackComponent-ErrorRating">Invalid field</div>
           </div>
           <button [disabled]="!feedbackForm.valid" *ngIf="idExistingFeedback !== 0" class="btn" [ngClass]="feedbackForm.valid ? 'btn-primary' : 'btn-secondary'" i18n="@@ButtonEdit">Edit</button>
           <button [disabled]="!feedbackForm.valid" *ngIf="idExistingFeedback === 0" class="btn" [ngClass]="feedbackForm.valid ? 'btn-success' : 'btn-secondary'" i18n="@@ButtonAdd">Add</button>

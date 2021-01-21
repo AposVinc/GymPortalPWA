@@ -16,7 +16,6 @@ export class LoginFormComponent implements OnInit {
 
   loginForm: FormGroup;
   user: User;
-  loginError: any;
 
 
   constructor(private store: Store<IAppState>, private fb: FormBuilder, public router: Router) {

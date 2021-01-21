@@ -7,28 +7,28 @@
           <div class="form-group col-md-6">
             <label for="name" i18n="@@Form-LabelName">Name</label>
             <input id="name" type="text" name="name" formControlName="name" placeholder="Your Name" class="form-control"> <!--  data-rule="minlen:4" data-msg="Please enter at least 4 chars" -->
-            <div class="validate" *ngIf="updateForm.get('name').dirty && !updateForm.get('name').valid" i18n="@@Form-ErrorName">Invalid field</div>
+            <div class="validate" *ngIf="updateForm.get('name').dirty && (updateForm.get('name').pristine || !updateForm.get('name').valid)" i18n="@@Form-ErrorName">Invalid field</div>
           </div>
           <div class="form-group col-md-6">
             <label for="lastname" i18n="@@Form-LabelLastname">Lastname</label>
             <input id="lastname" type="text" name="lastname" formControlName="lastname" placeholder="Your Lastname" class="form-control"> <!-- data-rule="lastname" data-msg="Please enter a valid email" -->
-            <div class="validate" *ngIf="updateForm.get('lastname').dirty && !updateForm.get('lastname').valid" i18n="@@Form-ErrorLastname">Invalid field</div>
+            <div class="validate" *ngIf="updateForm.get('lastname').dirty && (updateForm.get('lastname').pristine || !updateForm.get('lastname').valid)" i18n="@@Form-ErrorLastname">Invalid field</div>
           </div>
         </div>
         <div class="form-group">
           <label for="username" i18n="@@Form-LabelUsername">Username</label>
           <input id="username" type="text" name="username" formControlName="username" placeholder="Your Username" class="form-control"> <!-- data-rule="lastname" data-msg="Please enter a valid email" -->
-          <div class="validate" *ngIf="updateForm.get('username').dirty && !updateForm.get('username').valid" i18n="@@Form-ErrorUsername">Invalid field</div>
+          <div class="validate" *ngIf="updateForm.get('username').dirty && (updateForm.get('username').pristine || !updateForm.get('username').valid)" i18n="@@Form-ErrorUsername">Invalid field</div>
         </div>
         <div class="form-group">
           <label for="email" i18n="@@Form-LabelEmail">Email</label>
           <input id="email" type="email" name="email" formControlName="email" placeholder="Your Email" class="form-control"> <!-- data-rule="email" data-msg="Please enter a valid email" -->
-          <div class="validate" *ngIf="updateForm.get('email').dirty && !updateForm.get('email').valid" i18n="@@Form-ErrorEmail">Invalid field</div>
+          <div class="validate" *ngIf="updateForm.get('email').dirty && (updateForm.get('email').pristine || !updateForm.get('email').valid)" i18n="@@Form-ErrorEmail">Invalid field</div>
         </div>
         <div class="form-group">
           <label for="password" i18n="@@Form-LabelPassword">Password</label>
           <input id="password" type="password" name="password" formControlName="password" placeholder="Password" class="form-control"> <!-- data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" -->
-          <div class="validate" *ngIf="updateForm.get('password').dirty && !updateForm.get('password').valid" i18n="@@Form-ErrorPassword">Length between 5 and 10 characters</div>
+          <div class="validate" *ngIf="updateForm.get('password').dirty && (updateForm.get('password').pristine || !updateForm.get('password').valid)" i18n="@@Form-ErrorPassword">Length between 5 and 10 characters</div>
         </div>
 
 <!--        <div class="mb-3">-->

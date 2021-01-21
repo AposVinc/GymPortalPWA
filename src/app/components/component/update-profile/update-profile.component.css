@@ -4,7 +4,9 @@
   margin-bottom: .2rem;
 }
 
-
+#contact .php-email-form .validate {
+  display: block;
+}
 
 #contact .php-email-form button.btn-disabled[type="submit"] {
   background: #6c757d;

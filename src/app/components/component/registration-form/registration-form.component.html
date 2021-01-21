@@ -12,27 +12,27 @@
               <div class="form-group">
                 <label for="name" i18n="@@Form-LabelName">Name</label>
                 <input class="form-control" formControlName="name" id="name" type="text">
-                <div *ngIf="registrationForm.get('name').dirty && !registrationForm.get('name').valid" class="alert alert-danger" i18n="@@Form-ErrorName">Invalid field</div>
+                <div *ngIf="registrationForm.get('name').dirty && (registrationForm.get('name').pristine || !registrationForm.get('name').valid)" class="alert alert-danger" i18n="@@Form-ErrorName">Invalid field</div>
               </div>
               <div class="form-group">
                 <label for="lastname" i18n="@@Form-LabelLastname">Lastname</label>
                 <input class="form-control" formControlName="lastname" id="lastname" type="text">
-                <div *ngIf="registrationForm.get('lastname').dirty && !registrationForm.get('lastname').valid" class="alert alert-danger" i18n="@@Form-ErrorLastname">Invalid field</div>
+                <div *ngIf="registrationForm.get('lastname').dirty && (registrationForm.get('lastname').pristine || !registrationForm.get('lastname').valid)" class="alert alert-danger" i18n="@@Form-ErrorLastname">Invalid field</div>
               </div>
               <div class="form-group">
                 <label for="email" i18n="@@Form-LabelEmail">Email</label>
                 <input class="form-control" formControlName="email" id="email" type="email">
-                <div *ngIf="registrationForm.get('email').dirty && !registrationForm.get('email').valid" class="alert alert-danger" i18n="@@Form-ErrorEmail">Invalid field</div>
+                <div *ngIf="registrationForm.get('email').dirty && (registrationForm.get('email').pristine || !registrationForm.get('email').valid)" class="alert alert-danger" i18n="@@Form-ErrorEmail">Invalid field</div>
               </div>
               <div class="form-group">
                 <label for="username" i18n="@@Form-LabelUsername">Username</label>
                 <input class="form-control" formControlName="username" id="username" type="text">
-                <div *ngIf="registrationForm.get('username').dirty && !registrationForm.get('username').valid" class="alert alert-danger" i18n="@@Form-ErrorUsername">Invalid field</div>
+                <div *ngIf="registrationForm.get('username').dirty && (registrationForm.get('username').pristine || !registrationForm.get('username').valid)" class="alert alert-danger" i18n="@@Form-ErrorUsername">Invalid field</div>
               </div>
               <div class="form-group">
                 <label for="password" i18n="@@Form-LabelPassword">Password</label>
                 <input class="form-control" formControlName="password" id="password" type="password">
-                <div *ngIf="registrationForm.get('password').dirty && !registrationForm.get('password').valid" class="alert alert-danger" i18n="@@Form-ErrorPassword">Length between 5 and 10 characters</div>
+                <div *ngIf="registrationForm.get('password').dirty && (registrationForm.get('password').pristine || !registrationForm.get('password').valid)" class="alert alert-danger" i18n="@@Form-ErrorPassword">Length between 5 and 10 characters</div>
               </div>
               <button [disabled]="!registrationForm.valid" class="btn" [ngClass]="registrationForm.valid ? 'btn-success' : 'btn-secondary'" i18n="@@ButtonRegister">Register</button>
             </form>

@@ -5,25 +5,18 @@
     <div class="row justify-content-center align-items-center">
       <div class="col-lg-5">
 
-        <div *ngIf="loginError" class="alert alert-danger">
-          <span *ngIf="loginError.error !== undefined && loginError.error.error !== undefined">
-            {{ loginError.error.error }}
-          </span>
-          <!--          Si è verificato un errore di autenticazione. Controllare i log.-->
-        </div>
-
         <div class="card">
           <div class="card-body">
             <form (ngSubmit)="submit()" [formGroup]="loginForm" class="form">
               <div class="form-group">
                 <label for="username" i18n="@@Form-LabelUsername">Username</label>
                 <input class="form-control" formControlName="username" id="username" type="text">
-                <div *ngIf="loginForm.get('username').dirty && !loginForm.get('username').valid" class="alert alert-danger" i18n="@@Form-ErrorUsername">Invalid field</div>
+                <div *ngIf="loginForm.get('username').dirty && (loginForm.get('username').dirty && !loginForm.get('username').valid)" class="alert alert-danger" i18n="@@Form-ErrorUsername">Invalid field</div>
               </div>
               <div class="form-group">
                 <label for="password" i18n="@@Form-LabelPassword">Password</label>
                 <input class="form-control" formControlName="password" id="password" type="password">
-                <div *ngIf="loginForm.get('password').dirty && !loginForm.get('password').valid" class="alert alert-danger" i18n="@@Form-ErrorPassword">Length between 5 and 10 characters</div>
+                <div *ngIf="loginForm.get('password').dirty && (loginForm.get('password').dirty && !loginForm.get('password').valid)" class="alert alert-danger" i18n="@@Form-ErrorPassword">Length between 5 and 10 characters</div>
               </div>
               <button [disabled]="!loginForm.valid" class="btn" [ngClass]="loginForm.valid ? 'btn-success' : 'btn-secondary'" i18n="@@ButtonLogin">Login</button>
             </form>
