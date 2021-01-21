@@ -34,7 +34,7 @@
                 <input class="form-control" formControlName="password" id="password" type="password">
                 <div *ngIf="registrationForm.get('password').dirty && !registrationForm.get('password').valid" class="alert alert-danger" i18n="@@Form-ErrorPassword">Length between 5 and 10 characters</div>
               </div>
-              <button [disabled]="!registrationForm.valid" class="btn btn-success" i18n="@@ButtonRegister">Register</button>
+              <button [disabled]="!registrationForm.valid" class="btn" [ngClass]="registrationForm.valid ? 'btn-success' : 'btn-secondary'" i18n="@@ButtonRegister">Register</button>
             </form>
 
           </div>

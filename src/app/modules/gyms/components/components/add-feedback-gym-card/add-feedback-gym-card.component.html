@@ -18,8 +18,8 @@
               <p>Invalid field</p>
             </div>
           </div>
-          <button [disabled]="!feedbackForm.valid" *ngIf="idExistingFeedback !== 0" class="btn btn-primary" i18n="@@ButtonEdit">Edit</button>
-          <button [disabled]="!feedbackForm.valid" *ngIf="idExistingFeedback === 0" class="btn btn-success" i18n="@@ButtonAdd">Add</button>
+          <button [disabled]="!feedbackForm.valid" *ngIf="idExistingFeedback !== 0" class="btn" [ngClass]="feedbackForm.valid ? 'btn-primary' : 'btn-secondary'" i18n="@@ButtonEdit">Edit</button>
+          <button [disabled]="!feedbackForm.valid" *ngIf="idExistingFeedback === 0" class="btn" [ngClass]="feedbackForm.valid ? 'btn-success' : 'btn-secondary'" i18n="@@ButtonAdd">Add</button>
         </form>
 
       </div>

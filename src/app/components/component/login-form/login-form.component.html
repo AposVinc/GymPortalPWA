@@ -25,7 +25,7 @@
                 <input class="form-control" formControlName="password" id="password" type="password">
                 <div *ngIf="loginForm.get('password').dirty && !loginForm.get('password').valid" class="alert alert-danger" i18n="@@Form-ErrorPassword">Length between 5 and 10 characters</div>
               </div>
-              <button [disabled]="!loginForm.valid" class="btn btn-success" i18n="@@ButtonLogin">Login</button>
+              <button [disabled]="!loginForm.valid" class="btn" [ngClass]="loginForm.valid ? 'btn-success' : 'btn-secondary'" i18n="@@ButtonLogin">Login</button>
             </form>
           </div>
         </div>
