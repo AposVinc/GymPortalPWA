@@ -13,6 +13,7 @@ const routes: Routes = [
   {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
 
   { path: 'regions/:region/gyms', loadChildren: () => import('./modules/gyms/gyms.module').then(m => m.GymsModule) },
+  { path: 'admin', loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule) },
 
 ];
 
