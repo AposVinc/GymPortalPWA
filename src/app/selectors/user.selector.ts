@@ -26,3 +26,10 @@ export const selectUserLoading = createSelector(
     return state.loading;
   }
 );
+
+export const selectUserErrorMessage = createSelector(
+  selectUser,
+  (state: IUserState) => {
+    return state.errorMessage;
+  }
+);

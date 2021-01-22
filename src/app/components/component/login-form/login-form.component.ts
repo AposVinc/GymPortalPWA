@@ -5,6 +5,8 @@ import {Store} from '@ngrx/store';
 import {IAppState} from '../../../state/app.states';
 import {LoginAction} from '../../../actions/user.actions';
 import {User} from '../../../domain/User';
+import {selectUserErrorMessage} from '../../../selectors/user.selector';
+import {Observable} from 'rxjs';
 
 
 @Component({
@@ -15,6 +17,7 @@ import {User} from '../../../domain/User';
 export class LoginFormComponent implements OnInit {
 
   loginForm: FormGroup;
+  errorMessage: string;
   user: User;
 
 
@@ -26,6 +29,7 @@ export class LoginFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.store.select(selectUserErrorMessage).subscribe(e => this.errorMessage = e);
   }
 
   submit() {

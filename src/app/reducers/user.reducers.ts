@@ -8,12 +8,14 @@ export function userReducer(state = initialUserState, action: fromActions.ALL_US
       return {
         ...state,
         loading: true,
+        errorMessage: null
       };
     }
     case EUserActions.LOGIN_FAILURE: {
       return {
         ...state,
         loading: false,
+        errorMessage: 'Incorrect email and/or password.'
       };
     }
     case EUserActions.LOGIN_SUCCESS: {
@@ -22,6 +24,7 @@ export function userReducer(state = initialUserState, action: fromActions.ALL_US
         token: action.payload.token,
         user: action.payload.user,
         loading: false,
+        errorMessage: null
       };
     }
 
@@ -29,12 +32,14 @@ export function userReducer(state = initialUserState, action: fromActions.ALL_US
       return {
         ...state,
         loading: true,
+        errorMessage: null
       };
     }
     case EUserActions.REGISTER_FAILURE: {
       return {
         ...state,
         loading: false,
+        errorMessage: 'That email/username are already in use.'
       };
     }
     case EUserActions.REGISTER_SUCCESS: {
@@ -43,6 +48,7 @@ export function userReducer(state = initialUserState, action: fromActions.ALL_US
         token: action.payload.token,
         user: action.payload.user,
         loading: false,
+        errorMessage: null
       };
     }
 
@@ -114,6 +120,7 @@ export function userReducer(state = initialUserState, action: fromActions.ALL_US
         user: null,
         token: '',
         loading: false,
+        errorMessage: null
       };
     }
 
