@@ -13,15 +13,22 @@ export class ErrorInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(request).pipe(catchError(err => {
+      if (request.url.includes('auth/login') || request.url.includes('auth/registration') || request.url.includes('auth/admin/login')) {
+        console.log('gestione grafica errore');
+        return next.handle(request);
+      }
+      if (request.url.includes('auth/refresh')) {
+        this.store.dispatch(new LoggedOutAction());
+      }
       if ([401].includes(err.status)) {
         // auto logout if 401 or 403 response returned from api
         console.log('errore 401');
-        this.store.dispatch(new LoggedOutAction());
+        this.store.dispatch(new TokenRefreshAction());
       }
       if ([403].includes(err.status)) {
         // auto logout if 401 or 403 response returned from api
         console.log('errore 403');
-        this.store.dispatch(new TokenRefreshAction());
+        this.store.dispatch(new LoggedOutAction());
       }
       // if ([401, 403].includes(err.status)) {
       //   // auto logout if 401 or 403 response returned from api
@@ -34,7 +41,7 @@ export class ErrorInterceptor implements HttpInterceptor {
       // }
 
       const error = (err && err.error && err.error.message) || err.statusText;
-      console.error(err);
+      // console.error(err);
       return throwError(error);
     }));
   }

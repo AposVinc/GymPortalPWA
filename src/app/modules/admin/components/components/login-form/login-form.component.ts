@@ -12,6 +12,7 @@ import {User} from '../../../../../domain/User';
 export class LoginFormComponent implements OnInit {
 
   loginForm: FormGroup;
+  loginError: any;
   user: User;
 
   constructor(public router: Router, private fb: FormBuilder, private adminService: AdminService) { }
@@ -30,7 +31,8 @@ export class LoginFormComponent implements OnInit {
       localStorage.setItem('admin-token', JSON.stringify(res.headers.get('Authorization')));
       this.router.navigate(['admin']);
     }, error => {
-      return this.router.navigate(['']);
+      this.loginError = error;
+      // return this.router.navigate(['']);
     });
   }
 
