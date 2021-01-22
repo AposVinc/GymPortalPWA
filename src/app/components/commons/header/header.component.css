@@ -6,6 +6,15 @@
   transition: top 0.3s;
 }
 
+#topbar .reserved-area i {
+  color: #50d8af;
+}
+
+#topbar .reserved-area-open {
+  color: #0c2e8a;
+}
+
+
 #header {
   position: fixed;
   top: 30px;
@@ -13,6 +22,11 @@
   width: 100%;
   transition: top 0.3s;
 }
+
+.nav-menu .btn {
+  color: #fff;
+}
+
 
 
 @media (max-width: 768px) {
