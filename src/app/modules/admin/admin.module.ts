@@ -6,15 +6,18 @@ import { AdminComponent } from './admin.component';
 import { TitleComponent } from './components/components/title/title.component';
 import { AddGymCardComponent } from './components/components/add-gym-card/add-gym-card.component';
 import { AddCourseCardComponent } from './components/components/add-course-card/add-course-card.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { LoginComponent } from './components/pages/login/login.component';
+import { LoginFormComponent } from './components/components/login-form/login-form.component';
 
 
 @NgModule({
-  declarations: [AdminComponent, TitleComponent, AddGymCardComponent, AddCourseCardComponent],
-  imports: [
-    CommonModule,
-    AdminRoutingModule,
-    FormsModule
-  ]
+  declarations: [AdminComponent, TitleComponent, AddGymCardComponent, AddCourseCardComponent, LoginComponent, LoginFormComponent],
+    imports: [
+        CommonModule,
+        AdminRoutingModule,
+        FormsModule,
+        ReactiveFormsModule
+    ]
 })
 export class AdminModule { }

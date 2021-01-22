@@ -36,4 +36,9 @@ export class Utility {
     return (idCourse % 14) + 1;
   }
 
+  // check if Admin is logged
+  isAdminLogged(): boolean{
+    const login: string = JSON.parse(localStorage.getItem('admin-token'));
+    return !!login;
+  }
 }
