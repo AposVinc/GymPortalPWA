@@ -1,1 +1,38 @@
-<p>add-course-card works!</p>
+<section id="contact" class="wow fadeInUp animated" style="visibility: visible;">
+  <div class="container">
+    <div class="form">
+      <form #addCourseForm="ngForm" (ngSubmit)="addCourse()" class="php-email-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" [ngModel]="newCourse.name" #courseName="ngModel" name="name" id="name" placeholder="Name" class="form-control" required>
+          <div class="validate" *ngIf="courseName.dirty && (courseName.pristine || !courseName.valid)">Invalid field</div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="region">Region</label>
+            <select class="form-control" id="region" name="region" [(ngModel)]="selectedRegion" (change)="changeGyms()" >
+              <option value="" disabled selected>--- Select Region ----</option>
+              <option *ngFor="let r of regions" [value]="r.name">{{r.name}}</option>
+            </select>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="gym">Gym</label>
+            <select class="form-control" [ngModel]="newCourse.gym" #courseGym="ngModel" id="gym" name="gym" required>
+              <option value="" disabled selected>--- Select Gym ----</option>
+              <option *ngFor="let g of gyms" [value]="g.id">{{g.name}}</option>
+            </select>
+            <div class="validate" *ngIf="courseGym.dirty && (courseGym.pristine || !courseGym.valid)">Invalid field</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="description"></label>
+          <textarea [ngModel]="newCourse.description" #courseDescription="ngModel"  id="description" name="description" rows="5" placeholder="Description" class="form-control" required></textarea>
+          <div class="validate" *ngIf="courseDescription.dirty && (courseDescription.pristine || !courseDescription.valid)">Write a copurse's description</div>
+        </div>
+
+        <div class="text-center"><button type="submit" [disabled]="!addCourseForm.valid" [ngClass]="{'btn-disabled' : !addCourseForm.valid}">Add</button></div>
+      </form>
+    </div>
+
+  </div>
+</section>

@@ -1,1 +1,36 @@
-<p>add-gym-card works!</p>
+<section id="contact" class="wow fadeInUp animated" style="visibility: visible;">
+  <div class="container">
+    <div class="form">
+      <form #addGymForm="ngForm" (ngSubmit)="addGym()" class="php-email-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" [ngModel]="newGym.name" #gymName="ngModel" name="name" id="name" placeholder="Name" class="form-control" required>
+          <div class="validate" *ngIf="gymName.dirty && (gymName.pristine || !gymName.valid)">Invalid field</div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="region">Region</label>
+            <select class="form-control" [ngModel]="newGym.region" #gymRegion="ngModel" id="region" name="region" required>
+              <option value="" disabled selected>--- Select Region ----</option>
+              <option *ngFor="let r of regions" [value]="r.name">{{r.name}}</option>
+            </select>
+            <div class="validate" *ngIf="gymRegion.dirty && (gymRegion.pristine || !gymRegion.valid)">Invalid field</div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="province"></label>
+            <input type="email" [ngModel]="newGym.province" #gymProvince="ngModel" name="province" id="province" placeholder="Province" class="form-control" required>
+            <div class="validate" *ngIf="gymProvince.dirty && (gymProvince.pristine || !gymProvince.valid)">Invalid field</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="address"></label>
+          <input type="text" [ngModel]="newGym.address" #gymAddress="ngModel" name="address" id="address" placeholder="Address" class="form-control" required>
+          <div class="validate" *ngIf="gymAddress.dirty && (gymAddress.pristine || !gymAddress.valid)">Invalid field</div>
+        </div>
+
+        <div class="text-center"><button type="submit" [disabled]="!addGymForm.valid" [ngClass]="{'btn-disabled' : !addGymForm.valid}">Add</button></div>
+      </form>
+    </div>
+
+  </div>
+</section>
