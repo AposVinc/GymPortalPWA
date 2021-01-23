@@ -11,7 +11,7 @@ const URL_ADMIN_LOGIN = 'admin/login';
 @Injectable({
   providedIn: 'root'
 })
-export class AdminService {
+export class AuthAdminService {
 
   constructor(public http: HttpClient) {
   }
