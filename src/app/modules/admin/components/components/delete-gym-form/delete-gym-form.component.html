@@ -1,0 +1,25 @@
+<section id="contact" class="wow fadeInUp animated" style="visibility: visible;">
+  <div class="container">
+    <div class="form">
+      <form #deleteGymForm="ngForm" (ngSubmit)="deleteGym()" class="php-email-form">
+        <div class="form-group">
+          <label for="region">Region</label>
+          <select class="form-control" id="region" name="region" [(ngModel)]="selectedRegion" (change)="changeGyms()" >
+            <option value="" disabled selected>--- Select Region ----</option>
+            <option *ngFor="let r of regions" [value]="r.name">{{r.name}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="gym">Gym</label>
+          <select class="form-control" [(ngModel)]="selectedGymId" #selGym="ngModel" id="gym" name="gym" required>
+            <option value="" disabled selected>--- Select Gym ----</option>
+            <option *ngFor="let g of gyms" [value]="g.id">{{g.name}}</option>
+          </select>
+          <div class="validate" *ngIf="selGym.dirty && (selGym.pristine || !selGym.valid)">Invalid field</div>
+        </div>
+        <div class="text-center"><button type="submit" [disabled]="!deleteGymForm.valid" [ngClass]="{'btn-disabled' : !deleteGymForm.valid}">Add</button></div>
+      </form>
+    </div>
+
+  </div>
+</section>

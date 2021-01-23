@@ -9,10 +9,12 @@ import { AddCourseCardComponent } from './components/components/add-course-card/
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { LoginComponent } from './components/pages/login/login.component';
 import { LoginFormComponent } from './components/components/login-form/login-form.component';
+import { DeleteGymFormComponent } from './components/components/delete-gym-form/delete-gym-form.component';
+import { DeleteCourseFormComponent } from './components/components/delete-course-form/delete-course-form.component';
 
 
 @NgModule({
-  declarations: [AdminComponent, TitleComponent, AddGymCardComponent, AddCourseCardComponent, LoginComponent, LoginFormComponent],
+  declarations: [AdminComponent, TitleComponent, AddGymCardComponent, AddCourseCardComponent, LoginComponent, LoginFormComponent, DeleteGymFormComponent, DeleteCourseFormComponent],
     imports: [
         CommonModule,
         AdminRoutingModule,
