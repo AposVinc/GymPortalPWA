@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {of} from 'rxjs';
 import {Store} from '@ngrx/store';
-import {catchError, mergeMap, switchMap, tap} from 'rxjs/operators';
+import {catchError, concatMap, mergeMap, switchMap, tap} from 'rxjs/operators';
 import {FeedbackCourseService} from '../services/feedback-course.service';
 import {
   CreateAction,
@@ -30,74 +30,46 @@ export class FeedbacksCourseEffects {
 
   findAll = createEffect(() => this.actions.pipe(
     ofType<ShowAllAction>(EFeedbackCourseActions.SHOW_ALL),
-    switchMap((action) => {
-      return this.feedbackCourseService.getAll(action.idGym, action.idCourse).pipe(
-        mergeMap( (feedbacks) => [{feedbacks, idGym: action.idGym, idCourse: action.idCourse}]
-        ),
-      );
-    }),
-    switchMap((payload) => of(new ShowAllSuccessAction(payload))),
-    catchError(() => of(new ShowAllFailureAction()))
-    )
+    switchMap((action) => this.feedbackCourseService.getAll(action.idGym, action.idCourse).pipe(
+      concatMap( (feedbacks) => [{feedbacks, idGym: action.idGym, idCourse: action.idCourse}]),
+      concatMap((payload) => of(new ShowAllSuccessAction(payload))),
+      catchError(() => of(new ShowAllFailureAction()))
+    )))
   );
 
   create = createEffect(() => this.actions.pipe(
     ofType<CreateAction>(EFeedbackCourseActions.CREATE),
-    switchMap((action) => {
-      return this.store.select(selectUserToken).pipe(
-        mergeMap( (token) => {
-          return this.feedbackCourseService.save(action.idGym, action.feedback, token).pipe(
-            mergeMap( (result) => {
-              const id: number = +result.headers.get('Location').substring(result.headers.get('Location').lastIndexOf('/') + 1);
-              return [{idGym: action.idGym, feedback: {...action.feedback, id}}];
-            })
-          );
-        })
-      );
-    }),
-    switchMap((payload) => of(new CreateSuccessAction(payload))),
-    tap(() => {
-      return this.router.navigate(['./']);
-    }),
-    catchError(() => of(new CreateFailureAction()))
-    )
+    switchMap((action) => this.store.select(selectUserToken).pipe(
+      concatMap( (token) => this.feedbackCourseService.save(action.idGym, action.feedback, token)),
+      concatMap( (result) => {
+        const id: number = +result.headers.get('Location').substring(result.headers.get('Location').lastIndexOf('/') + 1);
+        return [{idGym: action.idGym, feedback: {...action.feedback, id}}];
+      }),
+      concatMap((payload) => of(new CreateSuccessAction(payload))),
+      tap(() => this.router.navigate(['./'])),
+      catchError(() => of(new CreateFailureAction()))
+    )))
   );
 
   update = createEffect(() => this.actions.pipe(
     ofType<UpdateAction>(EFeedbackCourseActions.UPDATE),
-    switchMap((action) => {
-      return this.store.select(selectUserToken).pipe(
-        mergeMap( (token) => {
-          return this.feedbackCourseService.update(action.idGym, action.feedback, token).pipe(
-            mergeMap( () => [{idGym: action.idGym, feedback: action.feedback}] )
-          );
-        })
-      );
-    }),
-    switchMap((payload) => of(new UpdateSuccessAction(payload))),
-    tap(() => {
-      return this.router.navigate(['./']);
-    }),
-    catchError(() => of(new UpdateFailureAction()))
-    )
+    switchMap((action) => this.store.select(selectUserToken).pipe(
+      concatMap( (token) => this.feedbackCourseService.update(action.idGym, action.feedback, token)),
+      concatMap( () => [{idGym: action.idGym, feedback: action.feedback}]),
+      concatMap((payload) => of(new UpdateSuccessAction(payload))),
+      tap(() => this.router.navigate(['./'])),
+      catchError(() => of(new UpdateFailureAction()))
+    )))
   );
 
   delete = createEffect(() => this.actions.pipe(
     ofType<DeleteAction>(EFeedbackCourseActions.DELETE),
-    switchMap((action) => {
-      return this.store.select(selectUserToken).pipe(
-        mergeMap( (token) => {
-          return this.feedbackCourseService.delete(action.idGym, action.feedback, token).pipe(
-            mergeMap( () => [{idGym: action.idGym, feedback: action.feedback}])
-          );
-        })
-      );
-    }),
-    switchMap((payload) => of(new DeleteSuccessAction(payload))),
-    tap(() => {
-      return this.router.navigate(['./']);
-    }),
-    catchError(() => of(new DeleteFailureAction()))
-    )
+    switchMap((action) => this.store.select(selectUserToken).pipe(
+      concatMap( (token) => this.feedbackCourseService.delete(action.idGym, action.feedback, token)),
+      concatMap( () => [{idGym: action.idGym, feedback: action.feedback}]),
+      switchMap((payload) => of(new DeleteSuccessAction(payload))),
+      tap(() => this.router.navigate(['./'])),
+      catchError(() => of(new DeleteFailureAction()))
+    )))
   );
 }
