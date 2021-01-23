@@ -15,3 +15,15 @@
 #contact .php-email-form button.btn-disabled[type="submit"]:hover {
   background: #6c757d;
 }
+
+
+/* Chrome, Safari, Edge, Opera */
+.course-code input::-webkit-outer-spin-button{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.course-code input[type=number] {
+  -moz-appearance: textfield;
+}

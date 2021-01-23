@@ -1,6 +1,7 @@
 import {FeedbackCourse} from './FeedbackCourse';
 export interface Course {
   id: number;
+  code: string;
   description: string;
   name: string;
   gym: number;
@@ -9,6 +10,7 @@ export interface Course {
 
 export class ICourse implements Course{
   id: number;
+  code: string;
   description: string;
   name: string;
   gym: number;
@@ -16,6 +18,7 @@ export class ICourse implements Course{
 
   constructor() {
     this.name = '';
+    this.code = '';
     this.description = '';
     this.gym = 0;
   }
