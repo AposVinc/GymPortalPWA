@@ -3,12 +3,9 @@ import {Region} from '../../../../../domain/Region';
 import {RegionService} from '../../../../../services/utility/region.service';
 import {Gym} from '../../../../../domain/Gym';
 import {GymService} from '../../../../../services/gym.service';
-
-class NewCourse {
-  name: string;
-  description: string;
-  gym: number;
-}
+import {NgForm} from '@angular/forms';
+import {ICourse} from '../../../../../domain/Course';
+import {AdminService} from '../../../../../services/admin.service';
 
 @Component({
   selector: 'app-add-course-card',
@@ -17,12 +14,15 @@ class NewCourse {
 })
 export class AddCourseCardComponent implements OnInit {
 
-  newCourse = new NewCourse();
+  newCourse = new ICourse();
   gyms: Array<Gym>;
   regions: Array<Region>;
   selectedRegion: string;
 
-  constructor(private regionService: RegionService, private gymService: GymService) {
+  successfulOp: boolean;
+  errorMessage: string;
+
+  constructor(private regionService: RegionService, private gymService: GymService, private adminService: AdminService) {
     this.gyms = [];
     this.selectedRegion = '';
   }
@@ -35,8 +35,14 @@ export class AddCourseCardComponent implements OnInit {
     this.gymService.getGymsByRegion(this.selectedRegion).subscribe(g => this.gyms = g);
   }
 
-  addCourse(): void {
-    console.log('ciao');
+  addCourse(addCourseForm: NgForm): void {
+    this.adminService.saveCourse(this.newCourse).subscribe(e => {
+      addCourseForm.resetForm();
+      this.successfulOp = e.ok;
+    }, error => {
+      this.errorMessage = error;
+      // return this.router.navigate(['']);
+    });
   }
 
 }

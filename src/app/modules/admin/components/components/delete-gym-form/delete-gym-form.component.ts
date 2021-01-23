@@ -3,6 +3,9 @@ import {Region} from '../../../../../domain/Region';
 import {RegionService} from '../../../../../services/utility/region.service';
 import {GymService} from '../../../../../services/gym.service';
 import {Gym} from '../../../../../domain/Gym';
+import {NgForm} from '@angular/forms';
+import {CourseService} from '../../../../../services/course.service';
+import {AdminService} from '../../../../../services/admin.service';
 
 @Component({
   selector: 'app-delete-gym-form',
@@ -16,7 +19,10 @@ export class DeleteGymFormComponent implements OnInit {
   selectedRegion: string;
   selectedGymId: number;
 
-  constructor(private regionService: RegionService, private gymService: GymService) {
+  successfulOp: boolean;
+  errorMessage: string;
+
+  constructor(private regionService: RegionService, private gymService: GymService, private adminService: AdminService) {
   }
 
   ngOnInit(): void {
@@ -27,7 +33,12 @@ export class DeleteGymFormComponent implements OnInit {
     this.gymService.getGymsByRegion(this.selectedRegion).subscribe(g => this.gyms = g);
   }
 
-  deleteGym(): void {
-    console.log(this.selectedGymId);
-  }
+  deleteGym(deleteGymForm: NgForm): void {
+    this.adminService.deleteGym(this.selectedGymId).subscribe(e => {
+      deleteGymForm.resetForm();
+      this.successfulOp = e.ok;
+    }, error => {
+      this.errorMessage = error;
+      // return this.router.navigate(['']);
+    });  }
 }

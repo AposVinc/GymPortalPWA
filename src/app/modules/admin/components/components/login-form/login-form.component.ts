@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import {AdminService} from '../../../../../services/auth/admin.service';
+import {AuthAdminService} from '../../../../../services/auth/auth-admin.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {User} from '../../../../../domain/User';
 
@@ -15,7 +15,7 @@ export class LoginFormComponent implements OnInit {
   loginError: any;
   user: User;
 
-  constructor(public router: Router, private fb: FormBuilder, private adminService: AdminService) { }
+  constructor(public router: Router, private fb: FormBuilder, private adminService: AuthAdminService) { }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({

@@ -1,7 +1,7 @@
 <section id="contact" class="wow fadeInUp animated" style="visibility: visible;">
   <div class="container">
     <div class="form">
-      <form #deleteCourseForm="ngForm" (ngSubmit)="deleteGym()" class="php-email-form">
+      <form #deleteCourseForm="ngForm" (ngSubmit)="deleteCourse(deleteCourseForm)" class="php-email-form">
         <div class="form-group">
           <label for="region">Region</label>
           <select class="form-control" id="region" name="region" [(ngModel)]="selectedRegion" (change)="changeGyms()" >
@@ -27,6 +27,9 @@
             <div class="validate" *ngIf="selCourse.dirty && (selCourse.pristine || !selCourse.valid)">Invalid field</div>
           </div>
         </div>
+
+        <div class="alert alert-success" *ngIf="successfulOp">Course Deleted</div>
+        <div class="alert alert-danger" *ngIf="errorMessage">An error has occurred.</div>
 
         <div class="text-center"><button type="submit" [disabled]="!deleteCourseForm.valid" [ngClass]="{'btn-disabled' : !deleteCourseForm.valid}">Add</button></div>
       </form>

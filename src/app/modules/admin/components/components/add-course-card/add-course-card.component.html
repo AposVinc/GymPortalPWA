@@ -1,10 +1,10 @@
 <section id="contact" class="wow fadeInUp animated" style="visibility: visible;">
   <div class="container">
     <div class="form">
-      <form #addCourseForm="ngForm" (ngSubmit)="addCourse()" class="php-email-form">
+      <form #addCourseForm="ngForm" (ngSubmit)="addCourse(addCourseForm)" class="php-email-form">
         <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" [ngModel]="newCourse.name" #courseName="ngModel" name="name" id="name" placeholder="Name" class="form-control" required>
+          <input type="text" [(ngModel)]="newCourse.name" #courseName="ngModel" name="name" id="name" placeholder="Name" class="form-control" required>
           <div class="validate" *ngIf="courseName.dirty && (courseName.pristine || !courseName.valid)">Invalid field</div>
         </div>
         <div class="form-row">
@@ -17,7 +17,7 @@
           </div>
           <div class="form-group col-md-6">
             <label for="gym">Gym</label>
-            <select class="form-control" [ngModel]="newCourse.gym" #courseGym="ngModel" id="gym" name="gym" required>
+            <select class="form-control" [(ngModel)]="newCourse.gym" #courseGym="ngModel" id="gym" name="gym" required>
               <option value="" disabled selected>--- Select Gym ----</option>
               <option *ngFor="let g of gyms" [value]="g.id">{{g.name}}</option>
             </select>
@@ -26,9 +26,12 @@
         </div>
         <div class="form-group">
           <label for="description"></label>
-          <textarea [ngModel]="newCourse.description" #courseDescription="ngModel"  id="description" name="description" rows="5" placeholder="Description" class="form-control" required></textarea>
+          <textarea [(ngModel)]="newCourse.description" #courseDescription="ngModel"  id="description" name="description" rows="5" placeholder="Description" class="form-control" required></textarea>
           <div class="validate" *ngIf="courseDescription.dirty && (courseDescription.pristine || !courseDescription.valid)">Write a copurse's description</div>
         </div>
+
+        <div class="alert alert-success" *ngIf="successfulOp">Course Added</div>
+        <div class="alert alert-danger" *ngIf="errorMessage">An error has occurred.</div>
 
         <div class="text-center"><button type="submit" [disabled]="!addCourseForm.valid" [ngClass]="{'btn-disabled' : !addCourseForm.valid}">Add</button></div>
       </form>
