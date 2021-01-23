@@ -8,7 +8,7 @@
           <div class="validate" *ngIf="courseCode.dirty && (courseCode.pristine || !courseCode.valid)">Write only numbers</div>
         </div>
         <div class="form-group">
-          <label for="name" i18n="@@Form-LabelNamen">Name</label>
+          <label for="name" i18n="@@Form-LabelName">Name</label>
           <input type="text" [(ngModel)]="newCourse.name" #courseName="ngModel" name="name" id="name" placeholder="Name" class="form-control" required>
           <div class="validate" *ngIf="courseName.dirty && (courseName.pristine || !courseName.valid)">Invalid field</div>
         </div>

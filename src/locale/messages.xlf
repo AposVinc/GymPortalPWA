@@ -366,13 +366,6 @@
           <context context-type="linenumber">52</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="ButtonLogin" datatype="html">
-        <source>Login</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/admin/components/components/login-form/login-form.component.js</context>
-          <context context-type="linenumber">70</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="Form-ErrorAuthentication" datatype="html">
         <source>An authentication error has occurred.</source>
         <context-group purpose="location">
@@ -385,13 +378,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/components/components/add-course-card/add-course-card.component.js</context>
           <context context-type="linenumber">91</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="Form-LabelNamen" datatype="html">
-        <source>Name</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/admin/components/components/add-course-card/add-course-card.component.js</context>
-          <context context-type="linenumber">97</context>
         </context-group>
       </trans-unit>
       <trans-unit id="Form-LabelDescription" datatype="html">
@@ -457,20 +443,6 @@
           <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="AddFeedbackGymPage-Title" datatype="html">
-        <source>Add Review</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/gyms/components/pages/add-feedback-gym/add-feedback-gym.component.js</context>
-          <context context-type="linenumber">29</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="AddFeedbackGymPage-Subtitle" datatype="html">
-        <source>Add review to gym <x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/></source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/gyms/components/pages/add-feedback-gym/add-feedback-gym.component.js</context>
-          <context context-type="linenumber">35</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="AddFeedbackCoursePage-Title" datatype="html">
         <source>Add Review</source>
         <context-group purpose="location">
@@ -483,6 +455,20 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/gyms/components/pages/add-feedback-course/add-feedback-course.component.js</context>
           <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AddFeedbackGymPage-Title" datatype="html">
+        <source>Add Review</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/gyms/components/pages/add-feedback-gym/add-feedback-gym.component.js</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AddFeedbackGymPage-Subtitle" datatype="html">
+        <source>Add review to gym <x id="INTERPOLATION" equiv-text="&quot;\uFFFD0\uFFFD&quot;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/gyms/components/pages/add-feedback-gym/add-feedback-gym.component.js</context>
+          <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="FeedbacksCoursePage-FeedbacksTitle" datatype="html">
