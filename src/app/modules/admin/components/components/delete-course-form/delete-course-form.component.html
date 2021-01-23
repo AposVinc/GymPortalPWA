@@ -3,35 +3,35 @@
     <div class="form">
       <form #deleteCourseForm="ngForm" (ngSubmit)="deleteCourse(deleteCourseForm)" class="php-email-form">
         <div class="form-group">
-          <label for="region">Region</label>
+          <label for="region" i18n="@@Form-LabelRegion">Region</label>
           <select class="form-control" id="region" name="region" [(ngModel)]="selectedRegion" (change)="changeGyms()" >
-            <option value="" disabled selected>--- Select Region ----</option>
+            <option value="" disabled selected i18n="@@Form-SelectRegion">--- Select Region ----</option>
             <option *ngFor="let r of regions" [value]="r.name">{{r.name}}</option>
           </select>
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label for="gym">Gym</label>
+            <label for="gym" i18n="@@Form-LabelGym">Gym</label>
             <select class="form-control" [(ngModel)]="selectedGymId" #selGym="ngModel" id="gym" name="gym" (change)="changeCourses()" required>
-              <option value="" disabled selected>--- Select Gym ----</option>
+              <option value="" disabled selected i18n="@@Form-SelectGym">--- Select Gym ----</option>
               <option *ngFor="let g of gyms" [value]="g.id">{{g.name}}</option>
             </select>
             <div class="validate" *ngIf="selGym.dirty && (selGym.pristine || !selGym.valid)">Invalid field</div>
           </div>
           <div class="form-group col-md-6">
-            <label for="course">Course</label>
+            <label for="course" i18n="@@Form-LabelCourse">Course</label>
             <select class="form-control" [(ngModel)]="selectedCourseId" #selCourse="ngModel" id="course" name="course" required>
-              <option value="" disabled selected>--- Select Course ----</option>
+              <option value="" disabled selected i18n="@@Form-SelectCourse">--- Select Course ----</option>
               <option *ngFor="let c of courses" [value]="c.id">{{c.name}}</option>
             </select>
             <div class="validate" *ngIf="selCourse.dirty && (selCourse.pristine || !selCourse.valid)">Invalid field</div>
           </div>
         </div>
 
-        <div class="alert alert-success" *ngIf="successfulOp">Course Deleted</div>
-        <div class="alert alert-danger" *ngIf="errorMessage">An error has occurred.</div>
+        <div class="alert alert-success" *ngIf="successfulOp" i18n="@@Form-SuccessCourseDelete">Course Deleted</div>
+        <div class="alert alert-danger" *ngIf="errorMessage" i18n="@@Form-ErrorCourseDelete">An error has occurred.</div>
 
-        <div class="text-center"><button type="submit" [disabled]="!deleteCourseForm.valid" [ngClass]="{'btn-disabled' : !deleteCourseForm.valid}">Delete</button></div>
+        <div class="text-center"><button type="submit" [disabled]="!deleteCourseForm.valid" [ngClass]="{'btn-disabled' : !deleteCourseForm.valid}" i18n="@@Button-Delete">Delete</button></div>
       </form>
     </div>
 

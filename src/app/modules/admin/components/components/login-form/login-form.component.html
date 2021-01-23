@@ -7,7 +7,7 @@
 
         <div class="card">
           <div class="card-body">
-            <h3 class="card-title">Administration</h3>
+            <h3 class="card-title" i18n="@@AdminLoginForm-Title">Reserved Area</h3>
             <form (ngSubmit)="submit()" [formGroup]="loginForm" class="form">
               <div class="form-group">
                 <label for="username" i18n="@@Form-LabelUsername">Username</label>
@@ -20,7 +20,7 @@
                 <div *ngIf="loginForm.get('password').dirty && (loginForm.get('password').dirty && !loginForm.get('password').valid)" class="alert alert-danger" i18n="@@Form-ErrorPassword">Length between 5 and 10 characters</div>
               </div>
 
-              <div class="alert alert-danger" *ngIf="loginError">An authentication error has occurred.</div>
+              <div class="alert alert-danger" *ngIf="loginError" i18n="@@Form-ErrorAuthentication">An authentication error has occurred.</div>
 
               <button [disabled]="!loginForm.valid" class="btn" [ngClass]="loginForm.valid ? 'btn-success' : 'btn-secondary'" i18n="@@ButtonLogin">Login</button>
             </form>

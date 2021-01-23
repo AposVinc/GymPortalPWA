@@ -3,42 +3,42 @@
     <div class="form">
       <form #addCourseForm="ngForm" (ngSubmit)="addCourse(addCourseForm)" class="php-email-form">
         <div class="form-group">
-          <label for="code">Code</label>
+          <label for="code" i18n="@@Form-LabelCode">Code</label>
           <input type="number" [(ngModel)]="newCourse.code" #courseCode="ngModel" name="code" id="code" placeholder="Code" class="form-control course-code" required>
           <div class="validate" *ngIf="courseCode.dirty && (courseCode.pristine || !courseCode.valid)">Write only numbers</div>
         </div>
         <div class="form-group">
-          <label for="name">Name</label>
+          <label for="name" i18n="@@Form-LabelNamen">Name</label>
           <input type="text" [(ngModel)]="newCourse.name" #courseName="ngModel" name="name" id="name" placeholder="Name" class="form-control" required>
           <div class="validate" *ngIf="courseName.dirty && (courseName.pristine || !courseName.valid)">Invalid field</div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label for="region">Region</label>
+            <label for="region" i18n="@@Form-LabelRegion">Region</label>
             <select class="form-control" id="region" name="region" [(ngModel)]="selectedRegion" (change)="changeGyms()" >
-              <option value="" disabled selected>--- Select Region ----</option>
+              <option value="" disabled selected i18n="@@Form-SelectRegion">--- Select Region ----</option>
               <option *ngFor="let r of regions" [value]="r.name">{{r.name}}</option>
             </select>
           </div>
           <div class="form-group col-md-6">
-            <label for="gym">Gym</label>
+            <label for="gym" i18n="@@Form-LabelGym">Gym</label>
             <select class="form-control" [(ngModel)]="newCourse.gym" #courseGym="ngModel" id="gym" name="gym" required>
-              <option value="" disabled selected>--- Select Gym ----</option>
+              <option value="" disabled selected i18n="@@Form-SelectGym">--- Select Gym ----</option>
               <option *ngFor="let g of gyms" [value]="g.id">{{g.name}}</option>
             </select>
             <div class="validate" *ngIf="courseGym.dirty && (courseGym.pristine || !courseGym.valid)">Invalid field</div>
           </div>
         </div>
         <div class="form-group">
-          <label for="description"></label>
+          <label for="description" i18n="@@Form-LabelDescription">Description</label>
           <textarea [(ngModel)]="newCourse.description" #courseDescription="ngModel"  id="description" name="description" rows="5" placeholder="Description" class="form-control" required></textarea>
-          <div class="validate" *ngIf="courseDescription.dirty && (courseDescription.pristine || !courseDescription.valid)">Write a copurse's description</div>
+          <div class="validate" *ngIf="courseDescription.dirty && (courseDescription.pristine || !courseDescription.valid)">Write a course's description</div>
         </div>
 
-        <div class="alert alert-success" *ngIf="successfulOp">Course Added</div>
-        <div class="alert alert-danger" *ngIf="errorMessage">An error has occurred.</div>
+        <div class="alert alert-success" *ngIf="successfulOp" i18n="@@Form-SuccessCourseAdd">Course Added</div>
+        <div class="alert alert-danger" *ngIf="errorMessage" i18n="@@Form-ErrorCourseAdd">An error has occurred.</div>
 
-        <div class="text-center"><button type="submit" [disabled]="!addCourseForm.valid" [ngClass]="{'btn-disabled' : !addCourseForm.valid}">Add</button></div>
+        <div class="text-center"><button type="submit" [disabled]="!addCourseForm.valid" [ngClass]="{'btn-disabled' : !addCourseForm.valid}" i18n="@@Button-Add">Add</button></div>
       </form>
     </div>
 

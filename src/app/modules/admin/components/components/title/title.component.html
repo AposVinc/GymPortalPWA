@@ -5,6 +5,6 @@
       <h2>{{title}}</h2>
       <p>{{subtitle}}</p>
     </div>
-    <button *ngIf="hasLogoutButton" class="btn btn-danger btn-admin-logout" [ngClass]="{'btn-admin-logout-mobile':utility.getFlagMobile()}" (click)="logout()">Logout</button>
+    <button *ngIf="hasLogoutButton" class="btn btn-danger btn-admin-logout" [ngClass]="{'btn-admin-logout-mobile':utility.getFlagMobile()}" (click)="logout()" i18n="@@Button-Logout">Logout</button>
   </div>
 </section>

@@ -3,25 +3,25 @@
     <div class="form">
       <form #deleteGymForm="ngForm" (ngSubmit)="deleteGym(deleteGymForm)" class="php-email-form">
         <div class="form-group">
-          <label for="region">Region</label>
+          <label for="region" i18n="@@Form-LabelRegion">Region</label>
           <select class="form-control" id="region" name="region" [(ngModel)]="selectedRegion" (change)="changeGyms()" >
-            <option value="" disabled selected>--- Select Region ----</option>
+            <option value="" disabled selected i18n="@@Form-SelectRegion">--- Select Region ----</option>
             <option *ngFor="let r of regions" [value]="r.name">{{r.name}}</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="gym">Gym</label>
+          <label for="gym" i18n="@@Form-LabelGym">Gym</label>
           <select class="form-control" [(ngModel)]="selectedGymId" #selGym="ngModel" id="gym" name="gym" required>
-            <option value="" disabled selected>--- Select Gym ----</option>
+            <option value="" disabled selected i18n="@@Form-SelectGym">--- Select Gym ----</option>
             <option *ngFor="let g of gyms" [value]="g.id">{{g.name}}</option>
           </select>
           <div class="validate" *ngIf="selGym.dirty && (selGym.pristine || !selGym.valid)">Invalid field</div>
         </div>
 
-        <div class="alert alert-success" *ngIf="successfulOp">Gym Deleted</div>
-        <div class="alert alert-danger" *ngIf="errorMessage">An error has occurred. Delete first the gym's courses</div>
+        <div class="alert alert-success" *ngIf="successfulOp" i18n="@@Form-SuccessGymDelete">Gym Deleted</div>
+        <div class="alert alert-danger" *ngIf="errorMessage" i18n="@@Form-ErrorGymDelete">An error has occurred. Delete first the gym's courses</div>
 
-        <div class="text-center"><button type="submit" [disabled]="!deleteGymForm.valid" [ngClass]="{'btn-disabled' : !deleteGymForm.valid}">Delete</button></div>
+        <div class="text-center"><button type="submit" [disabled]="!deleteGymForm.valid" [ngClass]="{'btn-disabled' : !deleteGymForm.valid}" i18n="@@Button-Delete">Delete</button></div>
       </form>
     </div>
 

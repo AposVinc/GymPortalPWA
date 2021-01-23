@@ -1,5 +1,5 @@
 <!-- ======= Portfolio Section ======= -->
-<section id="portfolio" class="portfolio wow fadeInUp">
+<section id="portfolio" class="portfolio wow fadeInUp" *ngIf="(courses | async).length">
   <div class="container">
 
     <div class="row portfolio-container">
@@ -24,4 +24,13 @@
 
   </div>
 </section><!-- End Portfolio Section -->
+
+<section class="portfolio-details" *ngIf="!(courses | async).length">
+  <div class="container">
+    <div class="portfolio-description">
+      <h2 i18n="@@CourseCardComponent-NoCoursesTitle">There are no courses</h2>
+      <p i18n="@@CourseCardComponent-NoCoursesSubtitle">Unfortunately we don't have any courses for this gym on our site yet, we will try to fix that soon!!!</p>
+    </div>
+  </div>
+</section>
 

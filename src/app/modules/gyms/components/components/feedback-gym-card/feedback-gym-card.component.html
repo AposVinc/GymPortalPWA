@@ -1,5 +1,5 @@
 <!-- ======= Testimonials Section ======= -->
-<section id="testimonials">
+<section id="testimonials" *ngIf="(feedbacks | async).length">
   <div class="container">
     <div class="row">
 
@@ -20,3 +20,13 @@
     </div>
   </div>
 </section><!-- End Testimonials Section -->
+
+
+<section class="portfolio-details" *ngIf="!(feedbacks | async).length">
+  <div class="container">
+    <div class="portfolio-description">
+      <h2 i18n="@@FeedbacksComponent-NoFeedbacksGymTitle">There are no reviews for this gym</h2>
+      <p i18n="@@FeedbacksComponent-NoFeedbacksGymSubtitle">What are you waiting for?! You can be the first!!!</p>
+    </div>
+  </div>
+</section>

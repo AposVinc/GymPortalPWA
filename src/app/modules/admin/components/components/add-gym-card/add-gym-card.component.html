@@ -3,35 +3,35 @@
     <div class="form">
       <form #addGymForm="ngForm" (ngSubmit)="addGym(addGymForm)" class="php-email-form">
         <div class="form-group">
-          <label for="name">Name</label>
+          <label for="name" i18n="@@Form-LabelName">Name</label>
           <input type="text" [(ngModel)]="newGym.name" #gymName="ngModel" name="name" id="name" placeholder="Name" class="form-control" required>
           <div class="validate" *ngIf="gymName.dirty && (gymName.pristine || !gymName.valid)">Invalid field</div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label for="region">Region</label>
+            <label for="region" i18n="@@Form-LabelRegion">Region</label>
             <select class="form-control" [(ngModel)]="newGym.region" #gymRegion="ngModel" id="region" name="region" required>
-              <option value="" disabled selected>--- Select Region ----</option>
+              <option value="" disabled selected i18n="@@Form-SelectRegion">--- Select Region ----</option>
               <option *ngFor="let r of regions" [value]="r.name">{{r.name}}</option>
             </select>
             <div class="validate" *ngIf="gymRegion.dirty && (gymRegion.pristine || !gymRegion.valid)">Invalid field</div>
           </div>
           <div class="form-group col-md-6">
-            <label for="province"></label>
-            <input type="email" [(ngModel)]="newGym.province" #gymProvince="ngModel" name="province" id="province" placeholder="Province" class="form-control" required>
+            <label for="province" i18n="@@Form-LabelProvince">Province</label>
+            <input type="text" [(ngModel)]="newGym.province" #gymProvince="ngModel" name="province" id="province" placeholder="Province" class="form-control" required>
             <div class="validate" *ngIf="gymProvince.dirty && (gymProvince.pristine || !gymProvince.valid)">Invalid field</div>
           </div>
         </div>
         <div class="form-group">
-          <label for="address"></label>
+          <label for="address" i18n="@@Form-LabelAddress">Address</label>
           <input type="text" [(ngModel)]="newGym.address" #gymAddress="ngModel" name="address" id="address" placeholder="Address" class="form-control" required>
           <div class="validate" *ngIf="gymAddress.dirty && (gymAddress.pristine || !gymAddress.valid)">Invalid field</div>
         </div>
 
-        <div class="alert alert-success" *ngIf="successfulOp">Gym Added</div>
-        <div class="alert alert-danger" *ngIf="errorMessage">An error has occurred.</div>
+        <div class="alert alert-success" *ngIf="successfulOp" i18n="@@Form-SuccessGymAdd">Gym Added</div>
+        <div class="alert alert-danger" *ngIf="errorMessage" i18n="@@Form-ErrorGymAdd">An error has occurred.</div>
 
-        <div class="text-center"><button type="submit" [disabled]="!addGymForm.valid" [ngClass]="{'btn-disabled' : !addGymForm.valid}">Add</button></div>
+        <div class="text-center"><button type="submit" [disabled]="!addGymForm.valid" [ngClass]="{'btn-disabled' : !addGymForm.valid}" i18n="@@Button-Add">Add</button></div>
       </form>
     </div>
 

@@ -43,7 +43,7 @@
         <li><a *ngIf="!(logged | async)" routerLink="registration" i18n="@@Header-Registration">Registration</a></li>
         <li><a *ngIf="!(logged | async)" routerLink="login" i18n="@@Header-Login">Login</a></li>
         <li><a *ngIf="logged | async" routerLink="profile" i18n="@@Header-Profile">Profile</a></li>
-        <li><a *ngIf="logged | async" (click)="logout()" type="button" class="btn btn-danger" i18n="@@Header-Logout">Logout</a></li>
+        <li><a *ngIf="logged | async" (click)="logout()" type="button" class="btn btn-danger" i18n="@@Button-Logout">Logout</a></li>
       </ul>
     </nav><!-- #nav-menu-container -->
 
