@@ -19,6 +19,7 @@ export class ErrorInterceptor implements HttpInterceptor {
       }
       if (request.url.includes('auth/refresh')) {
         this.store.dispatch(new LoggedOutAction());
+        localStorage.removeItem('admin-token');
       }
       if ([401].includes(err.status)) {
         // auto logout if 401 or 403 response returned from api
