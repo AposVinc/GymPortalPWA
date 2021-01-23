@@ -1,3 +1,18 @@
 #section-title {
   padding-bottom: 0;
 }
+
+.container{
+  position: relative;
+}
+
+.btn-admin-logout {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.btn-admin-logout-mobile {
+  position: relative;
+  right: 0;
+}

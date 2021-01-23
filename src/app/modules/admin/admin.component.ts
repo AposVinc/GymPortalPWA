@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -8,14 +7,9 @@ import {Router} from '@angular/router';
 })
 export class AdminComponent implements OnInit {
 
-  constructor(public router: Router) { }
+  constructor() { }
 
   ngOnInit(): void {
-  }
-
-  logout(): void {
-    localStorage.removeItem('admin-token');
-    this.router.navigate(['']);
   }
 
 }
