@@ -1,0 +1,60 @@
+<section id="contact" class="wow fadeInUp animated" style="visibility: visible;">
+  <div class="container">
+    <div class="form">
+      <form #updateGymForm="ngForm" (ngSubmit)="updateGym(updateGymForm)" class="php-email-form">
+
+        <span i18n="@@Form-SplitSelectionGym">Select Gym</span>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="region1" i18n="@@Form-LabelRegion">Region</label>
+            <select class="form-control" id="region1" name="region1" [(ngModel)]="selectedRegion" (change)="changeGyms()" >
+              <option value="" disabled selected i18n="@@Form-SelectRegion">--- Select Region ----</option>
+              <option *ngFor="let r of regions" [value]="r.name">{{r.name}}</option>
+            </select>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="gym" i18n="@@Form-LabelGym">Gym</label>
+            <select class="form-control" [(ngModel)]="selectedGymId" #selGym="ngModel" id="gym" name="gym" (change)="changeGym()" required>
+              <option value="" disabled selected i18n="@@Form-SelectGym">--- Select Gym ----</option>
+              <option *ngFor="let g of gyms" [value]="g.id">{{g.name}}</option>
+            </select>
+            <div class="validate" *ngIf="selGym.dirty && (selGym.pristine || !selGym.valid)">Invalid field</div>
+          </div>
+        </div>
+
+        <span i18n="@@Form-SplitEditableGym">Edit Selected Gym</span>
+        <div class="form-group">
+          <label for="name" i18n="@@Form-LabelName">Name</label>
+          <input type="text" [(ngModel)]="gym.name" #gymName="ngModel" name="name" id="name" placeholder="Name" class="form-control" required>
+          <div class="validate" *ngIf="gymName.dirty && (gymName.pristine || !gymName.valid)">Invalid field</div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="region" i18n="@@Form-LabelRegion">Region</label>
+            <select class="form-control" [(ngModel)]="gym.region" #gymRegion="ngModel" id="region" name="region" required>
+              <option value="" disabled selected i18n="@@Form-SelectRegion">--- Select Region ----</option>
+              <option *ngFor="let r of regions" [value]="r.name">{{r.name}}</option>
+            </select>
+            <div class="validate" *ngIf="gymRegion.dirty && (gymRegion.pristine || !gymRegion.valid)">Invalid field</div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="province" i18n="@@Form-LabelProvince">Province</label>
+            <input type="text" [(ngModel)]="gym.province" #gymProvince="ngModel" name="province" id="province" placeholder="Province" class="form-control" required>
+            <div class="validate" *ngIf="gymProvince.dirty && (gymProvince.pristine || !gymProvince.valid)">Invalid field</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="address" i18n="@@Form-LabelAddress">Address</label>
+          <input type="text" [(ngModel)]="gym.address" #gymAddress="ngModel" name="address" id="address" placeholder="Address" class="form-control" required>
+          <div class="validate" *ngIf="gymAddress.dirty && (gymAddress.pristine || !gymAddress.valid)">Invalid field</div>
+        </div>
+
+        <div class="alert alert-success" *ngIf="successfulOp" i18n="@@Form-SuccessGymAdd">Gym Added</div>
+        <div class="alert alert-danger" *ngIf="errorMessage" i18n="@@Form-ErrorGymAdd">An error has occurred.</div>
+
+        <div class="text-center"><button type="submit" [disabled]="!updateGymForm.valid" [ngClass]="{'btn-disabled' : !updateGymForm.valid}" i18n="@@Button-Update">Update</button></div>
+      </form>
+    </div>
+
+  </div>
+</section>

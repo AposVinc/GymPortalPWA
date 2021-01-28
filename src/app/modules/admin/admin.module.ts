@@ -11,10 +11,12 @@ import { LoginComponent } from './components/pages/login/login.component';
 import { LoginFormComponent } from './components/components/login-form/login-form.component';
 import { DeleteGymFormComponent } from './components/components/delete-gym-form/delete-gym-form.component';
 import { DeleteCourseFormComponent } from './components/components/delete-course-form/delete-course-form.component';
+import { UpdateGymFormComponent } from './components/components/update-gym-form/update-gym-form.component';
+import { UpdateCourseFormComponent } from './components/components/update-course-form/update-course-form.component';
 
 
 @NgModule({
-  declarations: [AdminComponent, TitleComponent, AddGymCardComponent, AddCourseCardComponent, LoginComponent, LoginFormComponent, DeleteGymFormComponent, DeleteCourseFormComponent],
+  declarations: [AdminComponent, TitleComponent, AddGymCardComponent, AddCourseCardComponent, LoginComponent, LoginFormComponent, DeleteGymFormComponent, DeleteCourseFormComponent, UpdateGymFormComponent, UpdateCourseFormComponent],
     imports: [
         CommonModule,
         AdminRoutingModule,

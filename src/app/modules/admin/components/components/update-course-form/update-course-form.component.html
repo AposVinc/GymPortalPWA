@@ -1,0 +1,75 @@
+<section id="contact" class="wow fadeInUp animated" style="visibility: visible;">
+  <div class="container">
+    <div class="form">
+      <form #updateCourseForm="ngForm" (ngSubmit)="updateCourse(updateCourseForm)" class="php-email-form">
+
+        <span i18n="@@Form-SplitSelectionCourse">Select Course</span>
+        <div class="form-group">
+          <label for="region1" i18n="@@Form-LabelRegion">Region</label>
+          <select class="form-control" id="region1" name="region1" [(ngModel)]="selectedRegionForSelectCourse" (change)="changeGymsForSelectCourse()" >
+            <option value="" disabled selected i18n="@@Form-SelectRegion">--- Select Region ----</option>
+            <option *ngFor="let r of regions" [value]="r.name">{{r.name}}</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="gym1" i18n="@@Form-LabelGym">Gym</label>
+            <select class="form-control" [(ngModel)]="selectedGymIdForSelectCourse" #selGym="ngModel" id="gym1" name="gym1" (change)="changeGymForSelectCourse()">
+              <option value="" disabled selected i18n="@@Form-SelectGym">--- Select Gym ----</option>
+              <option *ngFor="let g of gymsForSelectCourse" [value]="g.id">{{g.name}}</option>
+            </select>
+            <div class="validate" *ngIf="selGym.dirty && (selGym.pristine || !selGym.valid)">Invalid field</div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="course1" i18n="@@Form-LabelCourse">Course</label>
+            <select class="form-control" [(ngModel)]="selectedCourseId" #selCourse="ngModel" id="course1" name="course1" (change)="changeCourse()"  required>
+              <option value="" disabled selected i18n="@@Form-SelectCourse">--- Select Course ----</option>
+              <option *ngFor="let c of courses" [value]="c.id">{{c.name}}</option>
+            </select>
+            <div class="validate" *ngIf="selCourse.dirty && (selCourse.pristine || !selCourse.valid)">Invalid field</div>
+          </div>
+        </div>
+
+        <span i18n="@@Form-SplitEditableCourse">Edit Selected Course</span>
+        <div class="form-group">
+          <label for="code" i18n="@@Form-LabelCode">Code</label>
+          <input type="number" [(ngModel)]="course.code" #courseCode="ngModel" name="code" id="code" placeholder="Code" class="form-control course-code" min="0" required>
+          <div class="validate" *ngIf="courseCode.dirty && (courseCode.pristine || !courseCode.valid)">Write only numbers</div>
+        </div>
+        <div class="form-group">
+          <label for="name" i18n="@@Form-LabelName">Name</label>
+          <input type="text" [(ngModel)]="course.name" #courseName="ngModel" name="name" id="name" placeholder="Name" class="form-control" required>
+          <div class="validate" *ngIf="courseName.dirty && (courseName.pristine || !courseName.valid)">Invalid field</div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="region" i18n="@@Form-LabelRegion">Region</label>
+            <select class="form-control" id="region" name="region" [(ngModel)]="selectedRegion" (change)="changeGyms()" >
+              <option value="" disabled selected i18n="@@Form-SelectRegion">--- Select Region ----</option>
+              <option *ngFor="let r of regions" [value]="r.name">{{r.name}}</option>
+            </select>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="gym" i18n="@@Form-LabelGym">Gym</label>
+            <select class="form-control" [(ngModel)]="course.gym" #courseGym="ngModel" id="gym" name="gym" required>
+              <option value="" disabled selected i18n="@@Form-SelectGym">--- Select Gym ----</option>
+              <option *ngFor="let g of gyms" [value]="g.id">{{g.name}}</option>
+            </select>
+            <div class="validate" *ngIf="courseGym.dirty && (courseGym.pristine || !courseGym.valid)">Invalid field</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="description" i18n="@@Form-LabelDescription">Description</label>
+          <textarea [(ngModel)]="course.description" #courseDescription="ngModel" id="description" name="description" rows="5" placeholder="Description" class="form-control" required></textarea>
+          <div class="validate" *ngIf="courseDescription.dirty && (courseDescription.pristine || !courseDescription.valid)">Write a course's description</div>
+        </div>
+
+        <div class="alert alert-success" *ngIf="successfulOp" i18n="@@Form-SuccessCourseAdd">Course Added</div>
+        <div class="alert alert-danger" *ngIf="errorMessage" i18n="@@Form-ErrorCourseAdd">An error has occurred.</div>
+
+        <div class="text-center"><button type="submit" [disabled]="!updateCourseForm.valid" [ngClass]="{'btn-disabled' : !updateCourseForm.valid}" i18n="@@Button-Update">Update</button></div>
+      </form>
+    </div>
+
+  </div>
+</section>

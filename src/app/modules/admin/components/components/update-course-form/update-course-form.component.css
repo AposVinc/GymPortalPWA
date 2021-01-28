@@ -1,0 +1,17 @@
+#contact .php-email-form label {
+  color: #6d6d6d;
+  font-size: 12px;
+  margin-bottom: .2rem;
+}
+
+#contact .php-email-form .validate {
+  display: block;
+}
+
+#contact .php-email-form button.btn-disabled[type="submit"] {
+  background: #6c757d;
+}
+
+#contact .php-email-form button.btn-disabled[type="submit"]:hover {
+  background: #6c757d;
+}
