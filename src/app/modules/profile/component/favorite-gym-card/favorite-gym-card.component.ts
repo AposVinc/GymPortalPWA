@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
-import {IAppState} from '../../../state/app.states';
-import {selectFavoritesGym} from '../../../selectors/favorite.selector';
-import {Gym} from '../../../domain/Gym';
 import {Observable} from 'rxjs';
-import {DeleteFavoriteGymAction, ShowAllFavoritesGymAction} from '../../../actions/favorite-gym.actions';
-import {Utility} from '../../../helpers/utility';
+import {Gym} from '../../../../domain/Gym';
+import {IAppState} from '../../../../state/app.states';
+import {Utility} from '../../../../helpers/utility';
+import {selectFavoritesGym} from '../../../../selectors/favorite.selector';
+import {DeleteFavoriteGymAction} from '../../../../actions/favorite-gym.actions';
 
 @Component({
   selector: 'app-favorite-gym-card',

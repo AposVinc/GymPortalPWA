@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {Course} from '../../../domain/Course';
 import {Observable} from 'rxjs';
 import {Store} from '@ngrx/store';
-import {IAppState} from '../../../state/app.states';
-import {DeleteFavoriteCourseAction, ShowAllFavoritesCourseAction} from '../../../actions/favorite-course.actions';
-import {selectFavoritesCourse} from '../../../selectors/favorite.selector';
-import {Utility} from '../../../helpers/utility';
+import {Course} from '../../../../domain/Course';
+import {IAppState} from '../../../../state/app.states';
+import {Utility} from '../../../../helpers/utility';
+import {selectFavoritesCourse} from '../../../../selectors/favorite.selector';
+import {DeleteFavoriteCourseAction} from '../../../../actions/favorite-course.actions';
 
 @Component({
   selector: 'app-favorite-course-card',

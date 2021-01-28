@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {User} from '../../../domain/User';
 import {Store} from '@ngrx/store';
-import {IAppState} from '../../../state/app.states';
 import {Observable} from 'rxjs';
-import {selectUserDetail} from '../../../selectors/user.selector';
-import {Utility} from '../../../helpers/utility';
+import {User} from '../../../../domain/User';
+import {IAppState} from '../../../../state/app.states';
+import {selectUserDetail} from '../../../../selectors/user.selector';
+import {Utility} from '../../../../helpers/utility';
 
 @Component({
   selector: 'app-card-profile',

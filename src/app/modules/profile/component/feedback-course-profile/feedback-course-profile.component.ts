@@ -1,11 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
-import {IAppState} from '../../../state/app.states';
-import {selectPersonalFeedbacksCourse} from '../../../selectors/feedback.selector';
 import {Observable} from 'rxjs';
-import {ShowAllForCourseAction} from '../../../actions/feedback-profile.actions';
-import {FeedbackCourse} from '../../../domain/FeedbackCourse';
-import {Utility} from '../../../helpers/utility';
+import {FeedbackCourse} from '../../../../domain/FeedbackCourse';
+import {IAppState} from '../../../../state/app.states';
+import {Utility} from '../../../../helpers/utility';
+import {selectPersonalFeedbacksCourse} from '../../../../selectors/feedback.selector';
 
 @Component({
   selector: 'app-feedback-course-profile',
