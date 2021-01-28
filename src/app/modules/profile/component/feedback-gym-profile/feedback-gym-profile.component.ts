@@ -1,11 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {FeedbackGym} from '../../../domain/FeedbackGym';
 import {Store} from '@ngrx/store';
-import {IAppState} from '../../../state/app.states';
-import {selectPersonalFeedbacksGym} from '../../../selectors/feedback.selector';
 import {Observable} from 'rxjs';
-import {ShowAllForGymAction} from '../../../actions/feedback-profile.actions';
-import {Utility} from '../../../helpers/utility';
+import {FeedbackGym} from '../../../../domain/FeedbackGym';
+import {IAppState} from '../../../../state/app.states';
+import {Utility} from '../../../../helpers/utility';
+import {selectPersonalFeedbacksGym} from '../../../../selectors/feedback.selector';
 
 @Component({
   selector: 'app-feedback-gym-profile',

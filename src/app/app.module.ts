@@ -6,7 +6,6 @@ import {AppComponent} from './app.component';
 import {ServiceWorkerModule} from '@angular/service-worker';
 import {environment} from '../environments/environment';
 import {HomeComponent} from './components/pages/home/home.component';
-import {ProfileComponent} from './components/pages/profile/profile.component';
 import {LoginComponent} from './components/pages/login/login.component';
 import {HeaderComponent} from './components/commons/header/header.component';
 import {FooterComponent} from './components/commons/footer/footer.component';
@@ -17,12 +16,6 @@ import {RegistrationFormComponent} from './components/component/registration-for
 import {ReactiveFormsModule} from '@angular/forms';
 import {LoginFormComponent} from './components/component/login-form/login-form.component';
 import {JwtModule} from '@auth0/angular-jwt';
-import {FeedbackGymProfileComponent} from './components/component/feedback-gym-profile/feedback-gym-profile.component';
-import {FeedbackCourseProfileComponent} from './components/component/feedback-course-profile/feedback-course-profile.component';
-import {FavoriteGymCardComponent} from './components/component/favorite-gym-card/favorite-gym-card.component';
-import {FavoriteCourseCardComponent} from './components/component/favorite-course-card/favorite-course-card.component';
-import {UpdateProfileComponent} from './components/component/update-profile/update-profile.component';
-import {CardProfileComponent} from './components/component/card-profile/card-profile.component';
 import {appReducers, localStorageSyncReducer} from './reducers/app.reducers';
 import {MetaReducer, StoreModule} from '@ngrx/store';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
@@ -55,7 +48,6 @@ const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
   declarations: [
     AppComponent,
     HomeComponent,
-    ProfileComponent,
     LoginComponent,
     HeaderComponent,
     FooterComponent,
@@ -63,12 +55,6 @@ const metaReducers: Array<MetaReducer<any, any>> = [localStorageSyncReducer];
     RegistrationComponent,
     RegistrationFormComponent,
     LoginFormComponent,
-    FeedbackGymProfileComponent,
-    FeedbackCourseProfileComponent,
-    FavoriteGymCardComponent,
-    FavoriteCourseCardComponent,
-    UpdateProfileComponent,
-    CardProfileComponent,
     TitleComponent,
     ScrollToTopComponent
 

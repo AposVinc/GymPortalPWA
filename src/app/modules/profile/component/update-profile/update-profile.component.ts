@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {User} from '../../../domain/User';
 import {Store} from '@ngrx/store';
-import {IAppState} from '../../../state/app.states';
-import {selectUserDetail} from '../../../selectors/user.selector';
 import {Observable} from 'rxjs';
-import {UpdateAction} from '../../../actions/user.actions';
+import {User} from '../../../../domain/User';
+import {IAppState} from '../../../../state/app.states';
+import {selectUserDetail} from '../../../../selectors/user.selector';
+import {UpdateAction} from '../../../../actions/user.actions';
 
 @Component({
   selector: 'app-update-profile',
@@ -41,6 +41,7 @@ export class UpdateProfileComponent implements OnInit {
   update() {
     const userUpdated: User = {...this.updateForm.value, id: this.idUser};
     this.store.dispatch( new UpdateAction(userUpdated));
+    this.updateForm.reset();
   }
 
 }
