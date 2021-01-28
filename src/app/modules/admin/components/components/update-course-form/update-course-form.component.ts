@@ -60,13 +60,14 @@ export class UpdateCourseFormComponent implements OnInit {
   }
 
   updateCourse(updateCourseForm: NgForm): void {
-    // this.adminService.saveCourse(this.course).subscribe(e => {
-    //   addCourseForm.resetForm();
-    //   this.successfulOp = e.ok;
-    // }, error => {
-    //   this.errorMessage = error;
-    //   // return this.router.navigate(['']);
-    // });
+    this.adminService.updateCourse(this.course).subscribe(e => {
+      updateCourseForm.resetForm();
+      this.successfulOp = true;
+    }, error => {
+      this.successfulOp = false;
+      this.errorMessage = error;
+      // return this.router.navigate(['']);
+    });
   }
 
 }

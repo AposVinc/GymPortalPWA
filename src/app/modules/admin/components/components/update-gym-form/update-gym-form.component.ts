@@ -41,13 +41,14 @@ export class UpdateGymFormComponent implements OnInit {
   }
 
   updateGym(updateGymForm: NgForm): void {
-    // this.adminService.saveGym(this.gym).subscribe(e => {
-    //   addGymForm.resetForm();
-    //   this.successfulOp = e.ok;
-    // }, error => {
-    //   this.errorMessage = error;
-    //   // return this.router.navigate(['']);
-    // });
+    this.adminService.updateGym(this.gym).subscribe(e => {
+      updateGymForm.resetForm();
+      this.successfulOp = true;
+    }, error => {
+      this.successfulOp = false;
+      this.errorMessage = error;
+      // return this.router.navigate(['']);
+    });
   }
 
 }

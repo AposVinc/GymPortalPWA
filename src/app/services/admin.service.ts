@@ -4,6 +4,7 @@ import {HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
 import {retry} from 'rxjs/operators';
 import {Gym} from '../domain/Gym';
 import {Course} from '../domain/Course';
+import {FeedbackCourse} from '../domain/FeedbackCourse';
 
 const BASE_URL = 'http://localhost:8080/GymREST/rest/gyms/';
 const URL_COURSE = '/courses/';
@@ -25,6 +26,15 @@ export class AdminService {
     );
   }
 
+  updateGym(gym: Gym): Observable<any> {
+    const token: string = JSON.parse(localStorage.getItem('admin-token'));
+    let headers: HttpHeaders = new HttpHeaders();
+    headers = headers.append('Authorization', token);
+    return this.http.put(BASE_URL + gym.id, gym, {headers}).pipe(
+      retry(3)
+    );
+  }
+
   deleteGym(idGym: number): Observable<any> {
     const token: string = JSON.parse(localStorage.getItem('admin-token'));
     let headers: HttpHeaders = new HttpHeaders();
@@ -39,6 +49,15 @@ export class AdminService {
     let headers: HttpHeaders = new HttpHeaders();
     headers = headers.append('Authorization', token);
     return this.http.post(BASE_URL + course.gym + URL_COURSE, course, {headers, observe: 'response'}).pipe(
+      retry(3)
+    );
+  }
+
+  updateCourse(course: Course): Observable<any> {
+    const token: string = JSON.parse(localStorage.getItem('admin-token'));
+    let headers: HttpHeaders = new HttpHeaders();
+    headers = headers.append('Authorization', token);
+    return this.http.put(BASE_URL + course.gym + URL_COURSE + course.id, course, {headers}).pipe(
       retry(3)
     );
   }

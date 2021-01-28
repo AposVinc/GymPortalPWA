@@ -64,8 +64,8 @@
           <div class="validate" *ngIf="courseDescription.dirty && (courseDescription.pristine || !courseDescription.valid)">Write a course's description</div>
         </div>
 
-        <div class="alert alert-success" *ngIf="successfulOp" i18n="@@Form-SuccessCourseAdd">Course Added</div>
-        <div class="alert alert-danger" *ngIf="errorMessage" i18n="@@Form-ErrorCourseAdd">An error has occurred.</div>
+        <div class="alert alert-success" *ngIf="successfulOp" i18n="@@Form-SuccessCourseUpdate">Course Updated</div>
+        <div class="alert alert-danger" *ngIf="errorMessage" i18n="@@Form-ErrorCourseUpdate">An error has occurred.</div>
 
         <div class="text-center"><button type="submit" [disabled]="!updateCourseForm.valid" [ngClass]="{'btn-disabled' : !updateCourseForm.valid}" i18n="@@Button-Update">Update</button></div>
       </form>
