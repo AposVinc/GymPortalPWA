@@ -16,5 +16,5 @@ export const appReducers: ActionReducerMap<IAppState, any> = {
 };
 
 export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
-  return localStorageSync({keys: ['commonState', 'userState', 'favoriteState', 'feedbackState'], rehydrate: true})(reducer);
+  return localStorageSync({keys: ['commonState', 'userState', 'favoriteState', 'feedbackState', 'gymState'], rehydrate: true})(reducer);
 }
