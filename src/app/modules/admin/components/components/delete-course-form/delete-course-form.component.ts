@@ -43,8 +43,9 @@ export class DeleteCourseFormComponent implements OnInit {
   deleteCourse(deleteCourseForm: NgForm): void {
     this.adminService.deleteCourse(this.selectedGymId, this.selectedCourseId).subscribe(e => {
       deleteCourseForm.resetForm();
-      this.successfulOp = e.ok;
+      this.successfulOp = true;
     }, error => {
+      this.successfulOp = false;
       this.errorMessage = error;
       // return this.router.navigate(['']);
     });
