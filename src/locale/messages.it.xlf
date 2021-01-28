@@ -279,7 +279,7 @@
         <target>Amministrazione</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/admin.component.js</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AdminHomePage-Subtitle" datatype="html">
@@ -287,7 +287,7 @@
         <target>Area riservata ai gestori di palestre, qui puoi aggiungere le tue palestre e i corsi ad esse associati </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/admin.component.js</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">27</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AdminHomePage-TitleAddGym" datatype="html">
@@ -295,7 +295,7 @@
         <target>Aggiungi Palestra</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/admin.component.js</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="linenumber">33</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AdminHomePage-TitleAddCourse" datatype="html">
@@ -303,7 +303,23 @@
         <target>Aggiungi Corso</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/admin.component.js</context>
-          <context context-type="linenumber">37</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AdminHomePage-TitleUpdateGym" datatype="html">
+        <source>Update Gym</source>
+        <target>Aggiorna Palestra</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/admin/admin.component.js</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="AdminHomePage-TitleUpdateCourse" datatype="html">
+        <source>Update Course</source>
+        <target>Aggiorna Corso</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/admin/admin.component.js</context>
+          <context context-type="linenumber">51</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AdminHomePage-TitleDeleteGym" datatype="html">
@@ -311,7 +327,7 @@
         <target>Elimina Plaestra</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/admin.component.js</context>
-          <context context-type="linenumber">43</context>
+          <context context-type="linenumber">57</context>
         </context-group>
       </trans-unit>
       <trans-unit id="AdminHomePage-TitleDeleteCourse" datatype="html">
@@ -319,7 +335,7 @@
         <target>Elimina Corso</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/admin.component.js</context>
-          <context context-type="linenumber">49</context>
+          <context context-type="linenumber">63</context>
         </context-group>
       </trans-unit>
       <trans-unit id="GymsPage-Subtitle" datatype="html">
@@ -330,12 +346,20 @@
           <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="Form-SplitSelectionGym" datatype="html">
+        <source>Select Gym</source>
+        <target>Seleziona Palestra</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/admin/components/components/update-gym-form/update-gym-form.component.js</context>
+          <context context-type="linenumber">110</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="Form-LabelRegion" datatype="html">
         <source>Region</source>
         <target>Regione</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/components/components/delete-course-form/delete-course-form.component.js</context>
-          <context context-type="linenumber">93</context>
+          <context context-type="linenumber">116</context>
         </context-group>
       </trans-unit>
       <trans-unit id="Form-SelectRegion" datatype="html">
@@ -343,7 +367,7 @@
         <target>--- Scegli Regone ----</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/components/components/delete-course-form/delete-course-form.component.js</context>
-          <context context-type="linenumber">99</context>
+          <context context-type="linenumber">122</context>
         </context-group>
       </trans-unit>
       <trans-unit id="Form-LabelGym" datatype="html">
@@ -351,55 +375,127 @@
         <target>Palestra</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/components/components/delete-course-form/delete-course-form.component.js</context>
-          <context context-type="linenumber">105</context>
+          <context context-type="linenumber">128</context>
         </context-group>
       </trans-unit>
       <trans-unit id="Form-SelectGym" datatype="html">
         <source>--- Select Gym ----</source>
         <target>--- Seleziona Palestra ----</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/admin/components/components/delete-course-form/delete-course-form.component.js</context>
-          <context context-type="linenumber">111</context>
+          <context context-type="sourcefile">src/app/modules/admin/components/components/update-gym-form/update-gym-form.component.js</context>
+          <context context-type="linenumber">134</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Form-SplitEditableGym" datatype="html">
+        <source>Edit Selected Gym</source>
+        <target>Modifica Palestra Selezionata</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/admin/components/components/update-gym-form/update-gym-form.component.js</context>
+          <context context-type="linenumber">140</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Form-LabelProvince" datatype="html">
+        <source>Province</source>
+        <target>Provincia</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/admin/components/components/update-gym-form/update-gym-form.component.js</context>
+          <context context-type="linenumber">164</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Form-LabelAddress" datatype="html">
+        <source>Address</source>
+        <target>Indirizzo</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/admin/components/components/update-gym-form/update-gym-form.component.js</context>
+          <context context-type="linenumber">170</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Form-SuccessGymUpdate" datatype="html">
+        <source>Gym Updated</source>
+        <target>Palestra Aggiornata</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/admin/components/components/update-gym-form/update-gym-form.component.js</context>
+          <context context-type="linenumber">182</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Form-ErrorGymUpdate" datatype="html">
+        <source>An error has occurred.</source>
+        <target>Si è verificato un errore.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/admin/components/components/update-gym-form/update-gym-form.component.js</context>
+          <context context-type="linenumber">188</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Form-SplitSelectionCourse" datatype="html">
+        <source>Select Course</source>
+        <target>Seleziona Corso</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/admin/components/components/update-course-form/update-course-form.component.js</context>
+          <context context-type="linenumber">145</context>
         </context-group>
       </trans-unit>
       <trans-unit id="Form-LabelCourse" datatype="html">
         <source>Course</source>
         <target>Corso</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/admin/components/components/delete-course-form/delete-course-form.component.js</context>
-          <context context-type="linenumber">117</context>
+          <context context-type="sourcefile">src/app/modules/admin/components/components/update-course-form/update-course-form.component.js</context>
+          <context context-type="linenumber">175</context>
         </context-group>
       </trans-unit>
       <trans-unit id="Form-SelectCourse" datatype="html">
         <source>--- Select Course ----</source>
         <target>--- Seleziona Corso ----</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/admin/components/components/delete-course-form/delete-course-form.component.js</context>
-          <context context-type="linenumber">123</context>
+          <context context-type="sourcefile">src/app/modules/admin/components/components/update-course-form/update-course-form.component.js</context>
+          <context context-type="linenumber">181</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Form-SplitEditableCourse" datatype="html">
+        <source>Edit Selected Course</source>
+        <target>Modifica Palestra Selezionata</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/admin/components/components/update-course-form/update-course-form.component.js</context>
+          <context context-type="linenumber">187</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Form-LabelCode" datatype="html">
+        <source>Code</source>
+        <target>codice</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/admin/components/components/update-course-form/update-course-form.component.js</context>
+          <context context-type="linenumber">193</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Form-LabelDescription" datatype="html">
+        <source>Description</source>
+        <target>Descrizione</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/admin/components/components/update-course-form/update-course-form.component.js</context>
+          <context context-type="linenumber">229</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Form-SuccessCourseUpdate" datatype="html">
+        <source>Course Updated</source>
+        <target>Corso Aggiornato</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/admin/components/components/update-course-form/update-course-form.component.js</context>
+          <context context-type="linenumber">241</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Form-ErrorCourseUpdate" datatype="html">
+        <source>An error has occurred.</source>
+        <target>Si è verificato un errore.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/admin/components/components/update-course-form/update-course-form.component.js</context>
+          <context context-type="linenumber">247</context>
         </context-group>
       </trans-unit>
       <trans-unit id="Button-Delete" datatype="html">
         <source>Delete</source>
         <target>Elimina</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/admin/components/components/delete-course-form/delete-course-form.component.js</context>
-          <context context-type="linenumber">129</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="Form-SuccessCourseDelete" datatype="html">
-        <source>Course Deleted</source>
-        <target>Corso Eliminato</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/admin/components/components/delete-course-form/delete-course-form.component.js</context>
-          <context context-type="linenumber">135</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="Form-ErrorCourseDelete" datatype="html">
-        <source>An error has occurred.</source>
-        <target>Si è verificato un errore.</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/admin/components/components/delete-course-form/delete-course-form.component.js</context>
-          <context context-type="linenumber">141</context>
+          <context context-type="sourcefile">src/app/modules/admin/components/components/delete-gym-form/delete-gym-form.component.js</context>
+          <context context-type="linenumber">97</context>
         </context-group>
       </trans-unit>
       <trans-unit id="Form-SuccessGymDelete" datatype="html">
@@ -418,6 +514,22 @@
           <context context-type="linenumber">109</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="Form-SuccessCourseDelete" datatype="html">
+        <source>Course Deleted</source>
+        <target>Corso Eliminato</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/admin/components/components/delete-course-form/delete-course-form.component.js</context>
+          <context context-type="linenumber">135</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="Form-ErrorCourseDelete" datatype="html">
+        <source>An error has occurred.</source>
+        <target>Si è verificato un errore.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/admin/components/components/delete-course-form/delete-course-form.component.js</context>
+          <context context-type="linenumber">141</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="AdminLoginForm-Title" datatype="html">
         <source>Reserved Area</source>
         <target>Area Riservata</target>
@@ -432,22 +544,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/components/components/login-form/login-form.component.js</context>
           <context context-type="linenumber">88</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="Form-LabelCode" datatype="html">
-        <source>Code</source>
-        <target>Codice</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/admin/components/components/add-course-card/add-course-card.component.js</context>
-          <context context-type="linenumber">91</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="Form-LabelDescription" datatype="html">
-        <source>Description</source>
-        <target>Descrizione</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/admin/components/components/add-course-card/add-course-card.component.js</context>
-          <context context-type="linenumber">127</context>
         </context-group>
       </trans-unit>
       <trans-unit id="Button-Add" datatype="html">
@@ -472,22 +568,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/admin/components/components/add-course-card/add-course-card.component.js</context>
           <context context-type="linenumber">145</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="Form-LabelProvince" datatype="html">
-        <source>Province</source>
-        <target>Provincia</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/admin/components/components/add-gym-card/add-gym-card.component.js</context>
-          <context context-type="linenumber">92</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="Form-LabelAddress" datatype="html">
-        <source>Address</source>
-        <target>Indirizzo</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/admin/components/components/add-gym-card/add-gym-card.component.js</context>
-          <context context-type="linenumber">98</context>
         </context-group>
       </trans-unit>
       <trans-unit id="Form-SuccessGymAdd" datatype="html">
@@ -622,32 +702,16 @@
         <source>Edit Review</source>
         <target>Modifica Recensione</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/gyms/components/components/feedback-gym-card/feedback-gym-card.component.js</context>
-          <context context-type="linenumber">125</context>
+          <context context-type="sourcefile">src/app/modules/gyms/components/components/feedback-course-card/feedback-course-card.component.js</context>
+          <context context-type="linenumber">126</context>
         </context-group>
       </trans-unit>
       <trans-unit id="LinkButton-DeleteReview" datatype="html">
         <source>Delete Review</source>
         <target>Elimina Recensione</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/gyms/components/components/feedback-gym-card/feedback-gym-card.component.js</context>
-          <context context-type="linenumber">131</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="FeedbacksComponent-NoFeedbacksGymTitle" datatype="html">
-        <source>There are no reviews for this gym</source>
-        <target>Non ci sono delle recensioni per questa palestra</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/gyms/components/components/feedback-gym-card/feedback-gym-card.component.js</context>
-          <context context-type="linenumber">137</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="FeedbacksComponent-NoFeedbacksGymSubtitle" datatype="html">
-        <source>What are you waiting for?! You can be the first!!!</source>
-        <target>Cosa stai aspettando? Puoi essere il primo!!!</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/gyms/components/components/feedback-gym-card/feedback-gym-card.component.js</context>
-          <context context-type="linenumber">143</context>
+          <context context-type="sourcefile">src/app/modules/gyms/components/components/feedback-course-card/feedback-course-card.component.js</context>
+          <context context-type="linenumber">132</context>
         </context-group>
       </trans-unit>
       <trans-unit id="FeedbacksComponent-NoFeedbacksCourseTitle" datatype="html">
@@ -664,6 +728,22 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/gyms/components/components/feedback-course-card/feedback-course-card.component.js</context>
           <context context-type="linenumber">144</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="FeedbacksComponent-NoFeedbacksGymTitle" datatype="html">
+        <source>There are no reviews for this gym</source>
+        <target>Non ci sono delle recensioni per questa palestra</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/gyms/components/components/feedback-gym-card/feedback-gym-card.component.js</context>
+          <context context-type="linenumber">137</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="FeedbacksComponent-NoFeedbacksGymSubtitle" datatype="html">
+        <source>What are you waiting for?! You can be the first!!!</source>
+        <target>Cosa stai aspettando? Puoi essere il primo!!!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/gyms/components/components/feedback-gym-card/feedback-gym-card.component.js</context>
+          <context context-type="linenumber">143</context>
         </context-group>
       </trans-unit>
       <trans-unit id="LinkButton-ViewsReview" datatype="html">
