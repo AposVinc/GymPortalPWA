@@ -4,7 +4,7 @@
       <form #addCourseForm="ngForm" (ngSubmit)="addCourse(addCourseForm)" class="php-email-form">
         <div class="form-group">
           <label for="code" i18n="@@Form-LabelCode">Code</label>
-          <input type="number" [(ngModel)]="newCourse.code" #courseCode="ngModel" name="code" id="code" placeholder="Code" class="form-control course-code" required>
+          <input type="number" [(ngModel)]="newCourse.code" #courseCode="ngModel" name="code" id="code" placeholder="Code" class="form-control course-code" min="0" required>
           <div class="validate" *ngIf="courseCode.dirty && (courseCode.pristine || !courseCode.valid)">Write only numbers</div>
         </div>
         <div class="form-group">
