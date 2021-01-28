@@ -27,6 +27,7 @@ import {
 import {IAppState} from '../state/app.states';
 import {selectUserDetail, selectUserToken} from '../selectors/user.selector';
 import {LoggedOutAction} from '../actions/common.actions';
+import {User} from '../domain/User';
 
 @Injectable()
 export class UserEffects {
@@ -83,7 +84,8 @@ export class UserEffects {
     ofType<UpdateAction>(EUserActions.UPDATE),
     switchMap((action) => this.store.select(selectUserToken).pipe(
       concatMap( (token) => this.userService.updateUser(action.user, token)),
-      concatMap(() => of(new UpdateSuccessAction(action.user))),
+      concatMap(() => of(new UpdateSuccessAction({...action.user, password: ''}))
+      ),
       catchError(() => of(new UpdateFailureAction()))
     )))
   );
